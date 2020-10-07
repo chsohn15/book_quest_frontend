@@ -7,15 +7,16 @@ const LogIn = (props) => {
     const [username, changeUserName] = useState("")
     const [password, changePassword] = useState("")
 
-    const handleForm = (e, username, password) => {
+    const handleLogIn = (e, username, password) => {
         e.preventDefault()
         props.addUser(username, password)
     }
+
     return(
         <div>
         <div>
             <div>Log in Here</div>
-                <form onSubmit={(e) => handleForm(e, username, password)}>
+                <form onSubmit={(e) => handleLogIn(e, username, password)}>
                 <label>Username</label>
                 <input name="username" type="text" onChange={(e)=> changeUserName(e.target.value)}/>
                 <label>Password</label>
