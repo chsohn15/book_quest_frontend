@@ -1,17 +1,16 @@
 import React from 'react'
-
+import { useState } from 'react'
 
 const SearchBar = (props) => {
     
-    const handleSearch = (e) => {
-        debugger
-    }
+    const [bookTitle, changeBookTitle] = useState("")
+
 
     return(
         <div>
-            <form onSubmit={(e) => handleSearch(e)}>
+            <form onSubmit={(e) => props.handleSearch(e, bookTitle)}>
                 <label>Book Title: </label>
-                <input type="text"/><br />
+                <input type="text" onChange={(e) => changeBookTitle(e.target.value)}/><br />
                 <input type="submit"/>
             </form>
         </div>
