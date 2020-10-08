@@ -4,7 +4,8 @@ import BookCard from './BookCard'
 import { useState } from 'react'
 
 const googleRootURL ="https://www.googleapis.com/books/v1/volumes?q=" // + bookTitle
-const googleAPIKey = "&apiKey=AIzaSyCIrIcg2DTV9incgpEyC3XsmmQDSK0-xfQ"
+const googleAPIKey = `&apiKey=${process.env.GOOGLE_BOOKS_API_KEY}`
+
 
 const BookSearchContainer = (props) => {
 
