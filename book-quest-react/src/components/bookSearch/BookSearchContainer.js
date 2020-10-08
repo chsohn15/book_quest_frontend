@@ -33,7 +33,8 @@ const BookSearchContainer = (props) => {
                 publishedDate={book.volumeInfo.publishedDate}
                 description={book.volumeInfo.description}
                 pageCount={book.volumeInfo.pageCount}
-                image_url={book.volumeInfo.imageLinks.thumbnail} />)
+                image_url={book.volumeInfo.imageLinks.thumbnail}
+                ISBN={book.volumeInfo.industryIdentifiers[0].identifier} />)
             })
         }
         return new_array
