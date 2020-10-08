@@ -21,15 +21,22 @@ const LogIn = (props) => {
         }
         fetch("http://localhost:3000/api/v1/login", configObj)
         .then(res => res.json())
-        .then(userInfo => props.addUser(
+        .then(userInfo => {
+            //Save information to local storage
+            localStorage.token = userInfo.token 
+            localStorage.user_id = userInfo.id 
+            localStorage.username = userInfo.username 
+
+            // Add user information to store
+            props.addUser(
             userInfo.id, 
             userInfo.first_name, 
             userInfo.last_name, 
             userInfo.username, 
-            userInfo.is_student))
+            userInfo.is_student)
         
-        //props.addUser(username, password)
-    }
+        })}
+    
 
     return(
         <div>
@@ -46,8 +53,8 @@ const LogIn = (props) => {
         <button>Test Button</button>
         </div>
     )
-
 }
+
 
 const mapStateToProps = state => {
     return{
