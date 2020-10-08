@@ -1,6 +1,7 @@
 import React from 'react'
 import SearchBar from './SearchBar'
 import BookCard from './BookCard'
+import Test from './Test'
 import { useState } from 'react'
 
 const googleRootURL ="https://www.googleapis.com/books/v1/volumes?q=" // + bookTitle
@@ -45,6 +46,7 @@ const BookSearchContainer = (props) => {
             <h3>Search for Your Choice Book!</h3>
             <SearchBar handleSearch={handleSearch}/>
             {filterBookData(books)}
+            <Test />
         </div>
     )
 }
