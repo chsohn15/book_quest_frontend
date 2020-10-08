@@ -9,7 +9,26 @@ const LogIn = (props) => {
 
     const handleLogIn = (e, username, password) => {
         e.preventDefault()
-        props.addUser(username, password)
+        
+        let configObj = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                username, password
+            })
+        }
+        fetch("http://localhost:3000/api/v1/login", configObj)
+        .then(res => res.json())
+        .then(userInfo => props.addUser(
+            userInfo.id, 
+            userInfo.first_name, 
+            userInfo.last_name, 
+            userInfo.username, 
+            userInfo.is_student))
+        
+        //props.addUser(username, password)
     }
 
     return(
@@ -32,13 +51,13 @@ const LogIn = (props) => {
 
 const mapStateToProps = state => {
     return{
-        user: state.currentUser
+        currentUser: state.currentUser
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        addUser: ((username, password) => dispatch({type: 'ADD_USER', payload: {username, password}}))
+        addUser: ((id, first_name, last_name, username, is_student) => dispatch({type: 'ADD_USER', payload: {id, first_name, last_name, username, is_student}}))
     }
 }
 

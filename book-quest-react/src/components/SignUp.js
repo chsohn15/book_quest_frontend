@@ -38,7 +38,7 @@ const SignUp = () => {
                 <label>Username</label>
                 <input onChange={(e) => changeUserName(e.target.value)} name="username" type="text" /><br />
                 <label>Password</label>
-                <input onChange={(e) => changePassword(e.target.value)} name="password" type="text" /><br />
+                <input onChange={(e) => changePassword(e.target.value)} name="password" type="password" /><br />
                 <input type="submit"/>
 
         </form>

@@ -1,16 +1,17 @@
 export default function userReducer(
     state = {
-        currentUser: {username: "test", password: "test"}
+        currentUser: {}
     }, 
     action
 ){
 
 switch(action.type){
     case 'ADD_USER':
-        console.log(action.payload.username)
+        const {id, first_name, last_name, username, is_student } = action.payload
+
         return {
             ...state, 
-            currentUser: {username: action.payload.username, password: action.payload.password}
+            currentUser: {id, first_name, last_name, username, is_student}
         }
     default: 
         return state;
