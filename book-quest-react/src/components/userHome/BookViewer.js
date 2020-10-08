@@ -13,7 +13,7 @@ const BookViewer = () => {
         
         function initialize() {
             var viewer = new window.google.books.DefaultViewer(canvasRef.current);
-            viewer.load('ISBN:0738531367');
+            viewer.load('ISBN:9781859846667');
             console.log(viewer)
           }
 
