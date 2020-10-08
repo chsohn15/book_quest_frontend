@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import SignUp from './components/SignUp.js'
 import LogIn from './components/LogIn.js'
+import BookSearchContainer from './components/bookSearch/BookSearchContainer.js'
 
 function App() {
   return (
@@ -16,6 +17,10 @@ function App() {
         </Route>
         <Route exact path = "/login" render = {(routerProps) => (
           <LogIn />
+        )}>
+        </Route>
+        <Route exact path = "/book_search" render = {(routerProps) => (
+          <BookSearchContainer />
         )}>
         </Route>
       </Router>

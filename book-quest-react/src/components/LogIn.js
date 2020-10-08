@@ -56,16 +56,10 @@ const LogIn = (props) => {
 }
 
 
-const mapStateToProps = state => {
-    return{
-        currentUser: state.currentUser
-    }
-}
-
 const mapDispatchToProps = dispatch => {
     return {
         addUser: ((id, first_name, last_name, username, is_student) => dispatch({type: 'ADD_USER', payload: {id, first_name, last_name, username, is_student}}))
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(LogIn)
+export default connect(null, mapDispatchToProps)(LogIn)
