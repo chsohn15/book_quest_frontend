@@ -4,6 +4,7 @@ import SignUp from './components/SignUp.js'
 import LogIn from './components/LogIn.js'
 import BookSearchContainer from './components/bookSearch/BookSearchContainer.js'
 
+
 function App() {
   return (
     <div className="App">
@@ -24,6 +25,7 @@ function App() {
         )}>
         </Route>
       </Router>
+
     </div>
   );
 }
