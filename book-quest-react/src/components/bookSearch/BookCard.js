@@ -6,7 +6,7 @@ const BookCard = (props) => {
 
     return(
         <div>
-            <img src={image_url} alt="book photo"/>
+            <img src={image_url} alt="book"/>
             <div>{title}</div>
             By {authorsArray.map(author => <div>{author}</div>)}
             <div>ISBN number: {ISBN}</div>

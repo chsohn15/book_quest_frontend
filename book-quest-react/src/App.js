@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import SignUp from './components/SignUp.js'
 import LogIn from './components/LogIn.js'
 import BookSearchContainer from './components/bookSearch/BookSearchContainer.js'
+import UserHomeContainer from './components/userHome/UserHomeContainer.js'
 
 function App() {
   return (
@@ -12,15 +13,19 @@ function App() {
       </header>
       <Router>
         <Route exact path = "/signup" render = {(routerProps) => (
-          <SignUp />
+          <SignUp {...routerProps}/>
         )}>
         </Route>
         <Route exact path = "/login" render = {(routerProps) => (
-          <LogIn />
+          <LogIn {...routerProps}/>
         )}>
         </Route>
         <Route exact path = "/book_search" render = {(routerProps) => (
-          <BookSearchContainer />
+          <BookSearchContainer {...routerProps}/>
+        )}>
+        </Route>
+        <Route exact path = "/user_home" render = {(routerProps) => (
+          <UserHomeContainer {...routerProps}/>
         )}>
         </Route>
       </Router>

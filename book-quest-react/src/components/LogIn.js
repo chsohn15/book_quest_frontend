@@ -35,11 +35,14 @@ const LogIn = (props) => {
             userInfo.username, 
             userInfo.is_student)
         
+            goToUserPage()
         })}
     
+        const goToUserPage = () => {
+            props.history.push("/user_home");
+          };
 
     return(
-        <div>
         <div>
             <div>Log in Here</div>
                 <form onSubmit={(e) => handleLogIn(e, username, password)}>
@@ -49,8 +52,6 @@ const LogIn = (props) => {
                 <input name="password" type="password" onChange={(e)=> changePassword(e.target.value)}/>
                 <input type="submit" value="Log in"/>
                 </form>
-        </div>
-        <button>Test Button</button>
         </div>
     )
 }
