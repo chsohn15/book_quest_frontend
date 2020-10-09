@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 //import { useState } from 'react'
 import { addingBook } from '../../redux/reducers/actions.js'
+import { NavLink } from "react-router-dom";
 
 const BookCard = (props) => {
     const {title, authorsArray, publisher, publishedDate, description, pageCount, image_url, ISBN} = props
@@ -17,7 +18,10 @@ const BookCard = (props) => {
             <div>Published Date: {publishedDate}</div>
             <div>Description: {description}</div>
             <div>Pages: {pageCount}</div>
-            <button onClick={() => props.addingBook(title, first_author, ISBN, image_url, pageCount)}>Select This Book!</button>
+            <NavLink to="user_home">
+                <button onClick={() => props.addingBook(title, first_author, ISBN, image_url, pageCount)}>Select This Book!</button>
+            </NavLink>
+
         </div>
     )
 }

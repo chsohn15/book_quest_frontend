@@ -7,9 +7,9 @@ const UserHomeContainer = (props) => {
     return(
         <div>
             User Home Container
-            <ProfileCard />
-            <NavLink to="/book_viewer">Read Your Book!</NavLink>
-            <UserBookCard />
+            <ProfileCard /><br />
+            <NavLink to="/book_viewer">Read Your Book!</NavLink><br />
+            <UserBookCard /><br />
         </div>
     )
 }
