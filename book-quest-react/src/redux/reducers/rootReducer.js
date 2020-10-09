@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
-    userReducer, booksReducer
+    userReducer, booksReducer, currentBookReducer
 })
 
 export default rootReducer
@@ -44,4 +44,13 @@ function booksReducer(state = {books: []}, action){
 }
 
 function currentBookReducer(state = {currentBook: {}}, action){
+    switch(action.type){
+        case 'CURRENTLY_READING':
+            return {
+                ...state,
+                currentBook: action.payload}
+            
+        default: 
+            return state;
+    }
 }

@@ -1,16 +1,22 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { addingCurrentBook } from '../../../actions.js'
 
 const ShelfBook = (props) => {
-    const {title, author, total_pages, image_url, ISBN_number} = props.book
+    const {id, title, author, total_pages, image_url, ISBN_number} = props.book
     
     return(
         <div>
             <img src={image_url} alt="book"/>
             <div>{title}</div>
             <div>{author}</div>
-            <button >Add to 'Currently Reading'</button>
+            <button onClick={() => props.addingCurrentBook(id)}>Add to 'Currently Reading'</button>
         </div>
     )
 }
 
-export default ShelfBook
+const mapDispatchToProps = (dispatch) => ({
+    addingCurrentBook: (book_id) => { dispatch( addingCurrentBook(book_id) )}
+})
+
+export default connect(null, mapDispatchToProps)(ShelfBook)

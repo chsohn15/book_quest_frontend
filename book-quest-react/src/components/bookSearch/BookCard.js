@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 //import { useState } from 'react'
-import { addingBook } from '../../redux/reducers/actions.js'
+import { addingBook } from '../../actions.js'
 import { NavLink } from "react-router-dom";
 
 const BookCard = (props) => {

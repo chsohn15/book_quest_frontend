@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux'
 
-const UserBookCard = (props) => {
+const CurrentBookCard = (props) => {
 
     const {title, author, image_url, total_pages, ISBN_number} = props.book
 
     return(
         <div>
-            <div>Book Card</div>
+            <div>Currently Reading</div>
             <img src={image_url}></img>
             <div>{title}</div>
             <div>{author}</div>
@@ -16,7 +16,7 @@ const UserBookCard = (props) => {
     )
 }
 
-// const mapStateToProps = state => {
-//     return {book: state.booksReducer.currentBook}
-// }
-export default connect()(UserBookCard)
+const mapStateToProps = state => {
+    return {book: state.currentBookReducer.currentBook}
+}
+export default connect(mapStateToProps)(CurrentBookCard)

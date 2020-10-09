@@ -1,5 +1,26 @@
 const BOOKS_URL = "http://localhost:3000/api/v1/books"
 const USER_URL = "http://localhost:3000/api/v1/users/"
+const CURRENT_BOOK_URL ="http://localhost:3000/api/v1/current_book"
+
+function addedCurrentBook(book){
+    return {type: "CURRENTLY_READING", payload: book}
+}
+
+function addingCurrentBook(book_id){
+    return (dispatch) => {
+        fetch(CURRENT_BOOK_URL, {method: "POST", 
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.token}`
+        },
+        body: JSON.stringify({
+            book_id: book_id,
+            user_id: localStorage.user_id
+        })
+        })
+        .then(res => res.json())
+        .then(book => dispatch(addedCurrentBook(book)))
+}}
 
 function loadedBooks(books){
 
@@ -48,4 +69,4 @@ function addingBook(title, author, ISBN_number, image_url, pageCount){
       }
 }
 
-export { addingBook, loadingBooks }
+export { addingBook, loadingBooks, addingCurrentBook}
