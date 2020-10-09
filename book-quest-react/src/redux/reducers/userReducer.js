@@ -1,6 +1,13 @@
+import { combineReducers } from "redux";
 
+const rootReducer = combineReducers({
+    currentUser: userReducer, 
+    currentBook: booksReducer
+})
 
-export default function userReducer(
+export default rootReducer
+
+function userReducer(
     state = {
         currentUser: {},
         currentBook: {}
