@@ -5,7 +5,6 @@ const SearchBar = (props) => {
     
     const [bookTitle, changeBookTitle] = useState("")
 
-
     return(
         <div>
             <form onSubmit={(e) => props.handleSearch(e, bookTitle)}>

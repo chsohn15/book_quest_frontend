@@ -25,9 +25,10 @@ const BookSearchContainer = (props) => {
     const filterBookData = (books) => {
         let new_array = [];
         if (books !== []){
-            new_array = books.map(book => {
+            new_array = books.map((book, index) => {
                 return (
                 <BookCard 
+                key={index}
                 title={book.volumeInfo.title} 
                 authorsArray={book.volumeInfo.authors}
                 publisher={book.volumeInfo.publisher}

@@ -1,5 +1,6 @@
 import React from 'react';
 import ProfileCard from './ProfileCard.js'
+import UserBookCard from './UserBookCard.js'
 import { NavLink } from "react-router-dom";
 
 const UserHomeContainer = (props) => {
@@ -8,6 +9,7 @@ const UserHomeContainer = (props) => {
             User Home Container
             <ProfileCard />
             <NavLink to="/book_viewer">Read Your Book!</NavLink>
+            <UserBookCard />
         </div>
     )
 }

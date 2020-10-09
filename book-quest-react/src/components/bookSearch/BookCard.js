@@ -1,8 +1,11 @@
 import React from 'react'
+import { connect } from 'react-redux'
 //import { useState } from 'react'
+import { addingBook } from '../../redux/reducers/actions.js'
 
 const BookCard = (props) => {
     const {title, authorsArray, publisher, publishedDate, description, pageCount, image_url, ISBN} = props
+    const first_author = authorsArray[0]
 
     return(
         <div>
@@ -14,8 +17,13 @@ const BookCard = (props) => {
             <div>Published Date: {publishedDate}</div>
             <div>Description: {description}</div>
             <div>Pages: {pageCount}</div>
+            <button onClick={() => props.addingBook(title, first_author, ISBN, image_url, pageCount)}>Select This Book!</button>
         </div>
     )
 }
 
-export default BookCard
+const mapDispatchToProps = (dispatch) => ({
+        addingBook: (title, first_author, ISBN, image_url, pageCount) => { dispatch( addingBook(title, first_author, ISBN, image_url, pageCount) )}
+})
+
+export default connect(null, mapDispatchToProps)(BookCard)
