@@ -6,6 +6,7 @@ const LogIn = (props) => {
 
     const [username, changeUserName] = useState("")
     const [password, changePassword] = useState("")
+    const [errors, addErrors] = useState([])
 
     const handleLogIn = (e, username, password) => {
         e.preventDefault()
@@ -22,6 +23,11 @@ const LogIn = (props) => {
         fetch("http://localhost:3000/api/v1/login", configObj)
         .then(res => res.json())
         .then(userInfo => {
+            if (userInfo.error){
+                addErrors([...errors, userInfo.error])
+                localStorage.errors = true;
+            }
+            else {
             //Save information to local storage
             localStorage.token = userInfo.token 
             localStorage.user_id = userInfo.id 
@@ -36,6 +42,7 @@ const LogIn = (props) => {
             userInfo.is_student)
         
             goToUserPage()
+            }
         })}
     
         const goToUserPage = () => {
@@ -52,6 +59,8 @@ const LogIn = (props) => {
                 <input name="password" type="password" onChange={(e)=> changePassword(e.target.value)}/>
                 <input type="submit" value="Log in"/>
                 </form>
+                {errors.length > 0 ? 
+                errors.map(error => <div>{error}</div>) : null}
         </div>
     )
 }
