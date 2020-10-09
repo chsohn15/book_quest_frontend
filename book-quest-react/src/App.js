@@ -4,7 +4,7 @@ import SignUp from './components/SignUp.js'
 import LogIn from './components/LogIn.js'
 import BookSearchContainer from './components/bookSearch/BookSearchContainer.js'
 import UserHomeContainer from './components/userHome/UserHomeContainer.js'
-import BookViewer from './components/userHome/BookViewer.js'
+import BookViewer from './components/userHome/books/BookViewer.js'
 import ReadingTweetContainer from './components/userHome/readingTweets/ReadingTweetContainer.js'
 
 function App() {

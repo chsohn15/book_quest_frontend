@@ -1,7 +1,7 @@
 import React from 'react';
 import ProfileCard from './ProfileCard.js'
 import UserBookCard from './UserBookCard.js'
-import UserBookShelf from './UserBookShelf.js'
+import UserBookShelf from './books/UserBookShelf.js'
 import ActivityContainer from './ActivityContainer.js'
 import { NavLink } from "react-router-dom";
 

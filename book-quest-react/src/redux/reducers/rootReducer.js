@@ -26,12 +26,12 @@ switch(action.type){
     }
 }
 
-function booksReducer(state = [], action){
+function booksReducer(state = {books: []}, action){
     switch(action.type){
         case 'ADD_BOOK':
             return{
                 ...state,
-                currentBook: {...action.payload}
+                books: [...state.books, action.payload]
             }
         default: 
             return state;
