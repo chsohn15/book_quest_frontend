@@ -4,6 +4,7 @@ import { finishingCurrentBook } from '../../actions.js'
 
 const CurrentBookCard = (props) => {
 
+    if (props.book.book){
     const {title, author, image_url, total_pages, ISBN_number} = props.book.book
     const student_book_id = props.book.id 
 
@@ -14,9 +15,11 @@ const CurrentBookCard = (props) => {
             <div>{title}</div>
             <div>{author}</div>
             <div>Total Pages: {total_pages}</div>
-            <button>Finished Book!</button>
+            <button onClick={() => props.finishingCurrentBook(student_book_id)}>Finished Book!</button>
         </div>
     )
+    }
+    else return null
 }
 
 const mapStateToProps = state => {

@@ -1,14 +1,26 @@
 const BOOKS_URL = "http://localhost:3000/api/v1/books"
 const USER_URL = "http://localhost:3000/api/v1/users/"
 const CURRENT_BOOK_URL ="http://localhost:3000/api/v1/current_book"
+const STUDENT_BOOK_URL = "http://localhost:3000/api/v1/student_books/"
 
 function finishedCurrentBook(book){
-
+    return {type: "FINISHED_READING"}
 }
 
 function finishingCurrentBook(student_book_id){
-
-}
+    return (dispatch) => {
+        fetch(STUDENT_BOOK_URL + student_book_id, {method: "POST", 
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.token}`
+        },
+        body: JSON.stringify({
+            id: student_book_id
+        })
+        })
+        .then(res => res.json())
+        .then(student_book => dispatch(finishedCurrentBook(student_book)))
+}}
 
 function addedCurrentBook(book){
     return {type: "SET_CURRENTLY_READING", payload: book}

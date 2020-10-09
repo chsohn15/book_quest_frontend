@@ -49,7 +49,10 @@ function currentBookReducer(state = {currentBook: {}}, action){
             return {
                 ...state,
                 currentBook: action.payload}
-            
+        case 'FINISHED_READING':
+            return {
+                ...state,
+                currentBook: {}}
         default: 
             return state;
     }
