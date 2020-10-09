@@ -7,6 +7,8 @@ const ShelfBook = (props) => {
         <div>
             <img src={image_url} alt="book"/>
             <div>{title}</div>
+            <div>{author}</div>
+            <button >Add to 'Currently Reading'</button>
         </div>
     )
 }

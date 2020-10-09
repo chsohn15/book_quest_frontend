@@ -42,3 +42,6 @@ function booksReducer(state = {books: []}, action){
             return state;
     }
 }
+
+function currentBookReducer(state = {currentBook: {}}, action){
+}
