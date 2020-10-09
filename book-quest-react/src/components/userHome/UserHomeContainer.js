@@ -18,9 +18,9 @@ const UserHomeContainer = (props) => {
         <div>
             User Home Container
             <ProfileCard /><br />
-            <CurrentBookCard /><br />
-            <UserBookShelf /><br />
+            <CurrentBookCard />
             <NavLink to="/book_viewer">Read Your Book!</NavLink><br />
+            <UserBookShelf /><br />
             <ActivityContainer />
         </div>
     )
