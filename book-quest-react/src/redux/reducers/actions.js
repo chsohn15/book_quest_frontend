@@ -12,7 +12,13 @@ function addingBook(title, author, ISBN_number, image_url, pageCount){
             Authorization: `Bearer ${localStorage.token}`
         },
         body: JSON.stringify({
-            title, author, ISBN_number, image_url, total_pages: pageCount
+            title, 
+            author, 
+            ISBN_number, 
+            image_url, 
+            total_pages: pageCount,
+            user_id: localStorage.user_id
+        
         })
     }
     

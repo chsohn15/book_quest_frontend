@@ -1,16 +1,14 @@
 import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
-    currentUser: userReducer, 
-    currentBook: booksReducer
+    userReducer, booksReducer
 })
 
 export default rootReducer
 
 function userReducer(
     state = {
-        currentUser: {},
-        currentBook: {}
+        currentUser: {}
     }, 
     action
 ){
@@ -23,12 +21,19 @@ switch(action.type){
             ...state, 
             currentUser: {id, first_name, last_name, username, is_student}
         }
-    case 'ADD_BOOK':
-        return{
-            ...state,
-            currentBook: {...action.payload}
-        }
     default: 
         return state;
+    }
+}
+
+function booksReducer(state = [], action){
+    switch(action.type){
+        case 'ADD_BOOK':
+            return{
+                ...state,
+                currentBook: {...action.payload}
+            }
+        default: 
+            return state;
     }
 }

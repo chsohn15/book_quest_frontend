@@ -17,6 +17,6 @@ const UserBookCard = (props) => {
 }
 
 const mapStateToProps = state => {
-    return {book: state.currentBook}
+    return {book: state.booksReducer.currentBook}
 }
 export default connect(mapStateToProps)(UserBookCard)

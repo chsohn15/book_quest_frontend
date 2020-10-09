@@ -5,7 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux'
-import userReducer from './redux/reducers/userReducer.js'
+import rootReducer from './redux/reducers/rootReducer.js'
 import thunk from "redux-thunk"
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
@@ -19,7 +19,7 @@ const persistConfig = {
   stateReconciler: autoMergeLevel2 // see "Merge Process" section for details.
  };
 
- const pReducer = persistReducer(persistConfig, userReducer);
+ const pReducer = persistReducer(persistConfig, rootReducer);
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(pReducer, composeEnhancers(

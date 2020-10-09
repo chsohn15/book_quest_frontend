@@ -14,7 +14,7 @@ const ProfileCard = (props) => {
 }
 
 const mapStateToProps = (state) => {
-    return state.currentUser
+    return state.userReducer.currentUser
 }
 
 export default connect(mapStateToProps)(ProfileCard)
