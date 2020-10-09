@@ -45,7 +45,7 @@ function booksReducer(state = {books: []}, action){
 
 function currentBookReducer(state = {currentBook: {}}, action){
     switch(action.type){
-        case 'CURRENTLY_READING':
+        case 'SET_CURRENTLY_READING':
             return {
                 ...state,
                 currentBook: action.payload}

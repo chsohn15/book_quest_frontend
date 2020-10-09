@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 
 const CurrentBookCard = (props) => {
 
-    const {title, author, image_url, total_pages, ISBN_number} = props.book
+    const {title, author, image_url, total_pages, ISBN_number} = props.book.book
+    const student_book_id = props.book.id 
 
     return(
         <div>
@@ -11,7 +12,8 @@ const CurrentBookCard = (props) => {
             <img src={image_url}></img>
             <div>{title}</div>
             <div>{author}</div>
-            <div>{total_pages}</div>
+            <div>Total Pages: {total_pages}</div>
+            <button>Finished Book!</button>
         </div>
     )
 }

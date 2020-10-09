@@ -2,8 +2,16 @@ const BOOKS_URL = "http://localhost:3000/api/v1/books"
 const USER_URL = "http://localhost:3000/api/v1/users/"
 const CURRENT_BOOK_URL ="http://localhost:3000/api/v1/current_book"
 
+function finishedCurrentBook(book){
+
+}
+
+function finishingCurrentBook(student_book_id){
+    
+}
+
 function addedCurrentBook(book){
-    return {type: "CURRENTLY_READING", payload: book}
+    return {type: "SET_CURRENTLY_READING", payload: book}
 }
 
 function addingCurrentBook(book_id){
@@ -19,7 +27,7 @@ function addingCurrentBook(book_id){
         })
         })
         .then(res => res.json())
-        .then(book => dispatch(addedCurrentBook(book)))
+        .then(student_book => dispatch(addedCurrentBook(student_book)))
 }}
 
 function loadedBooks(books){
