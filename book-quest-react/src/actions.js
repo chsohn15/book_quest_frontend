@@ -7,7 +7,7 @@ function finishedCurrentBook(book){
 }
 
 function finishingCurrentBook(student_book_id){
-    
+
 }
 
 function addedCurrentBook(book){
@@ -77,4 +77,4 @@ function addingBook(title, author, ISBN_number, image_url, pageCount){
       }
 }
 
-export { addingBook, loadingBooks, addingCurrentBook}
+export { addingBook, loadingBooks, addingCurrentBook, finishingCurrentBook}

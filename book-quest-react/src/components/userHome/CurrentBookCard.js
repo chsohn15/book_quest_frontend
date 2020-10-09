@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import { finishingCurrentBook } from '../../actions.js'
 
 const CurrentBookCard = (props) => {
 
@@ -21,4 +22,9 @@ const CurrentBookCard = (props) => {
 const mapStateToProps = state => {
     return {book: state.currentBookReducer.currentBook}
 }
-export default connect(mapStateToProps)(CurrentBookCard)
+
+const mapDispatchToProps = (dispatch) => ({
+    finishingCurrentBook: (student_book_id) => { dispatch( finishingCurrentBook(student_book_id) )}
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(CurrentBookCard)
