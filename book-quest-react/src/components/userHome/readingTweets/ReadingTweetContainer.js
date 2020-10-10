@@ -1,5 +1,5 @@
 import React from 'react'
-import CharacterSelectForm from './CharacterSelectForm'
+import CharacterSelectForm from './CharacterSelectContainer'
 
 const ReadingTweetContainer = (props) => {
     return(
