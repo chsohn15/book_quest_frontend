@@ -9,6 +9,7 @@ const TweetForm = (props) => {
     const { id, name, image_url } = useSelector(state => state.currentBookReducer.currentBook.twitter_character)
     const character_id = id
     const student_book_id = useSelector(state => state.currentBookReducer.currentBook.id)
+    const point_value = 5
 
     const [submission, changeTweet] = useState("")
 
@@ -24,7 +25,7 @@ const TweetForm = (props) => {
     return(
     <div>
         TweetForm
-        <form>
+        <form onSubmit={(e) => props.addingReadingTweet(e, submission, point_value, student_book_id, character_id)}>
             <label>Write {name}'s Next Lit Tweet Here!</label><br />
             <textarea onChange={(e)=> changeTweet(e.target.value)}></textarea><br />
             {charactersLeft()}
@@ -35,7 +36,7 @@ const TweetForm = (props) => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    addingReadingTweet: (submission, student_book_id, character_id) => { dispatch( addingReadingTweet(submission, student_book_id, character_id) )}
+    addingReadingTweet: (e, submission, point_value, student_book_id, character_id) => { dispatch( addingReadingTweet(e, submission, point_value, student_book_id, character_id) )}
 })
 
 export default connect(null, mapDispatchToProps)(TweetForm)
