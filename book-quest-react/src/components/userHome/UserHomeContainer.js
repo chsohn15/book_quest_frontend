@@ -16,12 +16,12 @@ const UserHomeContainer = (props) => {
 
     return(
         <div>
-            User Home Container
+            <div>User Home Container</div><br/>
             <ProfileCard /><br />
-            <CurrentBookCard />
+            <ActivityContainer /><br/>
+            <CurrentBookCard /><br />
             <NavLink to="/book_viewer">Read Your Book!</NavLink><br />
             <UserBookShelf /><br />
-            <ActivityContainer />
         </div>
     )
 }
