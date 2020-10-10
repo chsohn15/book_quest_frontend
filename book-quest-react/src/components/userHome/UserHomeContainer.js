@@ -5,7 +5,7 @@ import UserBookShelf from './books/UserBookShelf.js'
 import ActivityContainer from './ActivityContainer.js'
 import { NavLink } from "react-router-dom";
 import { useEffect } from 'react'
-import { loadingBooks } from '../../actions.js'
+import { loadingBooks } from '../../redux/actions.js'
 import { connect } from 'react-redux'
 
 const UserHomeContainer = (props) => {

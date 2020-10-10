@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addingCurrentBook } from '../../../actions.js'
+import { addingCurrentBook } from '../../../redux/actions.js'
 
 const ShelfBook = (props) => {
     const {id, title, author, total_pages, image_url, ISBN_number} = props.book

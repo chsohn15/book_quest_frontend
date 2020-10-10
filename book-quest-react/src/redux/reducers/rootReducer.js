@@ -53,6 +53,11 @@ function currentBookReducer(state = {currentBook: {}}, action){
             return {
                 ...state,
                 currentBook: {}}
+        case 'SET_CHARACTER':
+            return {
+                ...state,
+                currentBook: action.payload
+            }
         default: 
             return state;
     }
