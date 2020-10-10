@@ -1,9 +1,10 @@
 import React from 'react'
-import { connect } from 'react-redux'
+//import { connect } from 'react-redux'
 import { useSelector } from "react-redux";
 
 const CharacterProfileCard = (props) => {
 
+    // Map state to props
     const { id, name, image_url } = useSelector(state => state.currentBookReducer.currentBook.twitter_character)
 
 

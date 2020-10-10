@@ -1,6 +1,7 @@
 import React from 'react'
 import CharacterSelectForm from './CharacterSelectContainer'
 import CharacterProfileCard from './CharacterProfileCard'
+import TweetForm from './TweetForm'
 
 const ReadingTweetContainer = (props) => {
     return(
@@ -8,6 +9,7 @@ const ReadingTweetContainer = (props) => {
         <div>Lit Tweets!</div>
         <CharacterSelectForm /><br/>
         <CharacterProfileCard/>
+        <TweetForm />
     </div>
     )
 }

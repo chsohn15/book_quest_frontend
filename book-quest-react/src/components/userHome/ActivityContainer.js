@@ -6,7 +6,7 @@ const ActivityContainer = (props) => {
     return(
     <div>
         <div>Activity Container</div>
-        <NavLink to="reading_tweet">Fictional Twitter</NavLink>
+        <NavLink to="reading_tweet">Literary Tweets</NavLink>
     </div>
     )
 }
