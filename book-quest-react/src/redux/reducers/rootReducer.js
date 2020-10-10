@@ -58,6 +58,11 @@ function currentBookReducer(state = {currentBook: {}}, action){
                 ...state,
                 currentBook: action.payload
             }
+        case 'ADD_TWEET':
+            return {
+                ...state,
+                currentBook: action.payload
+            }
         default: 
             return state;
     }

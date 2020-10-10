@@ -5,14 +5,13 @@ const STUDENT_BOOK_URL = "http://localhost:3000/api/v1/student_books/"
 const SET_CHAR_URL = "http://localhost:3000/api/v1/set_character"
 const READING_TWEET_URL ="http://localhost:3000/api/v1/add_tweet"
 
-function addedReadingTweet(tweet){
-
+function addedReadingTweet(student_book){
+    return {type: "ADD_TWEET", payload: student_book}
 }
 
 function addingReadingTweet(e, submission, point_value, student_book_id, character_id){
     
     e.preventDefault()
-    debugger
     return (dispatch) => {
         fetch(READING_TWEET_URL, {method: "POST", 
         headers: {
@@ -27,8 +26,7 @@ function addingReadingTweet(e, submission, point_value, student_book_id, charact
         })
         })
         .then(res => res.json())
-        .then(student_book => console.log(student_book))
-        // .then(tweet => dispatch(addedReadingTweet(tweet)))
+        .then(tweet => dispatch(addedReadingTweet(tweet)))
 }}
 
 function setCharacter(student_book){
