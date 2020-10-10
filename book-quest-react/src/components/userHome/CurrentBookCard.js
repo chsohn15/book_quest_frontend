@@ -19,7 +19,9 @@ const CurrentBookCard = (props) => {
         </div>
     )
     }
-    else return null
+    else return (
+        <div>Add a book to your "Currently Reading" List below!</div>
+    )
 }
 
 const mapStateToProps = state => {
