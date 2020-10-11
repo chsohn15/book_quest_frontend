@@ -5,6 +5,11 @@ const STUDENT_BOOK_URL = "http://localhost:3000/api/v1/student_books/"
 const SET_CHAR_URL = "http://localhost:3000/api/v1/set_character"
 const READING_TWEET_URL ="http://localhost:3000/api/v1/add_tweet"
 const LOAD_CURRENT_BOOK_URL = "http://localhost:3000/api/v1/load_current_book"
+
+function filterBookShelf(book_id){
+    return {type: "FILTER_BOOK_SHELF", payload: book_id}
+}
+
 function loadedCurrentBook(student_book){
     return {type: "LOAD_CURRENT_BOOK", payload: student_book}
 }
@@ -161,4 +166,5 @@ export {
     finishingCurrentBook, 
     settingCharacter, 
     addingReadingTweet,
-    loadingCurrentBook}
+    loadingCurrentBook,
+    filterBookShelf}

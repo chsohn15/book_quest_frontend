@@ -38,6 +38,12 @@ function booksReducer(state = {books: []}, action){
                 ...state,
                 books: [...state.books, action.payload]
             }
+        case 'FILTER_BOOK_SHELF':
+            let bookshelf = state.books.filter(book => book.id !== action.payload)
+            return{
+                ...state,
+                books: bookshelf
+            }
         default: 
             return state;
     }
