@@ -3,6 +3,7 @@ import ProfileCard from './ProfileCard.js'
 import CurrentBookCard from './CurrentBookCard.js'
 import UserBookShelf from './books/UserBookShelf.js'
 import ActivityContainer from './ActivityContainer.js'
+import RewardsContainer from './rewardsBar/rewardsContainer.js'
 import { NavLink } from "react-router-dom";
 import { useEffect } from 'react'
 import { loadingBooks } from '../../redux/actions.js'
@@ -19,6 +20,7 @@ const UserHomeContainer = (props) => {
     return(
         <div>
             <div>User Home Container</div><br/>
+            <RewardsContainer /><br />
             <ProfileCard /><br />
             <ActivityContainer /><br/>
             <CurrentBookCard /><br />
