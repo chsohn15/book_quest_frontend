@@ -15,11 +15,11 @@ function userReducer(
 
 switch(action.type){
     case 'ADD_USER':
-        const {id, first_name, last_name, username, is_student } = action.payload
-
+        const {id, first_name, last_name, username, is_student, total_points } = action.payload
+        debugger
         return {
             ...state, 
-            currentUser: {id, first_name, last_name, username, is_student}
+            currentUser: {id, first_name, last_name, username, is_student, total_points}
         }
     default: 
         return state;

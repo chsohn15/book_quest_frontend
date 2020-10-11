@@ -39,7 +39,8 @@ const LogIn = (props) => {
             userInfo.first_name, 
             userInfo.last_name, 
             userInfo.username, 
-            userInfo.is_student)
+            userInfo.is_student,
+            userInfo.total_points)
         
             goToUserPage()
             }
@@ -68,7 +69,7 @@ const LogIn = (props) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        addUser: ((id, first_name, last_name, username, is_student) => dispatch({type: 'ADD_USER', payload: {id, first_name, last_name, username, is_student}}))
+        addUser: ((id, first_name, last_name, username, is_student, total_points) => dispatch({type: 'ADD_USER', payload: {id, first_name, last_name, username, is_student, total_points}}))
     }
 }
 
