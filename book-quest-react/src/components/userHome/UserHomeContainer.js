@@ -12,8 +12,8 @@ import { connect } from 'react-redux'
 const UserHomeContainer = (props) => {
 
     useEffect(() => {
-        props.loadingBooks()
         props.loadingCurrentBook()
+        props.loadingBooks()
     }, [])
 
     return(

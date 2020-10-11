@@ -5,6 +5,7 @@ const STUDENT_BOOK_URL = "http://localhost:3000/api/v1/student_books/"
 const SET_CHAR_URL = "http://localhost:3000/api/v1/set_character"
 const READING_TWEET_URL ="http://localhost:3000/api/v1/add_tweet"
 const LOAD_CURRENT_BOOK_URL = "http://localhost:3000/api/v1/load_current_book"
+
 function loadedCurrentBook(student_book){
     return {type: "LOAD_CURRENT_BOOK", payload: student_book}
 }
@@ -119,7 +120,7 @@ function loadingBooks(){
         Authorization: `Bearer ${localStorage.token}`
     }})
     .then(res => res.json())
-    .then(user => dispatch(loadedBooks(user.books)))
+    .then(user => dispatch(loadedBooks(user.bookshelf)))
 }
 }
 

@@ -1,9 +1,15 @@
 import React from 'react'
 import ShelfBook from './ShelfBook'
 import { connect } from 'react-redux'
+import { loadingBooks } from '../../../redux/actions.js'
+import { useEffect } from 'react'
 
 
 const UserBookShelf = (props) => {
+
+    useEffect(() => {
+        props.loadingBooks()
+    }, [])
 
     return(
         <div>
@@ -18,4 +24,8 @@ const mapStateToProps = state => {
     return {books: state.booksReducer.books}
 }
 
-export default connect(mapStateToProps)(UserBookShelf)
+const mapDispatchToProps = (dispatch) => ({
+    loadingBooks: () => { dispatch( loadingBooks() )}
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserBookShelf)
