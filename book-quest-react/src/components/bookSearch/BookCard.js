@@ -6,6 +6,7 @@ import { NavLink } from "react-router-dom";
 
 const BookCard = (props) => {
     const {title, authorsArray, publisher, publishedDate, description, pageCount, image_url, ISBN} = props
+    
     const first_author = authorsArray[0]
 
     return(

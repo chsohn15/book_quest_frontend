@@ -26,6 +26,7 @@ const BookSearchContainer = (props) => {
         let new_array = [];
         if (books !== []){
             new_array = books.map((book, index) => {
+                if (book.volumeInfo.imageLinks && book.volumeInfo.industryIdentifiers[0]){
                 return (
                 <BookCard 
                 key={index}
@@ -37,6 +38,8 @@ const BookSearchContainer = (props) => {
                 pageCount={book.volumeInfo.pageCount}
                 image_url={book.volumeInfo.imageLinks.thumbnail}
                 ISBN={book.volumeInfo.industryIdentifiers[0].identifier} />)
+                }
+                else return null
             })
         }
         return new_array

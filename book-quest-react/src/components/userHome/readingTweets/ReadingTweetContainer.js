@@ -4,24 +4,40 @@ import CharacterProfileCard from './CharacterProfileCard'
 import TweetForm from './TweetForm'
 import TweetsContainer from './TweetsContainer'
 import { useSelector } from "react-redux";
+import { connect } from 'react-redux'
 
 
 const ReadingTweetContainer = (props) => {
 
     const tweets = useSelector(state => state.currentBookReducer.currentBook.reading_tweets)
-
-    return(
-    <div>
-        <div>Lit Tweets!</div>
-        <CharacterSelectForm /><br/>
-        <CharacterProfileCard/>
-        <TweetForm />
-        {tweets ? 
-        <TweetsContainer />
-        :
-        null}
-    </div>
-    )
+    if (props.characters.length > 0){
+        return(
+            <div>
+                <div>Lit Tweets!</div>
+                <CharacterSelectForm /><br/>
+                <CharacterProfileCard/>
+                <TweetForm />
+                {tweets ? 
+                <TweetsContainer />
+                :
+                null}
+            </div>
+        )
+    }
+    else{
+        return(
+            <div>
+                <div>Lit Tweets!</div>
+                <CharacterSelectForm /><br/>
+            </div>
+        )
+    }
 }
 
-export default ReadingTweetContainer
+const mapStateToProps = (state) => {
+    if (state.currentBookReducer.currentBook.status !== 500){
+    return {characters: state.currentBookReducer.currentBook.book.characters}
+    }
+}
+
+export default connect(mapStateToProps)(ReadingTweetContainer)
