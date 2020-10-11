@@ -10,17 +10,24 @@ import { connect } from 'react-redux'
 const ReadingTweetContainer = (props) => {
 
     const tweets = useSelector(state => state.currentBookReducer.currentBook.reading_tweets)
+    const twitter_character = useSelector(state => state.currentBookReducer.currentBook.twitter_character)
+    
     if (props.characters.length > 0){
         return(
             <div>
                 <div>Lit Tweets!</div>
-                <CharacterSelectForm /><br/>
-                <CharacterProfileCard/>
-                <TweetForm />
-                {tweets ? 
-                <TweetsContainer />
-                :
-                null}
+                    <CharacterSelectForm /><br/>
+                    {twitter_character ? 
+                    <div>
+                        <CharacterProfileCard/>
+                        <TweetForm />
+                    </div>
+                    : 
+                    null}
+                    {tweets.length > 0 ? 
+                        <TweetsContainer />
+                    :
+                        null}
             </div>
         )
     }
