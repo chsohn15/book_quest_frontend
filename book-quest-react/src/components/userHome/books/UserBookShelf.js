@@ -14,7 +14,7 @@ const UserBookShelf = (props) => {
     return(
         <div>
             User Book Shelf
-            {props.books.map(book => <ShelfBook book={book}/>)}
+            {props.books.map(book => <ShelfBook book={book} key={book.id}/>)}
         </div>
     )
 }

@@ -5,8 +5,29 @@ const STUDENT_BOOK_URL = "http://localhost:3000/api/v1/student_books/"
 const SET_CHAR_URL = "http://localhost:3000/api/v1/set_character"
 const READING_TWEET_URL ="http://localhost:3000/api/v1/add_tweet"
 const LOAD_CURRENT_BOOK_URL = "http://localhost:3000/api/v1/load_current_book"
+const REMOVE_BOOK_URL = "http://localhost:3000/api/v1/remove_from_shelf"
 
+function removedFromShelf(student_book_id){
 
+}
+
+// Remove book from database
+function removingFromShelf(student_id, book_id){
+    return (dispatch) => {
+        fetch(REMOVE_BOOK_URL, {method: "POST", 
+        headers: {
+            "Content-Type":"application/json",
+            Authorization: `Bearer ${localStorage.token}`
+        },
+        body: JSON.stringify({
+            student_id, book_id
+        })})
+        .then(res => res.json())
+        .then(res => console.log(res))
+        // .then(()=> dispatch(removedFromShelf()))
+    }
+
+}
 
 // Remove book from bookshelf display when added to currently reading
 function filterBookShelf(book_id){
@@ -170,4 +191,5 @@ export {
     settingCharacter, 
     addingReadingTweet,
     loadingCurrentBook,
-    filterBookShelf}
+    filterBookShelf,
+    removingFromShelf}
