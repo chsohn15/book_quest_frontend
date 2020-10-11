@@ -16,7 +16,7 @@ const ReadingTweetContainer = (props) => {
         <CharacterSelectForm /><br/>
         <CharacterProfileCard/>
         <TweetForm />
-        {tweets.length > 0 ? 
+        {tweets ? 
         <TweetsContainer />
         :
         null}

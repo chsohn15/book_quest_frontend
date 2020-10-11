@@ -19,7 +19,7 @@ const BookCard = (props) => {
             <div>Description: {description}</div>
             <div>Pages: {pageCount}</div>
             <NavLink to="user_home">
-                <button onClick={() => props.addingBook(title, first_author, ISBN, image_url, pageCount)}>Select This Book!</button>
+                <button onClick={() => props.addingBook(title, first_author, ISBN, image_url, pageCount)}>Add to Book Shelf</button>
             </NavLink>
 
         </div>

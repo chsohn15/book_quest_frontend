@@ -74,7 +74,7 @@ function finishedCurrentBook(book){
 
 function finishingCurrentBook(student_book_id){
     return (dispatch) => {
-        fetch(STUDENT_BOOK_URL + student_book_id, {method: "POST", 
+        fetch(STUDENT_BOOK_URL + student_book_id, {method: "PATCH", 
         headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${localStorage.token}`
