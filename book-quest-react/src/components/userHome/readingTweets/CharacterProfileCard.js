@@ -12,6 +12,7 @@ const CharacterProfileCard = (props) => {
         <div>Character Profile Card</div>
         <img src={image_url} style={{ width: "100px"}}/>
         <div>{name}</div>
+        <button>Change Your Character</button>
         </div>)
 }
 

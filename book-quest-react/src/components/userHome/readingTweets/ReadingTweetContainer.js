@@ -16,14 +16,16 @@ const ReadingTweetContainer = (props) => {
         return(
             <div>
                 <div>Lit Tweets!</div>
-                    <CharacterSelectForm /><br/>
+                    
                     {twitter_character ? 
                     <div>
                         <CharacterProfileCard/>
                         <TweetForm />
                     </div>
                     : 
-                    null}
+                    <div>
+                    <CharacterSelectForm /><br/>
+                    </div>}
                     {tweets.length > 0 ? 
                         <TweetsContainer />
                     :
