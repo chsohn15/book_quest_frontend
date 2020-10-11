@@ -63,6 +63,11 @@ function currentBookReducer(state = {currentBook: {}}, action){
                 ...state,
                 currentBook: action.payload
             }
+        case 'LOAD_CURRENT_BOOK':
+            return {
+                ...state,
+                currentBook: action.payload
+            }
         default: 
             return state;
     }

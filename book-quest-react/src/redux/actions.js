@@ -4,6 +4,25 @@ const CURRENT_BOOK_URL ="http://localhost:3000/api/v1/current_book"
 const STUDENT_BOOK_URL = "http://localhost:3000/api/v1/student_books/"
 const SET_CHAR_URL = "http://localhost:3000/api/v1/set_character"
 const READING_TWEET_URL ="http://localhost:3000/api/v1/add_tweet"
+const LOAD_CURRENT_BOOK_URL = "http://localhost:3000/api/v1/load_current_book"
+function loadedCurrentBook(student_book){
+    return {type: "LOAD_CURRENT_BOOK", payload: student_book}
+}
+
+function loadingCurrentBook(){
+    return (dispatch) => {
+        fetch(LOAD_CURRENT_BOOK_URL, {method: "POST", 
+        headers: {
+            "Content-Type":"application/json",
+            Authorization: `Bearer ${localStorage.token}`
+        },
+        body: JSON.stringify({
+            user_id: localStorage.user_id
+        })})
+        .then(res => res.json())
+        .then(student_book=> dispatch(loadedCurrentBook(student_book)))
+    }
+}
 
 function addedReadingTweet(student_book){
     return {type: "ADD_TWEET", payload: student_book}
@@ -135,4 +154,11 @@ function addingBook(title, author, ISBN_number, image_url, pageCount){
       }
 }
 
-export { addingBook, loadingBooks, addingCurrentBook, finishingCurrentBook, settingCharacter, addingReadingTweet}
+export { 
+    addingBook, 
+    loadingBooks, 
+    addingCurrentBook, 
+    finishingCurrentBook, 
+    settingCharacter, 
+    addingReadingTweet,
+    loadingCurrentBook}

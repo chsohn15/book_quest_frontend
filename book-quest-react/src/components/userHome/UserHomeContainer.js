@@ -6,12 +6,14 @@ import ActivityContainer from './ActivityContainer.js'
 import { NavLink } from "react-router-dom";
 import { useEffect } from 'react'
 import { loadingBooks } from '../../redux/actions.js'
+import { loadingCurrentBook } from '../../redux/actions.js'
 import { connect } from 'react-redux'
 
 const UserHomeContainer = (props) => {
 
     useEffect(() => {
         props.loadingBooks()
+        props.loadingCurrentBook()
     }, [])
 
     return(
@@ -28,7 +30,8 @@ const UserHomeContainer = (props) => {
 
 
 const mapDispatchToProps = (dispatch) => ({
-    loadingBooks: () => { dispatch( loadingBooks() )}
+    loadingBooks: () => { dispatch( loadingBooks() )},
+    loadingCurrentBook: () => { dispatch( loadingCurrentBook() )}
 })
 
 export default connect(null, mapDispatchToProps)(UserHomeContainer)
