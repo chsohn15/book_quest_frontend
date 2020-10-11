@@ -16,6 +16,7 @@ const ShelfBook = (props) => {
             <div>{title}</div>
             <div>{author}</div>
             <button onClick={() => handleClick(id)}>Add to 'Currently Reading'</button>
+            <button>Remove from shelf</button>
         </div>
     )
 }

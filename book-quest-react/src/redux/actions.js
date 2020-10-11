@@ -6,6 +6,9 @@ const SET_CHAR_URL = "http://localhost:3000/api/v1/set_character"
 const READING_TWEET_URL ="http://localhost:3000/api/v1/add_tweet"
 const LOAD_CURRENT_BOOK_URL = "http://localhost:3000/api/v1/load_current_book"
 
+
+
+// Remove book from bookshelf display when added to currently reading
 function filterBookShelf(book_id){
     return {type: "FILTER_BOOK_SHELF", payload: book_id}
 }
