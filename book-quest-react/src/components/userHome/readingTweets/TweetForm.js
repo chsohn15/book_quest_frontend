@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from "react-redux";
 import { useState } from 'react'
 import { connect } from 'react-redux'
-import { addingReadingTweet } from '../../../redux/actions.js'
+import { addingReadingTweet, handlingStreak } from '../../../redux/actions.js'
 
 const TweetForm = (props) => {
 
@@ -22,10 +22,17 @@ const TweetForm = (props) => {
         }
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        props.handlingStreak()
+        // setTimeout?
+        props.addingReadingTweet(e, submission, point_value, student_book_id, character_id)
+    }
+
     return(
     <div>
         TweetForm
-        <form onSubmit={(e) => props.addingReadingTweet(e, submission, point_value, student_book_id, character_id)}>
+        <form onSubmit={(e) => handleSubmit(e)}>
             <label>Write {name}'s Next Lit Tweet Here!</label><br />
             <textarea onChange={(e)=> changeTweet(e.target.value)}></textarea><br />
             {charactersLeft()}
@@ -36,7 +43,8 @@ const TweetForm = (props) => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    addingReadingTweet: (e, submission, point_value, student_book_id, character_id) => { dispatch( addingReadingTweet(e, submission, point_value, student_book_id, character_id) )}
+    addingReadingTweet: (e, submission, point_value, student_book_id, character_id) => { dispatch( addingReadingTweet(e, submission, point_value, student_book_id, character_id) )},
+    handlingStreak: () => { dispatch( handlingStreak() )}
 })
 
 export default connect(null, mapDispatchToProps)(TweetForm)

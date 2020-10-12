@@ -21,6 +21,13 @@ switch(action.type){
             ...state, 
             currentUser: {id, first_name, last_name, username, is_student, total_points, streak}
         }
+    case 'HANDLE_STREAK':
+        const user_streak = action.payload.streak
+
+        return {
+            ...state, 
+            currentUser: {...state.currentUser, streak: user_streak}
+        }
     default: 
         return state;
     }
