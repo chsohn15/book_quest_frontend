@@ -1,14 +1,20 @@
 import React from 'react'
 import { BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar } from 'recharts';
-
-// import { useSelector } from "react-redux";
+import { useEffect } from 'react'
+import { loadingTweetData } from '../../redux/actions.js'
+import { connect } from 'react-redux'
+import { useSelector } from "react-redux";
 
 
 const TweetProgressChart = (props) => {
 
-    // const { total_points, streak }  = useSelector(state => state.userReducer.currentUser)
+    useEffect(() => {
+        props.loadingTweetData()
+    }, [])
 
-    
+
+    const tweetData  = useSelector(state => state.tweetDataReducer.tweetData)
+
     const data = [
         {
           "name": "Page A",
@@ -44,15 +50,20 @@ const TweetProgressChart = (props) => {
     return(
         <div>
             <div>Tweet Progress Chart</div>
-            <BarChart width={730} height={250} data={data}>
+            <BarChart width={730} height={250} data={tweetData}>
                     <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
+                    <XAxis dataKey="date" />
                     <YAxis />
                     <Tooltip />
-                    <Bar dataKey="uv" fill="#82ca9d" />
+                    <Bar dataKey="tweet_count" fill="#82ca9d" />
             </BarChart>
         </div>
     )
 }
 
-export default TweetProgressChart
+const mapDispatchToProps = (dispatch) => ({
+    loadingTweetData: () => { dispatch( loadingTweetData() )},
+
+})
+
+export default connect(null, mapDispatchToProps)(TweetProgressChart)

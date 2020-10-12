@@ -8,6 +8,26 @@ const LOAD_CURRENT_BOOK_URL = "http://localhost:3000/api/v1/load_current_book"
 const REMOVE_BOOK_URL = "http://localhost:3000/api/v1/remove_from_shelf"
 const REMOVE_CHARACTER_URL = "http://localhost:3000/api/v1/change_character"
 const HANDLE_STREAK_URL = "http://localhost:3000/api/v1/handle_streak"
+const TWEET_DATA_URL = "http://localhost:3000/api/v1/get_tweet_data"
+
+function loadedTweetData(tweetData){
+    return {type: "LOAD_TWEET_DATA", payload: tweetData}
+}
+
+function loadingTweetData(){
+    return (dispatch) => {
+        fetch(TWEET_DATA_URL, {method: "POST", 
+        headers: {
+            "Content-Type":"application/json",
+            Authorization: `Bearer ${localStorage.token}`
+        },
+        body: JSON.stringify({
+            id: localStorage.user_id
+        })})
+        .then(res => res.json()) 
+        .then(tweetData => dispatch(loadedTweetData(tweetData)))
+    }
+}
 
 function handledStreak(streak){
     return {type: "HANDLE_STREAK", payload: streak}
@@ -244,4 +264,5 @@ export {
     removingFromShelf, 
     removingCharacter,
     loadingUser,
-    handlingStreak}
+    handlingStreak,
+    loadingTweetData}
