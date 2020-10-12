@@ -1,10 +1,11 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { useRef } from 'react'
+import { useSelector } from "react-redux";
 
 
 const BookViewer = () => {
-    
+    const ISBN_num = useSelector(state => state.currentBookReducer.currentBook.book.ISBN_number)
     const canvasRef = useRef()
 
     useEffect(() => {
@@ -13,7 +14,7 @@ const BookViewer = () => {
         
         function initialize() {
             var viewer = new window.google.books.DefaultViewer(canvasRef.current);
-            viewer.load('ISBN:9781440637537');
+            viewer.load('ISBN:'+ISBN_num);
             console.log(viewer)
           }
 

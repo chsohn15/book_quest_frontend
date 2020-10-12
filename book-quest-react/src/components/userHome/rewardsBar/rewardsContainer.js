@@ -11,6 +11,7 @@ const RewardsContainer = (props) => {
             <div>Stars: {total_points}</div>
             <div>Streak: {streak}</div>
             <div>Badges: </div>
+            <div>Progress Charts</div>
         </div>
     )
 }

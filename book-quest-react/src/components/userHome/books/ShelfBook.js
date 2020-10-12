@@ -16,10 +16,10 @@ const ShelfBook = (props) => {
 
     return(
         <div>
-            <img src={image_url} alt="book"/>
+            <img src={image_url} alt="book" style={{height: "60px"}}/>
             <div>{title}</div>
             <div>{author}</div>
-            <button onClick={() => handleClick(id)}>Add to 'Currently Reading'</button>
+            <button onClick={() => handleClick(id)}>Add to 'Currently Reading'</button><br />
             <button onClick={() => props.removingFromShelf(student_id, id)}>Remove from shelf</button>
         </div>
     )
