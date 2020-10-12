@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const RewardsContainer = (props) => {
@@ -11,7 +12,9 @@ const RewardsContainer = (props) => {
             <div>Stars: {total_points}</div>
             <div>Streak: {streak}</div>
             <div>Badges: </div>
-            <div>Progress Charts</div>
+            <NavLink to="progress_chart">
+                See My Progress
+            </NavLink>
         </div>
     )
 }
