@@ -8,6 +8,7 @@ import { NavLink } from "react-router-dom";
 import { useEffect } from 'react'
 import { loadingBooks } from '../../redux/actions.js'
 import { loadingCurrentBook } from '../../redux/actions.js'
+import { loadingUser } from '../../redux/actions.js'
 import { connect } from 'react-redux'
 
 const UserHomeContainer = (props) => {
@@ -15,6 +16,7 @@ const UserHomeContainer = (props) => {
     useEffect(() => {
         props.loadingBooks()
         props.loadingCurrentBook()
+        props.loadingUser()
     }, [])
 
     return(
@@ -33,7 +35,8 @@ const UserHomeContainer = (props) => {
 
 const mapDispatchToProps = (dispatch) => ({
     loadingBooks: () => { dispatch( loadingBooks() )},
-    loadingCurrentBook: () => { dispatch( loadingCurrentBook() )}
+    loadingCurrentBook: () => { dispatch( loadingCurrentBook() )},
+    loadingUser: () => { dispatch( loadingUser() )}
 })
 
 export default connect(null, mapDispatchToProps)(UserHomeContainer)

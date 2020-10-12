@@ -8,6 +8,20 @@ const LOAD_CURRENT_BOOK_URL = "http://localhost:3000/api/v1/load_current_book"
 const REMOVE_BOOK_URL = "http://localhost:3000/api/v1/remove_from_shelf"
 const REMOVE_CHARACTER_URL = "http://localhost:3000/api/v1/change_character"
 
+function loadedUser(user){
+    return {type: "ADD_USER", payload: user}
+}
+
+function loadingUser(){
+    return (dispatch) => {
+        fetch(USER_URL + localStorage.user_id, {method: "GET", 
+        headers: {
+            Authorization: `Bearer ${localStorage.token}`
+        }})
+        .then(res => res.json())
+        .then(user => dispatch(loadedUser(user)))
+    }
+}
 
 function removingCharacter(id){
 
@@ -206,4 +220,5 @@ export {
     loadingCurrentBook,
     filterBookShelf,
     removingFromShelf, 
-    removingCharacter}
+    removingCharacter,
+    loadingUser}
