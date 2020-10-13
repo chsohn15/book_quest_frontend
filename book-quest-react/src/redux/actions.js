@@ -9,6 +9,27 @@ const REMOVE_BOOK_URL = "http://localhost:3000/api/v1/remove_from_shelf"
 const REMOVE_CHARACTER_URL = "http://localhost:3000/api/v1/change_character"
 const HANDLE_STREAK_URL = "http://localhost:3000/api/v1/handle_streak"
 const TWEET_DATA_URL = "http://localhost:3000/api/v1/get_tweet_data"
+const VOCAB_URL = "http://localhost:3000/api/v1/vocab_activities"
+
+function submittedVocab(){
+
+}
+function submittingVocab(e, student_book_id, word, definition, sentence_from_book, original_sentence){
+    e.preventDefault()
+    
+    return (dispatch) => {
+        fetch(VOCAB_URL, {method: "POST", 
+        headers: {
+            "Content-Type":"application/json",
+            Authorization: `Bearer ${localStorage.token}`
+        },
+        body: JSON.stringify({
+            id: localStorage.user_id
+        })})
+        .then(res => res.json()) 
+        .then(tweetData => dispatch(loadedTweetData(tweetData)))
+    }
+}
 
 function loadedTweetData(tweetData){
     return {type: "LOAD_TWEET_DATA", payload: tweetData}
@@ -265,4 +286,5 @@ export {
     removingCharacter,
     loadingUser,
     handlingStreak,
-    loadingTweetData}
+    loadingTweetData,
+    submittingVocab}
