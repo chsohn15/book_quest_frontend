@@ -48,6 +48,7 @@ function deletingTweet(tweet_id){
 }
 
 function loadedTweetData(tweetData){
+    console.log(tweetData)
     return {type: "LOAD_TWEET_DATA", payload: tweetData}
 }
 

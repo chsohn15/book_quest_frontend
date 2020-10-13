@@ -97,9 +97,11 @@ function currentBookReducer(state = {currentBook: {}}, action){
 function tweetDataReducer(state = {tweetData: []}, action){
     switch(action.type){
         case 'LOAD_TWEET_DATA':
+
             let tweetData2 = action.payload.map(tweet_hash => {
-                tweet_hash.date = new Date(tweet_hash.date)
-                tweet_hash.date = tweet_hash.date.toDateString()
+                let d = tweet_hash.date.replace(/\-/g, '/')
+                d = new Date(d)
+                tweet_hash.date = d.toDateString()
                 return tweet_hash
             })
             return {
