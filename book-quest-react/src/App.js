@@ -7,6 +7,7 @@ import UserHomeContainer from './components/userHome/UserHomeContainer.js'
 import BookViewer from './components/userHome/books/BookViewer.js'
 import ReadingTweetContainer from './components/userHome/readingTweets/ReadingTweetContainer.js'
 import ProgressChartContainer from './components/progressCharts/ProgressChartsContainer.js'
+import VocabContainer from './components/userHome/vocab/VocabContainer.js'
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
         </Route>
 
         <Route exact path = "/reading_tweet" component={ReadingTweetContainer}>
+        </Route>
+        <Route exact path = "/vocab" component={VocabContainer}>
         </Route>
         <Route exact path = "/book_viewer" render = {(routerProps) => (
           <BookViewer {...routerProps}/>
