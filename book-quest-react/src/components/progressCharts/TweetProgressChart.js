@@ -24,7 +24,8 @@ const TweetProgressChart = (props) => {
                     <XAxis dataKey="date" />
                     <YAxis />
                     <Tooltip />
-                    <Bar dataKey="tweet_count" fill="#82ca9d" />
+                    <Legend />
+                    <Bar name="Tweets" dataKey="tweet_count" fill="#82ca9d" />
             </BarChart>
         </div>
     )

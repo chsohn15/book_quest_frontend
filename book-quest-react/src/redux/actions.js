@@ -9,6 +9,15 @@ const REMOVE_BOOK_URL = "http://localhost:3000/api/v1/remove_from_shelf"
 const REMOVE_CHARACTER_URL = "http://localhost:3000/api/v1/change_character"
 const HANDLE_STREAK_URL = "http://localhost:3000/api/v1/handle_streak"
 const TWEET_DATA_URL = "http://localhost:3000/api/v1/get_tweet_data"
+const REST_TWEET_URL = "http://localhost:3000/api/v1/reading_tweets/"
+
+function deletedTweet(){
+
+}
+
+function deletingTweet(){
+
+}
 
 function loadedTweetData(tweetData){
     return {type: "LOAD_TWEET_DATA", payload: tweetData}
