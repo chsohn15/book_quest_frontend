@@ -81,6 +81,14 @@ function currentBookReducer(state = {currentBook: {}}, action){
                 ...state,
                 currentBook: action.payload
             }
+        case 'FILTER_TWEETS':
+            return{
+                ...state,
+                currentBook: {
+                    ...state.currentBook, 
+                    reading_tweets: state.currentBook.reading_tweets.filter(tweet => tweet.id !== action.payload)
+                }
+            }
         default: 
             return state;
     }
@@ -89,9 +97,14 @@ function currentBookReducer(state = {currentBook: {}}, action){
 function tweetDataReducer(state = {tweetData: []}, action){
     switch(action.type){
         case 'LOAD_TWEET_DATA':
+            let tweetData2 = action.payload.map(tweet_hash => {
+                tweet_hash.date = new Date(tweet_hash.date)
+                tweet_hash.date = tweet_hash.date.toDateString()
+                return tweet_hash
+            })
             return {
                 ...state,
-                tweetData: action.payload}
+                tweetData: tweetData2}
         default: 
             return state;
     }

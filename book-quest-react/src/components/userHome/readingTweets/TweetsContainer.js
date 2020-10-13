@@ -9,7 +9,7 @@ const TweetsContainer = (props) => {
     return(
     <div>
         <div>All Tweets:</div>
-        {tweets.map(tweet => <Tweet tweet={tweet}/>)}
+        {tweets.map(tweet => <Tweet tweet={tweet} key={tweet.id}/>)}
     </div>
     )
 }

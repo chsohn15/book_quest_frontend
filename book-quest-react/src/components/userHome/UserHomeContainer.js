@@ -27,6 +27,9 @@ const UserHomeContainer = (props) => {
             <ActivityContainer /><br/>
             <CurrentBookCard /><br />
             <NavLink to="/book_viewer">Read Your Book!</NavLink><br />
+            <br/>
+            <NavLink to="/book_search">Browse More Books</NavLink><br />
+            <br/>
             <UserBookShelf /><br />
         </div>
     )

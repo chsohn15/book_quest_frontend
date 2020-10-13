@@ -26,7 +26,7 @@ const BookViewer = () => {
 
     return(
         <div>
-            <div ref={canvasRef} id="viewerCanvas" style={{width: "600px; height: 500px"}}></div>
+            <div ref={canvasRef} id="viewerCanvas"></div>
         </div>
     )
 }

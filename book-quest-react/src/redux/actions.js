@@ -10,6 +10,7 @@ const REMOVE_CHARACTER_URL = "http://localhost:3000/api/v1/change_character"
 const HANDLE_STREAK_URL = "http://localhost:3000/api/v1/handle_streak"
 const TWEET_DATA_URL = "http://localhost:3000/api/v1/get_tweet_data"
 const VOCAB_URL = "http://localhost:3000/api/v1/vocab_activities"
+const RESTFUL_TWEET_URL = "http://localhost:3000/api/v1/reading_tweets/"
 
 function submittedVocab(){
 
@@ -28,6 +29,20 @@ function submittingVocab(e, student_book_id, word, definition, sentence_from_boo
         })})
         .then(res => res.json()) 
         .then(tweetData => dispatch(loadedTweetData(tweetData)))
+    }}
+
+function deletedTweet(tweet_id){
+    return {type: "FILTER_TWEETS", payload: tweet_id}
+}
+
+function deletingTweet(tweet_id){
+    return (dispatch) => {
+        fetch(RESTFUL_TWEET_URL + tweet_id, {method: "DELETE", 
+        headers: {
+            Authorization: `Bearer ${localStorage.token}`
+        }})
+        .then(res => res.json()) 
+        .then(res => dispatch(deletedTweet(tweet_id)))
     }
 }
 
@@ -287,4 +302,5 @@ export {
     loadingUser,
     handlingStreak,
     loadingTweetData,
+    deletingTweet, 
     submittingVocab}

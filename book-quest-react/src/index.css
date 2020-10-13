@@ -13,6 +13,7 @@ code {
 }
 
 #viewerCanvas{
+  margin-left: 350px;
   width: 700px;
-  height: 1000px;
+  height: 800px;
 }
