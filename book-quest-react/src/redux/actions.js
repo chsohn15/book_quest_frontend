@@ -17,7 +17,7 @@ function submittedVocab(){
 }
 function submittingVocab(e, student_book_id, word, definition, sentence_from_book, original_sentence){
     e.preventDefault()
-    
+    debugger
     return (dispatch) => {
         fetch(VOCAB_URL, {method: "POST", 
         headers: {
@@ -25,10 +25,11 @@ function submittingVocab(e, student_book_id, word, definition, sentence_from_boo
             Authorization: `Bearer ${localStorage.token}`
         },
         body: JSON.stringify({
-            id: localStorage.user_id
+            student_book_id, word, definition, sentence_from_book, original_sentence
         })})
         .then(res => res.json()) 
-        .then(tweetData => dispatch(loadedTweetData(tweetData)))
+        .then(res => console.log(res))
+        // .then(tweetData => dispatch(loadedTweetData(tweetData)))
     }}
 
 function deletedTweet(tweet_id){

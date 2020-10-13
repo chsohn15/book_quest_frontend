@@ -17,7 +17,7 @@ const BasicVocabForm = (props) => {
     return(
     <div>
         <div>Create a New Vocabulary Word for <em>{book_title}</em></div>
-        <form>
+        <form onSubmit={(e) => props.submittingVocab(e, student_book_id, word, definition, sentence_from_book, original_sentence)}>
             <label>New Vocabulary Word from the Text: </label>
             <input type="text" onChange={(e)=> changeWord(e.target.value)}></input><br />
             <label>Sentence from Book with Word: </label>
@@ -26,7 +26,7 @@ const BasicVocabForm = (props) => {
             <textarea onChange={(e)=> changeDefinition(e.target.value)}></textarea><br />
             <label>Your Original Sentence: </label>
             <textarea onChange={(e)=> changeOriginalSentence(e.target.value)}></textarea><br />
-            <input type="button" value="Submit"></input>
+            <input type="submit" value="Submit"></input>
         </form>
     </div>
     )
