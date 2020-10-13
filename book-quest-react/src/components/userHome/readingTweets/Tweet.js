@@ -1,10 +1,12 @@
 import React from 'react'
+import { deletingTweet } from '../../../redux/actions.js'
+import { connect } from 'react-redux'
 
 const Tweet = (props) => {
     const { id, created_at, submission } = props.tweet
     const { name, image_url } = props.tweet.character
-    let date = new Date(created_at)
-    let finalDate = date.toDateString()
+    const date = new Date(created_at)
+    const finalDate = date.toDateString()
 
     return(
     <div>
@@ -12,9 +14,14 @@ const Tweet = (props) => {
         <span>{name}</span>
         <div>{submission}</div>
         <div>{finalDate}</div>
-        <button>-</button>
+        <button onClick={() => props.deletingTweet(id)}>-</button>
     </div>
     )
 }
 
-export default Tweet
+
+const mapDispatchToProps = (dispatch) => ({
+    deletingTweet: (tweet_id) => { dispatch( deletingTweet(tweet_id) )}
+})
+
+export default connect(null, mapDispatchToProps)(Tweet)

@@ -81,6 +81,14 @@ function currentBookReducer(state = {currentBook: {}}, action){
                 ...state,
                 currentBook: action.payload
             }
+        case 'FILTER_TWEETS':
+            return{
+                ...state,
+                currentBook: {
+                    ...state.currentBook, 
+                    reading_tweets: state.currentBook.reading_tweets.filter(tweet => tweet.id !== action.payload)
+                }
+            }
         default: 
             return state;
     }
