@@ -4,8 +4,8 @@ import Tweet from "./Tweet.js"
 
 const TweetsContainer = (props) => {
 
-    const tweets = useSelector(state => state.currentBookReducer.currentBook.reading_tweets.reverse())
-
+    const tweets = useSelector(state => state.currentBookReducer.currentBook.reading_tweets)
+    // const reversed_tweets = tweets.reverse()
     return(
     <div>
         <div>All Tweets:</div>
