@@ -13,7 +13,7 @@ const VocabCard = (props) => {
     return(
     <div onClick={() => flipCard(!flipped)}>
         {flipped == false ? <CardFront word={word}/> : <CardBack vocab={props.vocab.vocab} book_title={book_title}/>}
-
+        <br />
     </div>
     )
 }

@@ -21,12 +21,17 @@ switch(action.type){
             ...state, 
             currentUser: {id, first_name, last_name, username, is_student, total_points, streak, all_vocab}
         }
-    case 'HANDLE_STREAK':
-        const user_streak = action.payload.streak
+    // case 'HANDLE_STREAK':
+    //     const user_streak = action.payload.streak
 
+    //     return {
+    //         ...state, 
+    //         currentUser: {...state.currentUser, streak: user_streak}
+    //     }
+    case 'ADD_VOCAB_WORD':
         return {
             ...state, 
-            currentUser: {...state.currentUser, streak: user_streak}
+            currentUser: {...state.currentUser, all_vocab: action.payload}
         }
     default: 
         return state;
