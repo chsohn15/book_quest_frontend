@@ -24,7 +24,7 @@ const TweetForm = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        props.handlingStreak()
+        // props.handlingStreak()
         // setTimeout?
         props.addingReadingTweet(e, submission, point_value, student_book_id, character_id)
     }
@@ -44,7 +44,7 @@ const TweetForm = (props) => {
 
 const mapDispatchToProps = (dispatch) => ({
     addingReadingTweet: (e, submission, point_value, student_book_id, character_id) => { dispatch( addingReadingTweet(e, submission, point_value, student_book_id, character_id) )},
-    handlingStreak: () => { dispatch( handlingStreak() )}
+    // handlingStreak: () => { dispatch( handlingStreak() )}
 })
 
 export default connect(null, mapDispatchToProps)(TweetForm)

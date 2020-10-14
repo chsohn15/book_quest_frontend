@@ -12,6 +12,14 @@ const TWEET_DATA_URL = "http://localhost:3000/api/v1/get_tweet_data"
 const VOCAB_URL = "http://localhost:3000/api/v1/vocab_activities"
 const RESTFUL_TWEET_URL = "http://localhost:3000/api/v1/reading_tweets/"
 
+function loadedVocab(){
+
+}
+
+function loadingVocab(){
+    
+}
+
 function submittedVocab(){
 
 }
@@ -67,26 +75,26 @@ function loadingTweetData(){
     }
 }
 
-function handledStreak(streak){
-    return {type: "HANDLE_STREAK", payload: streak}
-}
+// function handledStreak(streak){
+//     return {type: "HANDLE_STREAK", payload: streak}
+// }
 
-function handlingStreak(){
+// function handlingStreak(){
 
-    return (dispatch) => {
-        fetch(HANDLE_STREAK_URL, {method: "POST", 
-        headers: {
-            "Content-Type":"application/json",
-            Authorization: `Bearer ${localStorage.token}`
-        },
-        body: JSON.stringify({
-            id: localStorage.user_id
-        })})
-        .then(res => res.json()) 
-        // return user.streak
-        .then(user_streak => dispatch(handledStreak(user_streak)))
-    }
-}
+//     return (dispatch) => {
+//         fetch(HANDLE_STREAK_URL, {method: "POST", 
+//         headers: {
+//             "Content-Type":"application/json",
+//             Authorization: `Bearer ${localStorage.token}`
+//         },
+//         body: JSON.stringify({
+//             id: localStorage.user_id
+//         })})
+//         .then(res => res.json()) 
+//         // return user.streak
+//         .then(user_streak => dispatch(handledStreak(user_streak)))
+//     }
+// }
 
 function loadedUser(user){
     return {type: "ADD_USER", payload: user}
@@ -302,7 +310,6 @@ export {
     removingFromShelf, 
     removingCharacter,
     loadingUser,
-    handlingStreak,
     loadingTweetData,
     deletingTweet, 
     submittingVocab}
