@@ -10,6 +10,8 @@ const BookViewer = () => {
 
     useEffect(() => {
         console.log(canvasRef)
+
+        //Check if google.books.load is a function
         window.google.books.load()
         
         function initialize() {

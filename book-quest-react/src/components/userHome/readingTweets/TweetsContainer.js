@@ -5,11 +5,11 @@ import Tweet from "./Tweet.js"
 const TweetsContainer = (props) => {
 
     const tweets = useSelector(state => state.currentBookReducer.currentBook.reading_tweets)
-    // const reversed_tweets = tweets.reverse()
+    const reversed_tweets = [...tweets].reverse()
     return(
     <div>
         <div>All Tweets:</div>
-        {tweets.map(tweet => <Tweet tweet={tweet} key={tweet.id}/>)}
+        {reversed_tweets.map(tweet => <Tweet tweet={tweet} key={tweet.id}/>)}
     </div>
     )
 }
