@@ -5,6 +5,7 @@ import TweetForm from './TweetForm'
 import TweetsContainer from './TweetsContainer'
 import { useSelector } from "react-redux";
 import { connect } from 'react-redux'
+import { NavLink } from "react-router-dom";
 
 
 const ReadingTweetContainer = (props) => {
@@ -17,6 +18,9 @@ const ReadingTweetContainer = (props) => {
             <div>
                 <div>Lit Tweets!</div>
                     
+                <NavLink to="/all_tweets">See My Tweets of All Time!</NavLink><br />
+            <br/>
+
                     {twitter_character ? 
                     <div>
                         <CharacterProfileCard/>

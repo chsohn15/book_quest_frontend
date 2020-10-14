@@ -6,6 +6,7 @@ import BookSearchContainer from './components/bookSearch/BookSearchContainer.js'
 import UserHomeContainer from './components/userHome/UserHomeContainer.js'
 import BookViewer from './components/userHome/books/BookViewer.js'
 import ReadingTweetContainer from './components/userHome/readingTweets/ReadingTweetContainer.js'
+import AllTweets from './components/userHome/readingTweets/AllTweets.js'
 import ProgressChartContainer from './components/progressCharts/ProgressChartsContainer.js'
 import VocabContainer from './components/userHome/vocab/VocabContainer.js'
 import BasicVocab from './components/userHome/vocab/BasicVocabContainer.js'
@@ -31,6 +32,8 @@ function App() {
         </Route>
 
         <Route exact path = "/reading_tweet" component={ReadingTweetContainer}>
+        </Route>
+        <Route exact path = "/all_tweets" component={AllTweets}>
         </Route>
         <Route exact path = "/vocab" component={VocabContainer}>
         </Route>
