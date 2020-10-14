@@ -12,7 +12,27 @@ const TWEET_DATA_URL = "http://localhost:3000/api/v1/get_tweet_data"
 const VOCAB_URL = "http://localhost:3000/api/v1/vocab_activities"
 const RESTFUL_TWEET_URL = "http://localhost:3000/api/v1/reading_tweets/"
 const GET_VOCAB = "http://localhost:3000/api/v1/get_vocab"
+const GET_ALL_TWEETS = "http://localhost:3000/api/v1/get_all_tweets"
 
+function loadedAllTweets(){
+
+}
+
+function loadingAllTweets(){
+    return (dispatch) => {
+        fetch(GET_ALL_TWEETS, {method: "POST", 
+        headers: {
+            "Content-Type":"application/json",
+            Authorization: `Bearer ${localStorage.token}`
+        },
+        body: JSON.stringify({
+            id: localStorage.user_id
+        })})
+        .then(res => res.json()) 
+        .then(allTweets => console.log(allTweets))
+        // .then(allTweets => dispatch(loadedAllTweets(allTweets)))
+    }
+}
 
 function submittedVocab(words){
     return {type: "ADD_VOCAB_WORD", payload: words}
@@ -306,4 +326,5 @@ export {
     loadingUser,
     loadingTweetData,
     deletingTweet, 
-    submittingVocab}
+    submittingVocab,
+    loadingAllTweets}
