@@ -10,6 +10,7 @@ import { loadingBooks } from '../../redux/actions.js'
 import { loadingCurrentBook } from '../../redux/actions.js'
 import { loadingUser } from '../../redux/actions.js'
 import { connect } from 'react-redux'
+//import { loadingAllTweets } from '../../redux/actions.js'
 
 const UserHomeContainer = (props) => {
 
@@ -17,6 +18,7 @@ const UserHomeContainer = (props) => {
         props.loadingBooks()
         props.loadingCurrentBook()
         props.loadingUser()
+        //props.loadingAllTweets()
     }, [])
 
     return(
@@ -39,7 +41,8 @@ const UserHomeContainer = (props) => {
 const mapDispatchToProps = (dispatch) => ({
     loadingBooks: () => { dispatch( loadingBooks() )},
     loadingCurrentBook: () => { dispatch( loadingCurrentBook() )},
-    loadingUser: () => { dispatch( loadingUser() )}
-})
+    loadingUser: () => { dispatch( loadingUser() )},
+    //loadingAllTweets: (() => {{ dispatch( loadingAllTweets() )}
+}) 
 
 export default connect(null, mapDispatchToProps)(UserHomeContainer)

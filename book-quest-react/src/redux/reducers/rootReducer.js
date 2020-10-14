@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
-    userReducer, booksReducer, currentBookReducer, tweetDataReducer
+    userReducer, booksReducer, currentBookReducer, tweetDataReducer, allTweetsReducer
 })
 
 export default rootReducer
@@ -112,6 +112,17 @@ function tweetDataReducer(state = {tweetData: []}, action){
             return {
                 ...state,
                 tweetData: tweetData2}
+        default: 
+            return state;
+    }
+}
+
+function allTweetsReducer(state = {allTweets: []}, action){
+    switch(action.type){
+        case 'LOAD_ALL_TWEETS':
+            return {
+                ...state,
+                allTweets: action.payload}
         default: 
             return state;
     }

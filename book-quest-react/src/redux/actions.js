@@ -14,8 +14,8 @@ const RESTFUL_TWEET_URL = "http://localhost:3000/api/v1/reading_tweets/"
 const GET_VOCAB = "http://localhost:3000/api/v1/get_vocab"
 const GET_ALL_TWEETS = "http://localhost:3000/api/v1/get_all_tweets"
 
-function loadedAllTweets(){
-
+function loadedAllTweets(allTweets){
+    return {type: "LOAD_ALL_TWEETS", payload: allTweets} 
 }
 
 function loadingAllTweets(){
@@ -29,8 +29,7 @@ function loadingAllTweets(){
             id: localStorage.user_id
         })})
         .then(res => res.json()) 
-        .then(allTweets => console.log(allTweets))
-        // .then(allTweets => dispatch(loadedAllTweets(allTweets)))
+        .then(allTweets => dispatch(loadedAllTweets(allTweets)))
     }
 }
 
