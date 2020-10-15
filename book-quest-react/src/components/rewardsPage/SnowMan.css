@@ -1,6 +1,7 @@
 #snow-main-container{
     
         background-color: #9ed2ec;
+        height: 100vh;
         margin:0;
         padding: 0;
     
@@ -89,8 +90,8 @@
     width: 200px;
     background-color: white;
     border-radius: 50%;
-    position: relative;
-    top:90px;
+    position: absolute;
+    top:210px;
     left:70px;
 }
 .shadow2{
