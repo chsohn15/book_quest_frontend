@@ -10,7 +10,7 @@ const RewardsBar = (props) => {
         <div>
             <div>Rewards Bar</div>
             <div>Stars: {total_points}</div>
-            <div>Streak: {streak}</div>
+            <div>Tweet Streak: {streak}</div>
             <div>Badges: </div>
             <NavLink to="progress_chart">
                 See My Progress
