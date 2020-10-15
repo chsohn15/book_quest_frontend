@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import SignUp from './components/SignUp.js'
 import LogIn from './components/LogIn.js'
 import BookSearchContainer from './components/bookSearch/BookSearchContainer.js'
@@ -11,14 +11,23 @@ import ProgressChartContainer from './components/progressCharts/ProgressChartsCo
 import VocabContainer from './components/userHome/vocab/VocabContainer.js'
 import BasicVocab from './components/userHome/vocab/BasicVocabContainer.js'
 import RewardsPage from './components/rewardsPage/rewardsPage.js';
+import SnowManContainer from './components/rewardsPage/SnowManContainer.js';
 
 function App() {
+  const logOut = () => {
+    localStorage.clear();
+  }
+
   return (
     <div className="App">
       <header className="App-header">
         Book Quest
+
       </header>
       <Router>
+      <NavLink  style={{padding: "12px", "justify-content": "right"}} onClick={logOut} to="/login">
+          Log Out
+        </NavLink>
         <Route exact path = "/signup" component={SignUp}>
         </Route>
         <Route exact path = "/login" component={LogIn}
@@ -32,6 +41,8 @@ function App() {
         <Route exact path = "/progress_chart" component={ProgressChartContainer}>
         </Route>
         <Route exact path = "/rewards_page" component={RewardsPage}>
+        </Route>
+        <Route exact path = "/snow_man" component={SnowManContainer}>
         </Route>
         <Route exact path = "/reading_tweet" component={ReadingTweetContainer}>
         </Route>
