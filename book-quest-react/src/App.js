@@ -10,6 +10,7 @@ import AllTweets from './components/userHome/readingTweets/AllTweets.js'
 import ProgressChartContainer from './components/progressCharts/ProgressChartsContainer.js'
 import VocabContainer from './components/userHome/vocab/VocabContainer.js'
 import BasicVocab from './components/userHome/vocab/BasicVocabContainer.js'
+import RewardsPage from './components/rewards/rewardsPage.js';
 
 function App() {
   return (
@@ -30,7 +31,8 @@ function App() {
 
         <Route exact path = "/progress_chart" component={ProgressChartContainer}>
         </Route>
-
+        <Route exact path = "/rewards_page" component={RewardsPage}>
+        </Route>
         <Route exact path = "/reading_tweet" component={ReadingTweetContainer}>
         </Route>
         <Route exact path = "/all_tweets" component={AllTweets}>

@@ -14,6 +14,9 @@ const RewardsBar = (props) => {
             <div>Badges: </div>
             <NavLink to="progress_chart">
                 See My Progress
+            </NavLink><br />
+            <NavLink to="rewards_page">
+                Redeem My Rewards!
             </NavLink>
         </div>
     )
