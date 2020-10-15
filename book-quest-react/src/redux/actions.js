@@ -11,8 +11,27 @@ const HANDLE_STREAK_URL = "http://localhost:3000/api/v1/handle_streak"
 const TWEET_DATA_URL = "http://localhost:3000/api/v1/get_tweet_data"
 const VOCAB_URL = "http://localhost:3000/api/v1/vocab_activities"
 const RESTFUL_TWEET_URL = "http://localhost:3000/api/v1/reading_tweets/"
-const GET_VOCAB = "http://localhost:3000/api/v1/get_vocab"
+const VOCAB_DATA_URL = "http://localhost:3000/api/v1/get_vocab_data"
 const GET_ALL_TWEETS = "http://localhost:3000/api/v1/get_all_tweets"
+
+function loadedVocabData(vocabData){
+    return {type: "LOAD_VOCAB_DATA", payload: vocabData}
+}
+
+function loadingVocabData(){
+    return (dispatch) => {
+        fetch(VOCAB_DATA_URL, {method: "POST", 
+        headers: {
+            "Content-Type":"application/json",
+            Authorization: `Bearer ${localStorage.token}`
+        },
+        body: JSON.stringify({
+            id: localStorage.user_id
+        })})
+        .then(res => res.json()) 
+        .then(vocabData => dispatch(loadedVocabData(vocabData)))
+    }
+}
 
 function loadedAllTweets(allTweets){
     return {type: "LOAD_ALL_TWEETS", payload: allTweets} 
@@ -36,7 +55,7 @@ function loadingAllTweets(){
 function submittedVocab(words){
     return {type: "ADD_VOCAB_WORD", payload: words}
 }
-function submittingVocab(e, student_book_id, word, definition, sentence_from_book, original_sentence){
+function submittingVocab(e, student_book_id, word, definition, sentence_from_book, original_sentence, point_value){
     e.preventDefault()
 
     return (dispatch) => {
@@ -46,7 +65,7 @@ function submittingVocab(e, student_book_id, word, definition, sentence_from_boo
             Authorization: `Bearer ${localStorage.token}`
         },
         body: JSON.stringify({
-            user_id: localStorage.user_id, student_book_id, word, definition, sentence_from_book, original_sentence
+            user_id: localStorage.user_id, student_book_id, word, definition, sentence_from_book, original_sentence, point_value
         })})
         .then(res => res.json()) 
         .then(words => dispatch(submittedVocab(words)))
@@ -69,7 +88,6 @@ function deletingTweet(tweet_id){
 }
 
 function loadedTweetData(tweetData){
-    console.log(tweetData)
     return {type: "LOAD_TWEET_DATA", payload: tweetData}
 }
 
@@ -326,4 +344,5 @@ export {
     loadingTweetData,
     deletingTweet, 
     submittingVocab,
-    loadingAllTweets}
+    loadingAllTweets,
+    loadingVocabData}

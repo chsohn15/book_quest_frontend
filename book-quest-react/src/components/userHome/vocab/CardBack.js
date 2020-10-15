@@ -10,6 +10,7 @@ const CardBack = (props) => {
         <div>Definition: {definition}</div>
         <div>Sentence from <em>{book_title}</em>: {sentence_from_book}</div>
         <div>Original Sentence: {original_sentence}</div>
+        <button>Delete Card</button>
     </div>
     )
 }

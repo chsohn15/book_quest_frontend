@@ -13,11 +13,12 @@ const BasicVocabForm = (props) => {
 
     const book_title  = useSelector(state => state.currentBookReducer.currentBook.book.title)
     const student_book_id = useSelector(state => state.currentBookReducer.currentBook.id)
-
+    const point_value = 5 
+    
     return(
     <div>
         <div>Create a New Vocabulary Word for <em>{book_title}</em></div>
-        <form onSubmit={(e) => props.submittingVocab(e, student_book_id, word, definition, sentence_from_book, original_sentence)}>
+        <form onSubmit={(e) => props.submittingVocab(e, student_book_id, word, definition, sentence_from_book, original_sentence, point_value)}>
             <label>New Vocabulary Word from the Text: </label>
             <input type="text" onChange={(e)=> changeWord(e.target.value)}></input><br />
             <label>Sentence from Book with Word: </label>
@@ -33,7 +34,7 @@ const BasicVocabForm = (props) => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    submittingVocab: (e, student_book_id, word, definition, sentence_from_book, original_sentence) => { dispatch( submittingVocab(e, student_book_id, word, definition, sentence_from_book, original_sentence) )},
+    submittingVocab: (e, student_book_id, word, definition, sentence_from_book, original_sentence, point_value) => { dispatch( submittingVocab(e, student_book_id, word, definition, sentence_from_book, original_sentence, point_value) )},
     
 })
 

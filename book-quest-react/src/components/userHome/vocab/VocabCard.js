@@ -11,7 +11,7 @@ const VocabCard = (props) => {
     const [flipped, flipCard] = useState(false)
 
     return(
-    <div onClick={() => flipCard(!flipped)}>
+    <div style={{cursor: "pointer"}} onClick={() => flipCard(!flipped)}>
         {flipped == false ? <CardFront word={word}/> : <CardBack vocab={props.vocab.vocab} book_title={book_title}/>}
         <br />
     </div>

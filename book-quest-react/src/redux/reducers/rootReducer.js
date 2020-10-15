@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
-    userReducer, booksReducer, currentBookReducer, tweetDataReducer, allTweetsReducer
+    userReducer, booksReducer, currentBookReducer, tweetDataReducer, allTweetsReducer, vocabDataReducer
 })
 
 export default rootReducer
@@ -112,6 +112,24 @@ function tweetDataReducer(state = {tweetData: []}, action){
             return {
                 ...state,
                 tweetData: tweetData2}
+        default: 
+            return state;
+    }
+}
+
+function vocabDataReducer(state = {vocabData: []}, action){
+    switch(action.type){
+        case 'LOAD_VOCAB_DATA':
+
+            let vocabData2 = action.payload.map(vocab_hash => {
+                let d = vocab_hash.date.replace(/\-/g, '/')
+                d = new Date(d)
+                vocab_hash.date = d.toDateString()
+                return vocab_hash
+            })
+            return {
+                ...state,
+                vocabData: vocabData2}
         default: 
             return state;
     }
