@@ -22,9 +22,9 @@ const ProgressChartsContainer = (props) => {
         <div>
             <div>Progress Chart Container</div><br />
             <div>Tweet Progress Chart</div><br />
-            <Chart data={tweetData} dataKey={"tweet_count"} name={"Tweets"}/><br />
+            <Chart data={tweetData} dataKey={"tweet_count"} name={"Tweets"} fill={"#82ca9d"}/><br />
             <div>Vocab Progress Chart</div><br />
-            <Chart data={vocabData} dataKey={"vocab_count"} name={"Vocab Activities"}/>
+            <Chart data={vocabData} dataKey={"vocab_count"} name={"Vocab Activities"} fill={"#8884d8"}/>
         </div>
     )
 }

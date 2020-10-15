@@ -15,7 +15,7 @@ const Chart = (props) => {
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Bar name={props.name} dataKey={props.dataKey} fill="#82ca9d" />
+                    <Bar name={props.name} dataKey={props.dataKey} fill={props.fill} />
             </BarChart>
         </div>
     )
