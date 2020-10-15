@@ -10,7 +10,7 @@ import AllTweets from './components/userHome/readingTweets/AllTweets.js'
 import ProgressChartContainer from './components/progressCharts/ProgressChartsContainer.js'
 import VocabContainer from './components/userHome/vocab/VocabContainer.js'
 import BasicVocab from './components/userHome/vocab/BasicVocabContainer.js'
-import RewardsPage from './components/rewards/rewardsPage.js';
+import RewardsPage from './components/rewardsPage/rewardsPage.js';
 
 function App() {
   return (
