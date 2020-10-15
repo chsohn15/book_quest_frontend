@@ -110,8 +110,8 @@
     border-bottom: 50px solid #e63c33;
     border-left:8px solid transparent;
     border-right: 8px solid transparent;
-    position: relative;
-    bottom:90px;
+    position: absolute;
+    bottom:-160px;
     left:195px;
     transform:rotate(-15deg);
 }

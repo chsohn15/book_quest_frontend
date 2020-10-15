@@ -1,8 +1,8 @@
 import React from 'react'
 import './SnowMan.css'
-import SnowBody from './SnowBody.js'
+import SnowBody from './snowBody/SnowBody.js'
 import SnowScarf from './SnowScarf.js'
-import SnowFace from './SnowFace.js'
+import SnowFace from './snowFace/SnowFace.js'
 import SnowFall from './SnowFall.js'
 
 const SnowManContainer = (props) => {
