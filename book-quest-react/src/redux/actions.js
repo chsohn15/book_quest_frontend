@@ -13,6 +13,30 @@ const VOCAB_URL = "http://localhost:3000/api/v1/vocab_activities"
 const RESTFUL_TWEET_URL = "http://localhost:3000/api/v1/reading_tweets/"
 const VOCAB_DATA_URL = "http://localhost:3000/api/v1/get_vocab_data"
 const GET_ALL_TWEETS = "http://localhost:3000/api/v1/get_all_tweets"
+const ADD_CHAR_URL = "http://localhost:3000/api/v1/characters"
+
+function addedCharacterToBook(){
+
+}
+
+function addingCharacterToBook(e){
+    e.preventDefault()
+
+    return (dispatch) => {
+        // fetch(ADD_CHAR_URL, {method: "POST", 
+        // headers: {
+        //     "Content-Type": "application/json",
+        //     Authorization: `Bearer ${localStorage.token}`
+        // },
+        // body: JSON.stringify({
+        //     student_book_id,
+        //     character_id
+        // })
+        // })
+        // .then(res => res.json())
+        // .then(character => console.log(character))
+        // .then(character => dispatch(setCharacter(student_book)))
+}}
 
 function loadedVocabData(vocabData){
     return {type: "LOAD_VOCAB_DATA", payload: vocabData}
