@@ -10,7 +10,7 @@ const BookViewer = () => {
     const canvasRef = useRef()
 
     const [loaded, setLoaded] = useState(false);
-    //const [pageReloaded, setPageReloaded] = useState(false);
+    const [pageReloaded, setPageReloaded] = useState(false);
 
   
     useEffect(()=> {
@@ -23,6 +23,7 @@ const BookViewer = () => {
     useEffect(()=>{
 
       if (!loaded) return
+        // { setTimeout( () => {window.location.reload(true);}, 2000 )}
       else{
             window.google.books.load() 
             window.google.books.setOnLoadCallback(initialize)
@@ -30,6 +31,7 @@ const BookViewer = () => {
                 var viewer = new window.google.books.DefaultViewer(canvasRef.current);
                 viewer.load('ISBN:'+ ISBN_num);
             }
+            // setLoaded(true)
     }}, [loaded])
 
     return (
@@ -50,7 +52,7 @@ const BookViewer = () => {
 //      useEffect(() => {
 //         console.log(canvasRef)
 
-//         if(!window.google) return;
+//         //if(!window.google) return;
 
 //         window.google.books.load() 
 //         window.google.books.setOnLoadCallback(initialize)
@@ -73,6 +75,9 @@ const BookViewer = () => {
 
 
 export default BookViewer
+
+
+
     // const loadBook = () => {
     //         window.google.books.load() 
     //         window.google.books.setOnLoadCallback(initialize)
