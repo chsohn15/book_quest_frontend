@@ -6,6 +6,7 @@ import TweetsContainer from './TweetsContainer'
 import { useSelector } from "react-redux";
 import { connect } from 'react-redux'
 import { NavLink } from "react-router-dom";
+import AddCharacterForm from './AddCharacterForm'
 
 
 const ReadingTweetContainer = (props) => {
@@ -13,8 +14,8 @@ const ReadingTweetContainer = (props) => {
     const tweets = useSelector(state => state.currentBookReducer.currentBook.reading_tweets)
     const twitter_character = useSelector(state => state.currentBookReducer.currentBook.twitter_character)
     const current_book_status = useSelector(state => state.currentBookReducer.currentBook.status)
+    const existing_characters = useSelector(state => state.currentBookReducer.currentBook.book.characters)
 
-    
     if (current_book_status === 500){
         return(
             <div>Add a Book to "Currently Reading" to Start Writing Tweets!</div>
@@ -42,6 +43,18 @@ const ReadingTweetContainer = (props) => {
                         <TweetsContainer />
                     :
                         null}
+            </div>
+        )
+    }
+    else if (props.characters.length === 0){
+        return(
+            <div>
+                <br />
+                <div>No Characters Exist for This Book Yet!</div>
+                <br />
+                <div>Add a Character to This Book:</div>
+                <br />
+                <AddCharacterForm />
             </div>
         )
     }
