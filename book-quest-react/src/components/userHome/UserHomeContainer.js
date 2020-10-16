@@ -11,8 +11,11 @@ import { loadingCurrentBook } from '../../redux/actions.js'
 import { loadingUser } from '../../redux/actions.js'
 import { connect } from 'react-redux'
 //import { loadingAllTweets } from '../../redux/actions.js'
+import { useSelector } from "react-redux";
 
 const UserHomeContainer = (props) => {
+
+    const current_book_status = useSelector(state => state.currentBookReducer.currentBook.status)
 
     useEffect(() => {
         props.loadingBooks()
@@ -28,8 +31,12 @@ const UserHomeContainer = (props) => {
             <ProfileCard /><br />
             <ActivityContainer /><br/>
             <CurrentBookCard /><br />
-            <NavLink to="/book_viewer">Read Your Book!</NavLink><br />
-            <br/>
+            { current_book_status !== 500 ?
+            <div>
+                <NavLink to="/book_viewer">Read Your Book!</NavLink><br />
+                <br/>
+            </div>
+            : null}
             <NavLink to="/book_search">Browse More Books</NavLink><br />
             <br/>
             <UserBookShelf /><br />
