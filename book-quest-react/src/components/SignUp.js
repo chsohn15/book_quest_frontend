@@ -9,6 +9,10 @@ const SignUp = (props) => {
     const [username, changeUserName] = useState("")
     const [password, changePassword] = useState("")
 
+    const directToBookSearch = () => {
+        props.history.push('/book_search')
+    }
+    
     const handleSignUp = (e, first_name, last_name, username, password) => {
         e.preventDefault()
         
@@ -36,6 +40,8 @@ const SignUp = (props) => {
             userInfo.last_name, 
             userInfo.username, 
             userInfo.is_student)
+
+            directToBookSearch()
         })
 
     }

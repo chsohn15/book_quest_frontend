@@ -12,7 +12,15 @@ const ReadingTweetContainer = (props) => {
 
     const tweets = useSelector(state => state.currentBookReducer.currentBook.reading_tweets)
     const twitter_character = useSelector(state => state.currentBookReducer.currentBook.twitter_character)
+    const current_book_status = useSelector(state => state.currentBookReducer.currentBook.status)
+
     
+    if (current_book_status === 500){
+        return(
+            <div>Add a Book to "Currently Reading" to Start Writing Tweets!</div>
+        )
+    }
+
     if (props.characters.length > 0){
         return(
             <div>
