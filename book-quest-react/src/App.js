@@ -12,11 +12,15 @@ import VocabContainer from './components/userHome/vocab/VocabContainer.js'
 import BasicVocab from './components/userHome/vocab/BasicVocabContainer.js'
 import RewardsPage from './components/rewardsPage/rewardsPage.js';
 import SnowManContainer from './components/rewardsPage/SnowManContainer.js';
+import { useEffect } from 'react'
+import { useState } from 'react'
 
 function App() {
+  
   const logOut = () => {
     localStorage.clear();
   }
+
 
   return (
     <div className="App">
