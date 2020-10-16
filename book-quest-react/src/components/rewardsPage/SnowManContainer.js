@@ -19,7 +19,7 @@ const SnowManContainer = (props) => {
           
     </div>
     <div class="snow"></div>
-    {/* <SnowFall /> */}
+    <SnowFall />
         </div>
     )
 }
