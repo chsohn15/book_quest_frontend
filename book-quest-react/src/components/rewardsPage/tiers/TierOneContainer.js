@@ -15,7 +15,7 @@ const TierOneContainer = (props) => {
     const face_price = 20
     const face_description = "face"
 
-    // Disable button when reward is redeemed
+    // DISABLE BUTTON WHEN REWARD IS REDEEMED
 
     return(
         <React.Fragment>
