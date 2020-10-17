@@ -14,6 +14,7 @@ const RESTFUL_TWEET_URL = "http://localhost:3000/api/v1/reading_tweets/"
 const VOCAB_DATA_URL = "http://localhost:3000/api/v1/get_vocab_data"
 const GET_ALL_TWEETS = "http://localhost:3000/api/v1/get_all_tweets"
 const ADD_CHAR_URL = "http://localhost:3000/api/v1/characters"
+const CREATE_REWARD_URL = "http://localhost:3000/api/v1/rewards/"
 
 function addedCharacterToBook(){
 
@@ -37,6 +38,26 @@ function addingCharacterToBook(e){
         // .then(character => console.log(character))
         // .then(character => dispatch(setCharacter(student_book)))
 }}
+
+function createdReward(){
+
+}
+
+function creatingReward(price, level, student_id, description){
+
+    return (dispatch) => {
+        fetch(CREATE_REWARD_URL, {method: "POST", 
+        headers: {
+            "Content-Type":"application/json",
+            Authorization: `Bearer ${localStorage.token}`
+        },
+        body: JSON.stringify({
+            price, level, student_id, description
+        })})
+        .then(res => res.json()) 
+        // .then(vocabData => dispatch(loadedVocabData(vocabData)))
+    }
+}
 
 function loadedVocabData(vocabData){
     return {type: "LOAD_VOCAB_DATA", payload: vocabData}
@@ -369,4 +390,5 @@ export {
     deletingTweet, 
     submittingVocab,
     loadingAllTweets,
-    loadingVocabData}
+    loadingVocabData,
+    creatingReward}
