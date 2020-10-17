@@ -28,15 +28,12 @@ function App() {
     <div className="App">
       <Router>
       <NavLink  style={{padding: "12px", "justify-content": "right"}} onClick={logOut} to="/login">Log Out</NavLink>
-        <Route exact path = "/signup" component={SignUp}>
-        </Route>
-
-        <Route exact path = "/signup2" component={SignUp2}>
+        <Route exact path = "/signup" component={SignUp2}>
         </Route>
 
         <Route exact path = "/login" component={LogIn}>
         </Route>
-        <Route exact path = "/welcome" component={Welcome}>
+        <Route exact path = "/" component={Welcome}>
         </Route>
         <Route exact path = "/book_search" component={BookSearchContainer}>
         </Route>
