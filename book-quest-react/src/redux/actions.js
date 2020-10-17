@@ -39,8 +39,8 @@ function addingCharacterToBook(e){
         // .then(character => dispatch(setCharacter(student_book)))
 }}
 
-function createdReward(){
-
+function createdReward(reward){
+    return {message: "reward created"}
 }
 
 function creatingReward(price, level, student_id, description){
@@ -55,7 +55,7 @@ function creatingReward(price, level, student_id, description){
             price, level, student_id, description
         })})
         .then(res => res.json()) 
-        // .then(vocabData => dispatch(loadedVocabData(vocabData)))
+        .then(reward => dispatch(createdReward(reward)))
     }
 }
 

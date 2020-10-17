@@ -6,9 +6,11 @@ import { useSelector } from "react-redux";
 const TierOneContainer = (props) => {
 
     const student_id = useSelector(state => state.userReducer.currentUser.id)
+    
     const level = 1
     const body_price = 25
     const body_description = "body"
+
     const face_price = 20
     const face_description = "face"
 

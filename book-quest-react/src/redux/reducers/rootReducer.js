@@ -15,11 +15,11 @@ function userReducer(
 
 switch(action.type){
     case 'ADD_USER':
-        const {id, first_name, last_name, username, is_student, total_points, streak, all_vocab } = action.payload
+        const {id, first_name, last_name, username, is_student, total_points, streak, all_vocab, rewards_hash } = action.payload
 
         return {
             ...state, 
-            currentUser: {id, first_name, last_name, username, is_student, total_points, streak, all_vocab}
+            currentUser: {id, first_name, last_name, username, is_student, total_points, streak, all_vocab, rewards_hash}
         }
     // case 'HANDLE_STREAK':
     //     const user_streak = action.payload.streak
@@ -145,3 +145,15 @@ function allTweetsReducer(state = {allTweets: []}, action){
             return state;
     }
 }
+
+// function rewardsReducer(state = {rewards: {}}, action){
+//     switch(action.type){
+//         case 'ADD_REWARD':
+//             let reward = action.payload.description
+//             return {
+//                 ...state,
+//                 [reward]: true}
+//         default: 
+//             return state;
+//     }
+// }
