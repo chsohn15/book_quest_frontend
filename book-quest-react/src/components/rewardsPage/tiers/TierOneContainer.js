@@ -6,7 +6,8 @@ import { useSelector } from "react-redux";
 const TierOneContainer = (props) => {
 
     const student_id = useSelector(state => state.userReducer.currentUser.id)
-    
+    // const errors = useSelector(state => state.errorsReducer.errors)
+
     const level = 1
     const body_price = 25
     const body_description = "body"
@@ -14,9 +15,11 @@ const TierOneContainer = (props) => {
     const face_price = 20
     const face_description = "face"
 
+    // Disable button when reward is redeemed
 
     return(
         <React.Fragment>
+            {/* {errors.rewardsError ? <div>{errors.rewardsError}</div>: null} */}
             <div>Tier One Container</div>
             <button onClick={() => props.creatingReward(body_price, level, student_id, body_description)}>Build the Body of Your Snowman</button>
             <button onClick={() => props.creatingReward(face_price, level, student_id, face_description)}>Add a Face to Your Snowman</button>

@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
-    userReducer, booksReducer, currentBookReducer, tweetDataReducer, allTweetsReducer, vocabDataReducer
+    userReducer, booksReducer, currentBookReducer, tweetDataReducer, allTweetsReducer, vocabDataReducer, errorsReducer
 })
 
 export default rootReducer
@@ -146,14 +146,13 @@ function allTweetsReducer(state = {allTweets: []}, action){
     }
 }
 
-// function rewardsReducer(state = {rewards: {}}, action){
-//     switch(action.type){
-//         case 'ADD_REWARD':
-//             let reward = action.payload.description
-//             return {
-//                 ...state,
-//                 [reward]: true}
-//         default: 
-//             return state;
-//     }
-// }
+function errorsReducer(state = {errors: {}}, action){
+    switch(action.type){
+        case 'ADD_REWARD_ERROR_MSG':
+            return {
+                ...state,
+                errors: {...state.errors, rewardsError: action.payload}}
+        default: 
+            return state;
+    }
+}

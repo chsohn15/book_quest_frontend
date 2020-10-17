@@ -40,7 +40,12 @@ function addingCharacterToBook(e){
 }}
 
 function createdReward(reward){
+    debugger
     return {message: "reward created"}
+}
+
+function addRewardErrorMessage(error){
+    return {type: "ADD_REWARD_ERROR_MSG", payload: error}
 }
 
 function creatingReward(price, level, student_id, description){
@@ -55,9 +60,14 @@ function creatingReward(price, level, student_id, description){
             price, level, student_id, description
         })})
         .then(res => res.json()) 
-        .then(reward => dispatch(createdReward(reward)))
-    }
-}
+        .then(reward => {
+            if (reward.errors){
+                dispatch(addRewardErrorMessage(reward.errors))
+            }
+            else {
+                dispatch(createdReward(reward))
+            }
+        })}}
 
 function loadedVocabData(vocabData){
     return {type: "LOAD_VOCAB_DATA", payload: vocabData}
