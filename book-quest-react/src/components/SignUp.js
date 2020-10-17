@@ -48,7 +48,7 @@ const SignUp = (props) => {
     
     return(
         <div>
-            <div>Sign Up Here</div>
+            <div id="signup-container">Sign Up Here</div>
             <form onSubmit={(e) => handleSignUp(e, first_name, last_name, username, password)}>
                 <label>First Name</label>
                 <input onChange={(e) => changeFirstName(e.target.value)} name="first_name" type="text" /><br />

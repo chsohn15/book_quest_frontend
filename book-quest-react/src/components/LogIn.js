@@ -52,7 +52,7 @@ const LogIn = (props) => {
           };
 
     return(
-        <div>
+        <div id="login-container">
             <div>Log in Here</div>
                 <form onSubmit={(e) => handleLogIn(e, username, password)}>
                 <label>Username</label>
