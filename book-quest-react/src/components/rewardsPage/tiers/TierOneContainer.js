@@ -16,6 +16,7 @@ const TierOneContainer = (props) => {
     const face_description = "face"
 
     // DISABLE BUTTON WHEN REWARD IS REDEEMED
+    // CALCULATE MONEY SPENT AND BALANCE
 
     return(
         <React.Fragment>
