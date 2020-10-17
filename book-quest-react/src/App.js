@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import SignUp from './components/SignUp.js'
+import SignUp2 from './components/SignUp2.js'
 import LogIn from './components/LogIn.js'
 import Welcome from './components/Welcome.js'
 import BookSearchContainer from './components/bookSearch/BookSearchContainer.js'
@@ -29,6 +30,10 @@ function App() {
       <NavLink  style={{padding: "12px", "justify-content": "right"}} onClick={logOut} to="/login">Log Out</NavLink>
         <Route exact path = "/signup" component={SignUp}>
         </Route>
+
+        <Route exact path = "/signup2" component={SignUp2}>
+        </Route>
+
         <Route exact path = "/login" component={LogIn}>
         </Route>
         <Route exact path = "/welcome" component={Welcome}>
