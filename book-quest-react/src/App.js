@@ -25,14 +25,8 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        Book Quest
-
-      </header>
       <Router>
-      <NavLink  style={{padding: "12px", "justify-content": "right"}} onClick={logOut} to="/login">
-          Log Out
-        </NavLink>
+      <NavLink  style={{padding: "12px", "justify-content": "right"}} onClick={logOut} to="/login">Log Out</NavLink>
         <Route exact path = "/signup" component={SignUp}>
         </Route>
         <Route exact path = "/login" component={LogIn}>
