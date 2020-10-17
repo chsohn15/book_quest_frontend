@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import SignUp from './components/SignUp.js'
 import LogIn from './components/LogIn.js'
+import Welcome from './components/Welcome.js'
 import BookSearchContainer from './components/bookSearch/BookSearchContainer.js'
 import UserHomeContainer from './components/userHome/UserHomeContainer.js'
 import BookViewer from './components/userHome/books/BookViewer.js'
@@ -34,8 +35,9 @@ function App() {
         </NavLink>
         <Route exact path = "/signup" component={SignUp}>
         </Route>
-        <Route exact path = "/login" component={LogIn}
-        >
+        <Route exact path = "/login" component={LogIn}>
+        </Route>
+        <Route exact path = "/welcome" component={Welcome}>
         </Route>
         <Route exact path = "/book_search" component={BookSearchContainer}>
         </Route>
