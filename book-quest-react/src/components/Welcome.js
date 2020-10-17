@@ -6,10 +6,14 @@ const Welcome = (props) => {
         props.history.push("/signup");
       };
 
+      const goToLoginPage = () => {
+        props.history.push("/login");
+      };
+
     return(
         <div id="welcome-container">
             <button onClick={() => goToSignUpPage()}>Sign Up Today!</button>
-            <button>Login</button>
+            <button onClick={() => goToLoginPage()}>Login</button>
         </div>
     )
 }

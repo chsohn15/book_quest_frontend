@@ -193,8 +193,10 @@ function Copyright() {
     avatar: {
       margin: theme.spacing(1),
       backgroundColor: theme.palette.secondary.main,
+      marginBottom: '20px'
     },
     form: {
+      paddingTop: '20px',
       width: '100%', // Fix IE 11 issue.
       marginTop: theme.spacing(1),
     },
