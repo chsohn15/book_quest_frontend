@@ -10,22 +10,27 @@ const TierTwoContainer = (props) => {
 
     const level = 2
     const buttons_price = 25
-    const buttons_description = "body"
+    const buttons_description = "buttons"
 
     const eyes_price = 20
-    const eyes_description = "face"
+    const eyes_description = "eyes"
 
     const nose_price = 20
-    const nose_description = "face"
+    const nose_description = "nose"
 
     return(
         <React.Fragment>
             <div>Tier Two Container</div>
-            <button>Add Buttons</button>
-            <button>Add Eyes</button>
-            <button>Add a Carrot Nose</button>
+            <button onClick={() => props.creatingReward(buttons_price, level, student_id, buttons_description)}>Add Buttons</button>
+            <button onClick={() => props.creatingReward(eyes_price, level, student_id, eyes_description)}>Add Eyes</button>
+            <button onClick={() => props.creatingReward(nose_price, level, student_id, nose_description)}>Add a Carrot Nose</button>
         </React.Fragment>
     )
 }
 
-export default TierTwoContainer
+const mapDispatchToProps = (dispatch) => ({
+    creatingReward: (price, level, student_id, description) => { dispatch( creatingReward(price, level, student_id, description) )}
+    
+})
+
+export default connect(null, mapDispatchToProps)(TierTwoContainer)

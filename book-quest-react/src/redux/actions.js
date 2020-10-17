@@ -40,8 +40,7 @@ function addingCharacterToBook(e){
 }}
 
 function createdReward(reward){
-    debugger
-    return {message: "reward created"}
+    return {type: "ADD_REWARD", payload: reward.description}
 }
 
 function addRewardErrorMessage(error){
