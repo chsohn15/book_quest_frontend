@@ -14,13 +14,13 @@ import VocabContainer from './components/userHome/vocab/VocabContainer.js'
 import BasicVocab from './components/userHome/vocab/BasicVocabContainer.js'
 import RewardsPage from './components/rewardsPage/rewardsPage.js';
 import SnowManContainer from './components/rewardsPage/SnowManContainer.js';
-import { useEffect } from 'react'
-import { useState } from 'react'
+import { connect } from 'react-redux'
 
-function App() {
+function App(props) {
   
   const logOut = () => {
     localStorage.clear();
+    props.logOutUser()
   }
 
 
@@ -63,4 +63,9 @@ function App() {
   );
 }
 
-export default App;
+
+const mapDispatchToProps = (dispatch) => ({
+  logOutUser: () => { dispatch( {type: 'USER_LOGOUT'} )}
+}) 
+
+export default connect(null, mapDispatchToProps)(App)

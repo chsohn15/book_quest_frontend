@@ -1,8 +1,18 @@
 import { combineReducers } from "redux";
+import storage from 'redux-persist/lib/storage';
 
-const rootReducer = combineReducers({
+const appReducer = combineReducers({
     userReducer, booksReducer, currentBookReducer, tweetDataReducer, allTweetsReducer, vocabDataReducer, errorsReducer
 })
+
+const rootReducer = (state, action) => {
+    if (action.type === 'USER_LOGOUT') {
+      storage.removeItem('persist:root')
+      state = undefined
+    }
+  
+    return appReducer(state, action)
+  }
 
 export default rootReducer
 
