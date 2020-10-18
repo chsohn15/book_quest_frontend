@@ -15,6 +15,7 @@ const VOCAB_DATA_URL = "http://localhost:3000/api/v1/get_vocab_data"
 const GET_ALL_TWEETS = "http://localhost:3000/api/v1/get_all_tweets"
 const ADD_CHAR_URL = "http://localhost:3000/api/v1/characters"
 const CREATE_REWARD_URL = "http://localhost:3000/api/v1/rewards/"
+const DELETE_VOCAB_URL = "http://localhost:3000/api/v1/vocab_activities/"
 
 function addedCharacterToBook(){
 
@@ -38,6 +39,21 @@ function addingCharacterToBook(e){
         // .then(character => console.log(character))
         // .then(character => dispatch(setCharacter(student_book)))
 }}
+
+function deletedVocab(vocab_id){
+    return {type: 'FILTER_VOCAB', payload: vocab_id}
+}
+
+function deletingVocab(vocab_id){
+    return (dispatch) => {
+        fetch(DELETE_VOCAB_URL  + vocab_id, {method: "DELETE", 
+        headers: {
+            Authorization: `Bearer ${localStorage.token}`
+        }})
+        .then(res => res.json()) 
+        .then(res => dispatch(deletedVocab(vocab_id)))
+    }
+}
 
 function createdReward(reward){
 
@@ -401,4 +417,5 @@ export {
     submittingVocab,
     loadingAllTweets,
     loadingVocabData,
-    creatingReward}
+    creatingReward,
+    deletingVocab}

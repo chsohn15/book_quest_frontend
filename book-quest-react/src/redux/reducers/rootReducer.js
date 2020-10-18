@@ -50,6 +50,13 @@ switch(action.type){
             ...state, 
             currentUser: {...state.currentUser, rewards_hash: {...state.currentUser.rewards_hash, [rewards_description]: true}}
         }
+    case 'FILTER_VOCAB':
+        return {
+            ...state, 
+            currentUser: {
+                ...state.currentUser, 
+                all_vocab: state.currentUser.all_vocab.filter(vocab => vocab.vocab.id !== action.payload)}
+        }
     default: 
         return state;
     }

@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { deletingVocab } from '../../../redux/actions.js'
 
 const CardBack = (props) => {
 
@@ -12,14 +13,14 @@ const CardBack = (props) => {
         <div>Definition: {definition}</div>
         <div>Sentence from <em>{book_title}</em>: {sentence_from_book}</div>
         <div>Original Sentence: {original_sentence}</div>
-        <button>Delete Card</button>
+        <button onClick={() => props.deletingVocab(id)}>Delete Card</button>
     </div>
     )
 }
 
 
 const mapDispatchToProps = (dispatch) => ({
-    //deletingVocab: () => { dispatch( deletingVocab() )},
+    deletingVocab: (id) => { dispatch( deletingVocab(id) )},
     
 })
 
