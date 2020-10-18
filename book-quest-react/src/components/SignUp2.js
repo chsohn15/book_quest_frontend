@@ -21,7 +21,6 @@ import { NavLink } from "react-router-dom";
 
 function SignUp2(props) {
 
-  debugger
   const classes = useStyles();
 
     const [first_name, changeFirstName] = useState("")
@@ -69,7 +68,6 @@ function SignUp2(props) {
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
-      {/* <Grid item xs={false} sm={4} md={7} className={classes.image} /> */}
       <Grid item component={Paper} elevation={6} square>
         <div className={classes.paper}>
           <Avatar className={classes.avatar}>
