@@ -73,7 +73,7 @@ function SignUp2(props) {
           <MenuBookIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign up for an account today!
+            Sign up for a Book Quest account today!
           </Typography>
           <form className={classes.form} noValidate onSubmit={(e) => handleSignUp(e, first_name, last_name, username, password)}>
             <Grid container spacing={2}>
