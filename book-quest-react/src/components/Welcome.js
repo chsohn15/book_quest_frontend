@@ -21,7 +21,7 @@ const useStyles = makeStyles({
   },
 });
 
-function Welcome() {
+function Welcome(props) {
   const classes = useStyles();
   const [state, setState] = React.useState({
     left: false,
@@ -42,10 +42,10 @@ function Welcome() {
         [classes.fullList]: anchor === 'top' || anchor === 'bottom',
       })}
       role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
+      // onClick={toggleDrawer(anchor, false)}
+      // onKeyDown={toggleDrawer(anchor, false)}
     >
-      <SignUp />
+      <SignUp history={props.history}/>
       
     </div>
   );

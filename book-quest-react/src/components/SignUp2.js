@@ -15,10 +15,13 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
+import { NavLink } from "react-router-dom";
 
 
 
 function SignUp2(props) {
+
+  debugger
   const classes = useStyles();
 
     const [first_name, changeFirstName] = useState("")
@@ -32,7 +35,7 @@ function SignUp2(props) {
     
     const handleSignUp = (e, first_name, last_name, username, password) => {
         e.preventDefault()
-        
+        debugger
         let configObj = {
             method: "POST",
             headers: {
@@ -132,8 +135,11 @@ function SignUp2(props) {
             variant="contained"
             color="primary"
             className={classes.submit}
+            
           >
+
             Sign Up
+
           </Button>
           <Grid container justify="flex-end">
             <Grid item>

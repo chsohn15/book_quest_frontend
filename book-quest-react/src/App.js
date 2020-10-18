@@ -28,8 +28,8 @@ function App(props) {
     <div className="App">
       <Router>
       <NavLink  style={{padding: "12px", "justify-content": "right"}} onClick={logOut} to="/login">Log Out</NavLink>
-        <Route exact path = "/signup" component={SignUp2}>
-        </Route>
+        {/* <Route exact path = "/signup" component={SignUp2}>
+        </Route> */}
 
         <Route exact path = "/login" component={LogIn}>
         </Route>
