@@ -56,6 +56,7 @@ switch(action.type){
                 ...state.currentUser, 
                 all_vocab: state.currentUser.all_vocab.filter(vocab => vocab.vocab.id !== action.payload)}
         }
+  
     default: 
         return state;
     }
@@ -115,6 +116,17 @@ function currentBookReducer(state = {currentBook: {}}, action){
                 currentBook: {
                     ...state.currentBook, 
                     reading_tweets: state.currentBook.reading_tweets.filter(tweet => tweet.id !== action.payload)
+                }
+            }
+        case 'ADD_CHARACTER':
+
+            return{
+                ...state,
+                currentBook: {
+                    ...state.currentBook, 
+                    book: {
+                        ...state.currentBook.book,
+                        characters: [...state.currentBook.book.characters, action.payload]}
                 }
             }
         default: 

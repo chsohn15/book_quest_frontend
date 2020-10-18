@@ -17,8 +17,8 @@ const ADD_CHAR_URL = "http://localhost:3000/api/v1/characters"
 const CREATE_REWARD_URL = "http://localhost:3000/api/v1/rewards/"
 const DELETE_VOCAB_URL = "http://localhost:3000/api/v1/vocab_activities/"
 
-function addedCharacterToBook(){
-
+function addedCharacterToBook(character){
+    return {type: 'ADD_CHARACTER', payload: character}
 }
 
 function addingCharacterToBook(e, book_id){
@@ -39,8 +39,7 @@ function addingCharacterToBook(e, book_id){
         })
         })
         .then(res => res.json())
-        .then(character => console.log(character))
-        // .then(character => dispatch(addedCharacterToBook(student_book)))
+        .then(character => dispatch(addedCharacterToBook(character)))
 }}
 
 function deletedVocab(vocab_id){
