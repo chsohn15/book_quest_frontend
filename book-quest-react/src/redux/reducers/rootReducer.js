@@ -45,7 +45,6 @@ switch(action.type){
         }
     case 'ADD_REWARD':
         let rewards_description = action.payload
-        //debugger
         return {
             ...state, 
             currentUser: {...state.currentUser, rewards_hash: {...state.currentUser.rewards_hash, [rewards_description]: true}}
