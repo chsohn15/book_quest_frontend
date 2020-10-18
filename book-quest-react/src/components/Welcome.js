@@ -36,14 +36,24 @@ function Welcome(props) {
     setState({ ...state, [anchor]: open });
   };
 
-  const list = (anchor) => (
+  const signUpDrawer = (anchor) => (
     <div
       className={clsx(classes.list, {
         [classes.fullList]: anchor === 'top' || anchor === 'bottom',
       })}
       role="presentation"
-      // onClick={toggleDrawer(anchor, false)}
-      // onKeyDown={toggleDrawer(anchor, false)}
+    >
+      <SignUp history={props.history}/>
+      
+    </div>
+  );
+
+  const loginDrawer = (anchor) => (
+    <div
+      className={clsx(classes.list, {
+        [classes.fullList]: anchor === 'top' || anchor === 'bottom',
+      })}
+      role="presentation"
     >
       <SignUp history={props.history}/>
       
@@ -52,7 +62,7 @@ function Welcome(props) {
 
   return (
     <div id="welcome-container">
-      {['left', 'right'].map((anchor) => (
+      {['right'].map((anchor) => (
         <React.Fragment key={anchor}>
           <Button onClick={toggleDrawer(anchor, true)}>Sign Up</Button>
           <SwipeableDrawer
@@ -61,9 +71,22 @@ function Welcome(props) {
             onClose={toggleDrawer(anchor, false)}
             onOpen={toggleDrawer(anchor, true)}
           >
-            {list(anchor)}
+            {signUpDrawer(anchor)}
           </SwipeableDrawer>
-        </React.Fragment>
+        </React.Fragment>))}
+
+         {['right'].map((anchor) => (
+          <React.Fragment key={anchor}>
+            <Button onClick={toggleDrawer(anchor, true)}>Login</Button>
+            <SwipeableDrawer
+              anchor={anchor}
+              open={state[anchor]}
+              onClose={toggleDrawer(anchor, false)}
+              onOpen={toggleDrawer(anchor, true)}
+            >
+              {signUpDrawer(anchor)}
+            </SwipeableDrawer>
+          </React.Fragment>
       ))}
     </div>
   );

@@ -32,16 +32,6 @@ const LogIn = (props) => {
             localStorage.token = userInfo.token 
             localStorage.user_id = userInfo.id 
             localStorage.username = userInfo.username 
-
-            // Add user information to store
-            // props.addUser(
-            // userInfo.id, 
-            // userInfo.first_name, 
-            // userInfo.last_name, 
-            // userInfo.username, 
-            // userInfo.is_student,
-            // userInfo.total_points,
-            // userInfo.streak)
         
             goToUserPage()
             }
