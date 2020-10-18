@@ -11,6 +11,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import SignUp from './SignUp2'
+import LogIn from './LogIn'
 
 const useStyles = makeStyles({
   list: {
@@ -24,11 +25,12 @@ const useStyles = makeStyles({
 function Welcome(props) {
   const classes = useStyles();
   const [state, setState] = React.useState({
-    left: false,
-    right: false,
+    signup: false,
+    login: false,
   });
 
   const toggleDrawer = (anchor, open) => (event) => {
+
     if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
@@ -37,7 +39,8 @@ function Welcome(props) {
   };
 
   const signUpDrawer = (anchor) => (
-    <div
+
+    <div 
       className={clsx(classes.list, {
         [classes.fullList]: anchor === 'top' || anchor === 'bottom',
       })}
@@ -46,23 +49,49 @@ function Welcome(props) {
       <SignUp history={props.history}/>
       
     </div>
+
   );
 
   const loginDrawer = (anchor) => (
-    <div
-      className={clsx(classes.list, {
-        [classes.fullList]: anchor === 'top' || anchor === 'bottom',
-      })}
+    <div 
+      // className={clsx(classes.list, {
+      //   [classes.fullList]: anchor === 'top' || anchor === 'bottom',
+      // })}
       role="presentation"
     >
-      <SignUp history={props.history}/>
+      <LogIn history={props.history}/>
       
     </div>
   );
 
   return (
     <div id="welcome-container">
-      {['right'].map((anchor) => (
+
+      <React.Fragment key={"signup"}>
+          <Button onClick={toggleDrawer("signup", true)}>Sign Up</Button>
+          <SwipeableDrawer
+            anchor={"right"}
+            open={state["signup"]}
+            onClose={toggleDrawer("signup", false)}
+            onOpen={toggleDrawer("signup", true)}
+          >
+            {signUpDrawer("right")}
+          </SwipeableDrawer>
+        </React.Fragment>
+
+        <React.Fragment key={"login"}>
+          <Button onClick={toggleDrawer("login", true)}>Log In</Button>
+          <SwipeableDrawer
+            anchor={"right"}
+            open={state["login"]}
+            onClose={toggleDrawer("login", false)}
+            onOpen={toggleDrawer("login", true)}
+          >
+            {loginDrawer("right")}
+          </SwipeableDrawer>
+        </React.Fragment>
+
+      {/* {['left'].map((anchor) => (
         <React.Fragment key={anchor}>
           <Button onClick={toggleDrawer(anchor, true)}>Sign Up</Button>
           <SwipeableDrawer
@@ -84,10 +113,10 @@ function Welcome(props) {
               onClose={toggleDrawer(anchor, false)}
               onOpen={toggleDrawer(anchor, true)}
             >
-              {signUpDrawer(anchor)}
+              {loginDrawer(anchor)}
             </SwipeableDrawer>
           </React.Fragment>
-      ))}
+      ))} */}
     </div>
   );
 }
