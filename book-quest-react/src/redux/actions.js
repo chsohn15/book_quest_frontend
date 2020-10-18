@@ -40,6 +40,7 @@ function addingCharacterToBook(e){
 }}
 
 function createdReward(reward){
+
     return {type: "ADD_REWARD", payload: reward.description}
 }
 
