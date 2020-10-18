@@ -9,10 +9,10 @@ const TierTwoContainer = (props) => {
     // const errors = useSelector(state => state.errorsReducer.errors)
 
     const level = 2
-    const buttons_price = 25
+    const buttons_price = 15
     const buttons_description = "buttons"
 
-    const eyes_price = 20
+    const eyes_price = 15
     const eyes_description = "eyes"
 
     const nose_price = 20

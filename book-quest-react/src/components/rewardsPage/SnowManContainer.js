@@ -22,7 +22,8 @@ const SnowManContainer = (props) => {
         <div class="snowman">
             {rewards["face"] ? <SnowFace /> : null}
             {rewards["body"] ? <SnowBody /> : null}
-            <SnowScarf />
+            {rewards["scarf"] ? <SnowScarf /> : null}
+            
         </div>
           
     </div>
