@@ -1,11 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { addingCharacterToBook } from '../../../redux/actions.js'
 
 const AddCharacterForm = (props) => {
 
     return(
     <div>
-        <form>
+        <form onSubmit={(e) => props.addingCharacterToBook(e)}>
         <label>Character Name:</label>
         <input type="text" name="character"></input><br />
         <label>Image URL:</label>
@@ -18,7 +19,7 @@ const AddCharacterForm = (props) => {
 
 
 const mapDispatchToProps = (dispatch) => ({
-    // addingReadingTweet: (e, submission, point_value, student_book_id, character_id) => { dispatch( addingReadingTweet(e, submission, point_value, student_book_id, character_id) )},
+    addingCharacterToBook : (e, book_id) => { dispatch( addingCharacterToBook (e, book_id) )},
   
 })
 

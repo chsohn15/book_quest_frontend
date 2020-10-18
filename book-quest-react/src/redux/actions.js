@@ -21,8 +21,10 @@ function addedCharacterToBook(){
 
 }
 
-function addingCharacterToBook(e){
+function addingCharacterToBook(e, book_id){
     e.preventDefault()
+    let name = e.target[0].value
+    let image_url = e.target[1].value
 
     return (dispatch) => {
         // fetch(ADD_CHAR_URL, {method: "POST", 
@@ -31,8 +33,9 @@ function addingCharacterToBook(e){
         //     Authorization: `Bearer ${localStorage.token}`
         // },
         // body: JSON.stringify({
-        //     student_book_id,
-        //     character_id
+        //     book_id,
+            //    name: , 
+            //    image_url ,
         // })
         // })
         // .then(res => res.json())
@@ -418,4 +421,5 @@ export {
     loadingAllTweets,
     loadingVocabData,
     creatingReward,
-    deletingVocab}
+    deletingVocab,
+    addingCharacterToBook}
