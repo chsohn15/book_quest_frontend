@@ -18,12 +18,16 @@ const TierTwoContainer = (props) => {
     const nose_price = 20
     const nose_description = "nose"
 
+    const arms_price = 20
+    const arms_description = "arms"
+
     return(
         <React.Fragment>
             <div>Tier Two Container</div>
             <button onClick={() => props.creatingReward(buttons_price, level, student_id, buttons_description)}>Add Buttons</button>
             <button onClick={() => props.creatingReward(eyes_price, level, student_id, eyes_description)}>Add Eyes</button>
             <button onClick={() => props.creatingReward(nose_price, level, student_id, nose_description)}>Add a Carrot Nose</button>
+            <button onClick={() => props.creatingReward(arms_price, level, student_id, arms_description)}>Add Arms</button>
         </React.Fragment>
     )
 }
