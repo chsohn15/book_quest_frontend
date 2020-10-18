@@ -12,6 +12,7 @@ import AllTweets from './components/userHome/readingTweets/AllTweets.js'
 import ProgressChartContainer from './components/progressCharts/ProgressChartsContainer.js'
 import VocabContainer from './components/userHome/vocab/VocabContainer.js'
 import BasicVocab from './components/userHome/vocab/BasicVocabContainer.js'
+import AddCharacterForm from './components/userHome/readingTweets/AddCharacterForm.js'
 import RewardsPage from './components/rewardsPage/rewardsPage.js';
 import SnowManContainer from './components/rewardsPage/SnowManContainer.js';
 import { connect } from 'react-redux'
@@ -31,13 +32,15 @@ function App(props) {
         {/* <Route exact path = "/signup" component={SignUp2}>
         </Route> */}
 
-        <Route exact path = "/login" component={LogIn}>
-        </Route>
+        {/* <Route exact path = "/login" component={LogIn}>
+        </Route> */}
         <Route exact path = "/" component={Welcome}>
         </Route>
         <Route exact path = "/book_search" component={BookSearchContainer}>
         </Route>
         <Route exact path = "/user_home" component={UserHomeContainer}>
+        </Route>
+        <Route exact path = "/character_form" component={AddCharacterForm}>
         </Route>
 
         <Route exact path = "/progress_chart" component={ProgressChartContainer}>

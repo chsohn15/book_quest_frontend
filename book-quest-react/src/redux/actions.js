@@ -27,19 +27,19 @@ function addingCharacterToBook(e, book_id){
     let image_url = e.target[1].value
 
     return (dispatch) => {
-        // fetch(ADD_CHAR_URL, {method: "POST", 
-        // headers: {
-        //     "Content-Type": "application/json",
-        //     Authorization: `Bearer ${localStorage.token}`
-        // },
-        // body: JSON.stringify({
-        //        book_id,
-            //    name: , 
-            //    image_url ,
-        // })
-        // })
-        // .then(res => res.json())
-        // .then(character => console.log(character))
+        fetch(ADD_CHAR_URL, {method: "POST", 
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.token}`
+        },
+        body: JSON.stringify({
+               book_id,
+               name, 
+               image_url
+        })
+        })
+        .then(res => res.json())
+        .then(character => console.log(character))
         // .then(character => dispatch(addedCharacterToBook(student_book)))
 }}
 
