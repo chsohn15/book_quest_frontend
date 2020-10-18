@@ -47,7 +47,7 @@ const BookSearchContainer = (props) => {
 
     return(
         <div>
-            <h3>Search for Your Choice Book!</h3>
+            <h3>Search for Books to Add to Your Bookshelf!</h3>
             <SearchBar handleSearch={handleSearch}/>
             {filterBookData(books)}
         </div>
