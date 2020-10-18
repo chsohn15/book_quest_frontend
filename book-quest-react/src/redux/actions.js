@@ -33,14 +33,14 @@ function addingCharacterToBook(e, book_id){
         //     Authorization: `Bearer ${localStorage.token}`
         // },
         // body: JSON.stringify({
-        //     book_id,
+        //        book_id,
             //    name: , 
             //    image_url ,
         // })
         // })
         // .then(res => res.json())
         // .then(character => console.log(character))
-        // .then(character => dispatch(setCharacter(student_book)))
+        // .then(character => dispatch(addedCharacterToBook(student_book)))
 }}
 
 function deletedVocab(vocab_id){
