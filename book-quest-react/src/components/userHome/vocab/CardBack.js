@@ -1,9 +1,11 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 const CardBack = (props) => {
 
-    const { definition, sentence_from_book, original_sentence } = props.vocab
+    const { id, definition, sentence_from_book, original_sentence } = props.vocab
     const book_title = props.book_title
+
 
     return(
     <div>
@@ -16,5 +18,9 @@ const CardBack = (props) => {
 }
 
 
+const mapDispatchToProps = (dispatch) => ({
+    //deletingVocab: () => { dispatch( deletingVocab() )},
+    
+})
 
-export default CardBack
+export default connect(null, mapDispatchToProps)(CardBack)
