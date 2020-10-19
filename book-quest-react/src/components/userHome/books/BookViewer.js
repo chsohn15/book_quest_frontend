@@ -32,11 +32,11 @@ const BookViewer = () => {
     useEffect(()=>{
       
       if (!loaded) return
-        // { setTimeout( () => {window.location.reload(true);}, 2000 )}
+       
       else{
 
         if(window.viewer){
-          //debugger
+
           let viewer = new window.google.books.DefaultViewer(canvasRef.current);
           
           viewer.load('ISBN:'+ ISBN_num, alertNotFound);
