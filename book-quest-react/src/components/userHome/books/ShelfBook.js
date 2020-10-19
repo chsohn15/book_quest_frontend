@@ -41,7 +41,7 @@ const ShelfBook = (props) => {
             <PopupState variant="popper" popupId="demo-popup-popper" >
                 {(popupState) => (
                     <div>
-                    <Button variant="contained" color="primary" {...bindToggle(popupState)} style={{"margin-left": "43px"}}>
+                    <Button variant="contained" color="primary" {...bindToggle(popupState)} style={{"marginLeft": "43px"}}>
                     +
                      </Button>
                     <Popper {...bindPopper(popupState)} transition>

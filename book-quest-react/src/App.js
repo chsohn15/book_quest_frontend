@@ -27,7 +27,7 @@ function App(props) {
   return (
     <div className="App">
       <Router>
-      <NavLink  style={{padding: "12px", "justify-content": "right"}} onClick={logOut} to="/">Log Out</NavLink>
+      <NavLink  style={{padding: "12px", "justifyContent": "right"}} onClick={logOut} to="/">Log Out</NavLink>
         {/* <Route exact path = "/signup" component={SignUp2}>
         </Route> */}
 
