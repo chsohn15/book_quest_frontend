@@ -38,10 +38,10 @@ const ShelfBook = (props) => {
             <Card.Body>
             <Card.Title>{title}</Card.Title>
             <Card.Text>{author}</Card.Text>
-            <PopupState variant="popper" popupId="demo-popup-popper">
+            <PopupState variant="popper" popupId="demo-popup-popper" >
                 {(popupState) => (
                     <div>
-                    <Button variant="contained" color="primary" {...bindToggle(popupState)}>
+                    <Button variant="contained" color="primary" {...bindToggle(popupState)} style={{"margin-left": "43px"}}>
                     +
                      </Button>
                     <Popper {...bindPopper(popupState)} transition>

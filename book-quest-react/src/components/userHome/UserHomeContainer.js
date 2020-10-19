@@ -123,19 +123,19 @@ const UserHomeContainer = (props) => {
           <List>
           <ListItem button onClick={()=> changePage("profile")}>
                 <ListItemIcon><PersonPinIcon/></ListItemIcon>
-                <ListItemText primary="Profile" />
+                <ListItemText primary="Profile" classes={{primary:classes.listItemText}}/>
         </ListItem>
         <ListItem button onClick={()=> changePage("browse")}>
                 <ListItemIcon><SearchIcon/></ListItemIcon>
-                <ListItemText primary="Browse Library" />
+                <ListItemText primary="Browse Library" classes={{primary:classes.listItemText}}/>
         </ListItem>
         <ListItem button onClick={()=> changePage("bookshelf")}>
                 <ListItemIcon><LocalLibraryIcon/></ListItemIcon>
-                <ListItemText primary="My Shelf" />
+                <ListItemText primary="My Shelf" classes={{primary:classes.listItemText}} />
         </ListItem>
         <ListItem button button onClick={handleClick} >
                 <ListItemIcon onClick={()=> changePage("twitter")}><TwitterIcon/></ListItemIcon>
-                <ListItemText primary="Lit Tweets!" />
+                <ListItemText primary="Lit Tweets!" classes={{primary:classes.listItemText}}/>
                 {subTwitterOpen ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
 
@@ -145,22 +145,22 @@ const UserHomeContainer = (props) => {
           <ListItem button className={classes.nested}>
             <ListItemIcon>
             </ListItemIcon>
-            <ListItemText primary="My Tweet Index" />
+            <ListItemText primary="My Tweet Index" classes={{primary:classes.listItemText}}/>
           </ListItem>
         </List>
       </Collapse>
 
         <ListItem button onClick={()=> changePage("vocab")}>
                 <ListItemIcon><LibraryBooksIcon/></ListItemIcon>
-                <ListItemText primary="Vocabulary" />
+                <ListItemText primary="Vocabulary" classes={{primary:classes.listItemText}}/>
         </ListItem>
         <ListItem button onClick={()=> changePage("rewards")}>
                 <ListItemIcon><StarIcon/></ListItemIcon>
-                <ListItemText primary="Rewards" />
+                <ListItemText primary="Rewards" classes={{primary:classes.listItemText}}/>
         </ListItem>
         <ListItem button onClick={()=> changePage("progress")}>
                 <ListItemIcon><AssessmentIcon/></ListItemIcon>
-                <ListItemText primary="Progress" />
+                <ListItemText primary="Progress" classes={{primary:classes.listItemText}}/>
         </ListItem>
 
 
@@ -183,24 +183,7 @@ const UserHomeContainer = (props) => {
       </div>
     );
 
-    // return(
-    //     <div>
-    //         <div>User Home Container</div><br/>
-    //         <RewardsBar /><br />
-    //         <ProfileCard /><br />
-    //         <ActivityContainer /><br/>
-    //         <CurrentBookCard /><br />
-    //         { current_book_status !== 500 ?
-    //         <div>
-    //             <NavLink to="/book_viewer">Read Your Book!</NavLink><br />
-    //             <br/>
-    //         </div>
-    //         : null}
-    //         <NavLink to="/book_search">Browse More Books</NavLink><br />
-    //         <br/>
-    //         <UserBookShelf /><br />
-    //     </div>
-    // )
+    
 }
 
 
@@ -275,6 +258,9 @@ const useStyles = makeStyles((theme) => ({
   nested: {
     paddingLeft: theme.spacing(4),
   },
+  listItemText:{
+    fontFamily:" 'Source Serif Pro', serif;",//Insert your required size
+  }
 }));
 
 export default connect(null, mapDispatchToProps)(UserHomeContainer)
