@@ -33,6 +33,10 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
+import ExpandLess from '@material-ui/icons/ExpandLess';
+import ExpandMore from '@material-ui/icons/ExpandMore';
+import StarBorder from '@material-ui/icons/StarBorder';
+import Collapse from '@material-ui/core/Collapse';
 
 import StarIcon from '@material-ui/icons/Star';
 import AssessmentIcon from '@material-ui/icons/Assessment';
@@ -57,6 +61,7 @@ const UserHomeContainer = (props) => {
     const classes = useStyles();
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
+    const [subTwitterOpen, setSubTwitterOpen] = React.useState(false);
   
     const handleDrawerOpen = () => {
       setOpen(true);
@@ -64,6 +69,10 @@ const UserHomeContainer = (props) => {
   
     const handleDrawerClose = () => {
       setOpen(false);
+    };
+
+    const handleClick = () => {
+      setSubTwitterOpen(!subTwitterOpen);
     };
   
     return (
@@ -124,10 +133,23 @@ const UserHomeContainer = (props) => {
                 <ListItemIcon><LocalLibraryIcon/></ListItemIcon>
                 <ListItemText primary="My Shelf" />
         </ListItem>
-        <ListItem button onClick={()=> changePage("twitter")}>
-                <ListItemIcon><TwitterIcon/></ListItemIcon>
+        <ListItem button button onClick={handleClick} >
+                <ListItemIcon onClick={()=> changePage("twitter")}><TwitterIcon/></ListItemIcon>
                 <ListItemText primary="Lit Tweets!" />
+                {subTwitterOpen ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
+
+        <Collapse in={subTwitterOpen} timeout="auto" unmountOnExit>
+        <List component="div" disablePadding>
+        
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+            </ListItemIcon>
+            <ListItemText primary="My Tweet Index" />
+          </ListItem>
+        </List>
+      </Collapse>
+
         <ListItem button onClick={()=> changePage("vocab")}>
                 <ListItemIcon><LibraryBooksIcon/></ListItemIcon>
                 <ListItemText primary="Vocabulary" />
@@ -249,6 +271,9 @@ const useStyles = makeStyles((theme) => ({
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
+  },
+  nested: {
+    paddingLeft: theme.spacing(4),
   },
 }));
 

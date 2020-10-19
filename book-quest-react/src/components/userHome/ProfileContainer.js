@@ -18,30 +18,54 @@ const useStyles = makeStyles((theme) => ({
 const ProfileContainer = (props) => {
 
     const current_book_status = useSelector(state => state.currentBookReducer.currentBook.status)
-
+    const currentBook = useSelector(state => state.currentBookReducer.currentBook)
+    const emptyBook = () => {
+        return Object.keys(currentBook).length === 0 && currentBook.constructor === Object
+    }
     const classes = useStyles();
 
+
+    if (current_book_status === 500 || !emptyBook){
     return(
         <div>
-    <Container style={{marginLeft: "10px"}}>
+        <Container style={{marginLeft: "10px"}}>
         <Row>
         <Col xs={2}>
             <ProfileCard /> 
             <CurrentBookCard /><br />
-                     { current_book_status !== 500 ?
+            </Col>
                      <div>
-                         <NavLink to="/book_viewer">Read Your Book!</NavLink><br />
+                         {/* <NavLink to="/book_viewer">Read Your Book!</NavLink><br /> */}
                          <br/>
+                        
+                        <Col xs={6}>
+                        {/* <BookViewer />  */}
+                        </Col>
                      </div>
-                     : null}
-            </Col>
-            <Col xs={6}>
-            <BookViewer />
-            </Col>
             </Row>
             </Container>
         </div>
     )
+    }
+    else {
+        return(
+    <div>
+        <Container style={{marginLeft: "10px"}}>
+            <Row>
+                <Col xs={2}>
+                    <ProfileCard /> 
+                    <CurrentBookCard /><br />
+                </Col>
+                         <NavLink to="/book_viewer">Read Your Book!</NavLink><br />
+                    <br/>
+                <Col xs={6}>
+                    <BookViewer /> 
+                </Col>
+                </Row>
+            </Container>
+        </div>
+        )
+    }
 }
 
 export default ProfileContainer
