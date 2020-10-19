@@ -86,7 +86,7 @@ const TierOneContainer = (props) => {
                 </CardContent>
             </CardActionArea>
         <CardActions>
-        {rewardsHash["body"] ? 
+        {rewardsHash["face"] ? 
                 <Typography variant="body2" color="textSecondary" component="p">
                     Redeemed!
                 </Typography> 
