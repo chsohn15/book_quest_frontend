@@ -13,7 +13,7 @@ import ProgressChartContainer from './components/progressCharts/ProgressChartsCo
 import VocabContainer from './components/userHome/vocab/VocabContainer.js'
 import BasicVocab from './components/userHome/vocab/BasicVocabContainer.js'
 import AddCharacterForm from './components/userHome/readingTweets/AddCharacterForm.js'
-import RewardsPage from './components/rewardsPage/rewardsPage.js';
+import RewardsPage from './components/rewardsPage/RewardsPage.js';
 import SnowManContainer from './components/rewardsPage/SnowManContainer.js';
 import { connect } from 'react-redux'
 

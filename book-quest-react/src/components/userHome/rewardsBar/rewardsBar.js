@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
+import RewardsPage from '../../rewardsPage/RewardsPage.js'
 
 const RewardsBar = (props) => {
 
@@ -13,12 +14,7 @@ const RewardsBar = (props) => {
             <div>Stars: {total_points}</div>
             <div>Tweet Streak: {streak}</div>
             <div>Badges: </div>
-            <NavLink to="progress_chart">
-                See My Progress
-            </NavLink><br />
-            <NavLink to="rewards_page">
-                Redeem My Rewards!
-            </NavLink>
+            <RewardsPage />
         </div>
     )
 }
