@@ -7,9 +7,6 @@ import SnowFall from './SnowFall.js'
 import { useSelector } from "react-redux";
 
 
-
-    
-
 const SnowManContainer = (props) => {
 
     const rewards = useSelector(state => state.userReducer.currentUser.rewards_hash)

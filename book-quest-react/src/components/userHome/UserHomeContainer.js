@@ -2,7 +2,7 @@ import React from 'react';
 import ProfileCard from './ProfileCard.js'
 import CurrentBookCard from './CurrentBookCard.js'
 import UserBookShelf from './books/UserBookShelf.js'
-import RewardsBar from './rewardsBar/rewardsBar.js'
+import RewardsBar from '../rewardsPage/RewardsBar.js'
 import BookSearchContainer from '../bookSearch/BookSearchContainer.js'
 import ReadingTweetsContainer from './readingTweets/ReadingTweetContainer.js'
 import BasicVocabContainer from './vocab/BasicVocabContainer.js'

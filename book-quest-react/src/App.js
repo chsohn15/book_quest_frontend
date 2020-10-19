@@ -13,7 +13,6 @@ import ProgressChartContainer from './components/progressCharts/ProgressChartsCo
 import VocabContainer from './components/userHome/vocab/VocabContainer.js'
 import BasicVocab from './components/userHome/vocab/BasicVocabContainer.js'
 import AddCharacterForm from './components/userHome/readingTweets/AddCharacterForm.js'
-import RewardsPage from './components/rewardsPage/RewardsPage.js';
 import SnowManContainer from './components/rewardsPage/SnowManContainer.js';
 import { connect } from 'react-redux'
 
@@ -45,8 +44,7 @@ function App(props) {
 
         <Route exact path = "/progress_chart" component={ProgressChartContainer}>
         </Route>
-        <Route exact path = "/rewards_page" component={RewardsPage}>
-        </Route>
+
         <Route exact path = "/snow_man" component={SnowManContainer}>
         </Route>
         <Route exact path = "/reading_tweet" component={ReadingTweetContainer}>
