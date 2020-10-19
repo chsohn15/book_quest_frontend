@@ -9,6 +9,7 @@ const RewardsBar = (props) => {
     return(
         <div>
             <div>Rewards Bar</div>
+        
             <div>Stars: {total_points}</div>
             <div>Tweet Streak: {streak}</div>
             <div>Badges: </div>
