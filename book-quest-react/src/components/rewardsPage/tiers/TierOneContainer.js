@@ -17,7 +17,9 @@ const TierOneContainer = (props) => {
     const classes = useStyles();
 
     const student_id = useSelector(state => state.userReducer.currentUser.id)
-    
+    const rewardsHash = useSelector(state => state.userReducer.currentUser.rewards_hash)
+    //rewardsHash["body"]
+
     // const errors = useSelector(state => state.errorsReducer.errors)
 
     const level = 1
@@ -54,9 +56,15 @@ const TierOneContainer = (props) => {
                 </CardContent>
             </CardActionArea>
         <CardActions>
-            <Button size="small" color="primary" onClick={() =>props.creatingReward(body_price, level, student_id, body_description)}>
-            Redeem Reward
-            </Button>
+            {rewardsHash["body"] ? 
+                <Typography variant="body2" color="textSecondary" component="p">
+                    Redeemed!
+                </Typography> 
+                : 
+                <Button size="small" color="primary" onClick={() =>props.creatingReward(body_price, level, student_id, body_description)}>
+                Redeem Reward
+                </Button>
+            }
         </CardActions>
     </Card>
     <Card className={classes.root}>
