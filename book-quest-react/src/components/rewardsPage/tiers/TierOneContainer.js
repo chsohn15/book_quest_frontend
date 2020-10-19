@@ -3,13 +3,25 @@ import { connect } from 'react-redux'
 import { creatingReward } from '../../../redux/actions.js' 
 import { useSelector } from "react-redux";
 
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+
 const TierOneContainer = (props) => {
 
+    const classes = useStyles();
+
     const student_id = useSelector(state => state.userReducer.currentUser.id)
+    
     // const errors = useSelector(state => state.errorsReducer.errors)
 
     const level = 1
-    const body_price = 25
+    const body_price = 20
     const body_description = "body"
 
     const face_price = 20
@@ -19,12 +31,60 @@ const TierOneContainer = (props) => {
     // CALCULATE MONEY SPENT AND BALANCE
 
     return(
-        <React.Fragment>
-            {/* {errors.rewardsError ? <div>{errors.rewardsError}</div>: null} */}
-            <div>Tier One Container</div>
-            <button onClick={() => props.creatingReward(body_price, level, student_id, body_description)}>Build the Body of Your Snowman</button>
-            <button onClick={() => props.creatingReward(face_price, level, student_id, face_description)}>Add a Face to Your Snowman</button>
-        </React.Fragment>
+    <React.Fragment>
+        {/* {errors.rewardsError ? <div>{errors.rewardsError}</div>: null} */}
+        <div>Tier One Container</div>
+        <Card className={classes.root}>
+            <CardActionArea>
+                <CardMedia
+                    className={classes.media}
+                    image="https://thumbs.dreamstime.com/b/child-making-snowball-isolated-vector-illustration-graphic-cute-child-making-snowball-isolated-vector-illustration-graphic-130272751.jpg"
+                    title="Building Snowman"
+                    />
+                <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
+                        Snow Body
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                        Start building your snowman by adding a base!
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                        Price: 20 Stars
+                    </Typography>
+                </CardContent>
+            </CardActionArea>
+        <CardActions>
+            <Button size="small" color="primary" onClick={() =>props.creatingReward(body_price, level, student_id, body_description)}>
+            Redeem Reward
+            </Button>
+        </CardActions>
+    </Card>
+    <Card className={classes.root}>
+            <CardActionArea>
+                <CardMedia
+                    className={classes.media}
+                    image="https://st4.depositphotos.com/5112083/21955/v/1600/depositphotos_219557216-stock-illustration-happy-family-winter-outwear-build.jpg"
+                    title="Building Snowman"
+                    />
+                <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
+                        Snow Face
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                        Add a Face to Your Snowman!
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                        Price: 20 Stars
+                    </Typography>
+                </CardContent>
+            </CardActionArea>
+        <CardActions>
+            <Button size="small" color="primary" onClick={() =>props.creatingReward(face_price, level, student_id, face_description)}>
+            Redeem Reward
+            </Button>
+        </CardActions>
+    </Card>
+    </React.Fragment>
     )
 }
 
@@ -32,5 +92,14 @@ const mapDispatchToProps = (dispatch) => ({
     creatingReward: (price, level, student_id, description) => { dispatch( creatingReward(price, level, student_id, description) )}
     
 })
+
+const useStyles = makeStyles({
+    root: {
+      maxWidth: 345,
+    },
+    media: {
+      height: 140,
+    },
+  });
 
 export default connect(null, mapDispatchToProps)(TierOneContainer)

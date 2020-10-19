@@ -58,7 +58,6 @@ const RewardsPage = (props) => {
           </div>
         ) : (
           <div>
-            <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
             <div>
               <Button disabled={activeStep === 0} onClick={handleBack} className={classes.button}>
                 Back
@@ -72,6 +71,7 @@ const RewardsPage = (props) => {
                 {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
               </Button>
             </div>
+            <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
           </div>
         )}
       </div>

@@ -11,12 +11,11 @@ const SnowManContainer = (props) => {
 
     const rewards = useSelector(state => state.userReducer.currentUser.rewards_hash)
 
-    //debugger
     return(
         <div id="snow-main-container">
             <div>Here is a Snowman</div>
             <div class="backg">
-        <div class="snowman">
+            <div class="snowman">
             {rewards["face"] ? <SnowFace /> : null}
             {rewards["body"] ? <SnowBody /> : null}
             {rewards["scarf"] ? <SnowScarf /> : null}
