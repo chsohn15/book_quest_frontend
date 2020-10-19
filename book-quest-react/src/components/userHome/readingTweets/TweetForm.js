@@ -33,7 +33,7 @@ const TweetForm = (props) => {
     <div>
         TweetForm
         <form onSubmit={(e) => handleSubmit(e)}>
-            <label>Write {name}'s Next Lit Tweet Here!</label><br />
+            <label>Write {name}'s Next Lit Tweet and Earn Five Points!</label><br />
             <textarea onChange={(e)=> changeTweet(e.target.value)}></textarea><br />
             {charactersLeft()}
             <input type="submit"/>

@@ -26,7 +26,7 @@ function addingCharacterToBook(e, book_id){
     let name = e.target[0].value
     let image_url = e.target[1].value
     e.persist()
-    
+
     return (dispatch) => {
         fetch(ADD_CHAR_URL, {method: "POST", 
         headers: {
@@ -282,6 +282,7 @@ function addedReadingTweet(student_book){
 function addingReadingTweet(e, submission, point_value, student_book_id, character_id){
     
     e.preventDefault()
+    e.persist()
     return (dispatch) => {
         fetch(READING_TWEET_URL, {method: "POST", 
         headers: {
@@ -296,7 +297,9 @@ function addingReadingTweet(e, submission, point_value, student_book_id, charact
         })
         })
         .then(res => res.json())
-        .then(tweet => dispatch(addedReadingTweet(tweet)))
+        .then(tweet => {
+            e.target.reset()
+            dispatch(addedReadingTweet(tweet))})
 }}
 
 function setCharacter(student_book){

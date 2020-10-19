@@ -26,7 +26,7 @@ const ReadingTweetContainer = (props) => {
     if (props.characters.length > 0){
         return(
             <div>
-                <div>Lit Tweets!</div>
+                <h2>Lit Tweets!</h2>
                     
                 <NavLink to="/all_tweets">See My Tweets of All Time!</NavLink><br />
             <br/>
@@ -40,7 +40,7 @@ const ReadingTweetContainer = (props) => {
                     <div>
                     <CharacterSelectForm /><br/>
                     </div>}
-                    
+
                     {tweets.length > 0 ? 
                         <TweetsContainer />
                     :
