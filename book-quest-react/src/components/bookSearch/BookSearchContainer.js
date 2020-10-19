@@ -2,6 +2,7 @@ import React from 'react'
 import SearchBar from './SearchBar'
 import BookCard from './BookCard'
 import { useState } from 'react'
+import Jumbotron from 'react-bootstrap/Jumbotron';
 
 const googleRootURL ="https://www.googleapis.com/books/v1/volumes?q=" // + bookTitle
 const googleAPIKey = `&apiKey=${process.env.GOOGLE_BOOKS_API_KEY}`
@@ -47,8 +48,11 @@ const BookSearchContainer = (props) => {
 
     return(
         <div>
-            <h3>Search for Books to Add to Your Bookshelf!</h3>
-            <SearchBar handleSearch={handleSearch}/>
+            <Jumbotron style={{backgroundImage: 'url("https://bloomerang.co/wp-content/uploads/2020/06/floating-book-header.png")', 
+                            backgroundSize: 'cover', height: '50vh'}}>
+                <h3 style={{color: 'white'}}>Search for Books to Add to Your Bookshelf!</h3>
+                <SearchBar handleSearch={handleSearch}/>
+            </Jumbotron>
             {filterBookData(books)}
         </div>
     )

@@ -116,13 +116,13 @@ const UserHomeContainer = (props) => {
                 <ListItemIcon><PersonPinIcon/></ListItemIcon>
                 <ListItemText primary="Profile" />
         </ListItem>
-        <ListItem button onClick={()=> changePage("bookshelf")}>
-                <ListItemIcon><LocalLibraryIcon/></ListItemIcon>
-                <ListItemText primary="My Shelf" />
-        </ListItem>
         <ListItem button onClick={()=> changePage("browse")}>
                 <ListItemIcon><SearchIcon/></ListItemIcon>
                 <ListItemText primary="Browse Library" />
+        </ListItem>
+        <ListItem button onClick={()=> changePage("bookshelf")}>
+                <ListItemIcon><LocalLibraryIcon/></ListItemIcon>
+                <ListItemText primary="My Shelf" />
         </ListItem>
         <ListItem button onClick={()=> changePage("twitter")}>
                 <ListItemIcon><TwitterIcon/></ListItemIcon>

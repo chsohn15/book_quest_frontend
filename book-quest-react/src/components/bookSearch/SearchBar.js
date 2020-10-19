@@ -8,7 +8,7 @@ const SearchBar = (props) => {
     return(
         <div>
             <form onSubmit={(e) => props.handleSearch(e, bookTitle)}>
-                <label>Book Title: </label>
+                <label style={{color: 'white'}}>Book Title: </label>
                 <input type="text" onChange={(e) => changeBookTitle(e.target.value)}/><br />
                 <input type="submit"/>
             </form>
