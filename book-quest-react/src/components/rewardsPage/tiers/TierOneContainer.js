@@ -35,7 +35,6 @@ const TierOneContainer = (props) => {
     return(
     <React.Fragment>
         {/* {errors.rewardsError ? <div>{errors.rewardsError}</div>: null} */}
-        <div>Tier One Container</div>
         <Card className={classes.root}>
             <CardActionArea>
                 <CardMedia
@@ -72,7 +71,7 @@ const TierOneContainer = (props) => {
                 <CardMedia
                     className={classes.media}
                     image="https://st4.depositphotos.com/5112083/21955/v/1600/depositphotos_219557216-stock-illustration-happy-family-winter-outwear-build.jpg"
-                    title="Building Snowman"
+                    title="Building Snowman Face"
                     />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
@@ -87,9 +86,16 @@ const TierOneContainer = (props) => {
                 </CardContent>
             </CardActionArea>
         <CardActions>
-            <Button size="small" color="primary" onClick={() =>props.creatingReward(face_price, level, student_id, face_description)}>
-            Redeem Reward
-            </Button>
+        {rewardsHash["body"] ? 
+                <Typography variant="body2" color="textSecondary" component="p">
+                    Redeemed!
+                </Typography> 
+                : 
+                <Button size="small" color="primary" onClick={() =>props.creatingReward(face_price, level, student_id, face_description)}>
+                    Redeem Reward
+                </Button>
+            }
+            
         </CardActions>
     </Card>
     </React.Fragment>

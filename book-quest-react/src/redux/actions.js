@@ -25,7 +25,8 @@ function addingCharacterToBook(e, book_id){
     e.preventDefault()
     let name = e.target[0].value
     let image_url = e.target[1].value
-
+    e.persist()
+    
     return (dispatch) => {
         fetch(ADD_CHAR_URL, {method: "POST", 
         headers: {
@@ -39,7 +40,9 @@ function addingCharacterToBook(e, book_id){
         })
         })
         .then(res => res.json())
-        .then(character => dispatch(addedCharacterToBook(character)))
+        .then(character => {
+            e.target.reset()
+            dispatch(addedCharacterToBook(character))})
 }}
 
 function deletedVocab(vocab_id){

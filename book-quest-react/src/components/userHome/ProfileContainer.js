@@ -25,7 +25,8 @@ const ProfileContainer = (props) => {
     const classes = useStyles();
 
 
-    if (current_book_status === 500 || !emptyBook){
+    if (current_book_status === 500 || emptyBook()){
+
     return(
         <div>
         <Container style={{marginLeft: "10px"}}>
@@ -48,6 +49,7 @@ const ProfileContainer = (props) => {
     )
     }
     else {
+        
         return(
     <div>
         <Container style={{marginLeft: "10px"}}>

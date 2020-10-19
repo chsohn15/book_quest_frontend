@@ -40,6 +40,7 @@ const ReadingTweetContainer = (props) => {
                     <div>
                     <CharacterSelectForm /><br/>
                     </div>}
+                    
                     {tweets.length > 0 ? 
                         <TweetsContainer />
                     :

@@ -10,7 +10,9 @@ const CharacterSelectContainer = (props) => {
 
     return(
     <div>
-        <button onClick={() => changeShowForm(!showForm)}>Add Another Character to This Book</button>
+        {showForm ? <button onClick={() => changeShowForm(!showForm)}>Hide Form</button>
+        :  <button onClick={() => changeShowForm(!showForm)}>Add Another Character to This Book</button>}
+        
         {showForm ? <AddCharacterForm />: null}
         <div>Select a Character From Your Book:</div>
         {props.characters.map(character => (<CharacterCard student_book_id={props.student_book_id} character={character} key={character.id}/>))}
