@@ -8,9 +8,15 @@ import { connect } from 'react-redux'
 import { NavLink } from "react-router-dom";
 import AddCharacterForm from './AddCharacterForm'
 
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import Avatar from '@material-ui/core/Avatar';
+
 
 
 const ReadingTweetContainer = (props) => {
+
+    const classes = useStyles();
 
     const tweets = useSelector(state => state.currentBookReducer.currentBook.reading_tweets)
     const twitter_character = useSelector(state => state.currentBookReducer.currentBook.twitter_character)
@@ -25,27 +31,30 @@ const ReadingTweetContainer = (props) => {
 
     if (props.characters.length > 0){
         return(
-            <div>
+            <div className={classes.root}>
                 <h2>Lit Tweets!</h2>
                     
                 <NavLink to="/all_tweets">See My Tweets of All Time!</NavLink><br />
             <br/>
-                    <div>
+                    <Grid container spacing={3}>
                     {twitter_character ? 
-                    <div>
+                    <Grid item xs={3}>
                         <CharacterProfileCard/>
                         <TweetForm />
-                    </div>
+                    </Grid>
                     : 
-                    <div>
+                    <Grid item xs={3}>
                     <CharacterSelectForm /><br/>
-                    </div>}
+                    </Grid>}
 
                     {tweets.length > 0 ? 
+                    <Grid item xs={6}>
                         <TweetsContainer />
+                    </Grid>
+                        
                     :
                         null}
-                    </div>
+                    </Grid>
             </div>
         )
     }
@@ -76,5 +85,16 @@ const mapStateToProps = (state) => {
     return {characters: state.currentBookReducer.currentBook.book.characters}
     }
 }
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+      flexGrow: 1,
+    },
+    paper: {
+      padding: theme.spacing(2),
+      textAlign: 'center',
+      color: theme.palette.text.secondary,
+    },
+  }));
 
 export default connect(mapStateToProps)(ReadingTweetContainer)
