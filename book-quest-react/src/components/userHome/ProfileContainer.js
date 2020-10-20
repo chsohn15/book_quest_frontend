@@ -24,11 +24,6 @@ const ProfileContainer = (props) => {
     }
     const classes = useStyles();
 
-    const refreshPage = () => {
-        window.location.reload();
-        return false;
-    }
-
     if (current_book_status === 500 || emptyBook()){
 
     return(
@@ -61,9 +56,7 @@ const ProfileContainer = (props) => {
                 <Col xs={2}>
                     <ProfileCard /> 
                     <CurrentBookCard /><br />
-                    <button onClick={()=> refreshPage()}>Refresh the Page to Read Your Book!</button>
                 </Col>
-                    {/* <NavLink to="/book_viewer">Read Your Book!</NavLink><br /> */}
                     <br/>
                 <Col xs={6}>
                     <BookViewer /> 

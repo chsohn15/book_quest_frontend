@@ -17,6 +17,9 @@ import VideoLabelIcon from '@material-ui/icons/VideoLabel';
 import StepConnector from '@material-ui/core/StepConnector';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import AcUnitIcon from '@material-ui/icons/AcUnit';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSnowman } from "@fortawesome/free-solid-svg-icons";
 
 const RewardsPage = (props) => {
 
@@ -204,8 +207,8 @@ const QontoConnector = withStyles({
     const { active, completed } = props;
   
     const icons = {
-      1: <SettingsIcon />,
-      2: <GroupAddIcon />,
+      1: <AcUnitIcon />,
+      2: <FontAwesomeIcon icon={faSnowman} size="2x"/>,
       3: <VideoLabelIcon />,
     };
   

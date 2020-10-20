@@ -35,7 +35,7 @@ const TierTwoContainer = (props) => {
 
     return(
         <React.Fragment>
-            <div>Tier Two Container</div>
+
             <Card className={classes.root}>
             <CardActionArea>
                 <CardMedia
