@@ -4,9 +4,13 @@ import { connect } from 'react-redux'
 
 const AddPhotoForm = (props) => {
     
+    const handleSubmit = (e) => {
+        props.addingProfilePhoto(e)
+        props.changeEditBtnClicked(!props.editBtnClicked)
+    }
     return(<div>
         Photo Form
-        <form onSubmit={(e) => props.addingProfilePhoto(e)}>
+        <form onSubmit={(e) => handleSubmit(e)}>
             <label>Image URL</label>
             <input type="text"></input>
             <input type="submit"></input>

@@ -11,16 +11,25 @@ const ProfileCard = (props) => {
     const classes = useStyles();
 
     const [btnClicked, changeBtnClicked] = React.useState(false);
+    const [editBtnClicked, changeEditBtnClicked] = React.useState(false);
 
     return(
         <div>
             { image_url === null ? 
             <div >
-            <Avatar alt="profile" src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png" className={classes.large} />
-            <button onClick={() => changeBtnClicked(!btnClicked)}>Add a Profile Picture</button>
+                <Avatar alt="profile" src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png" className={classes.large} />
+                <button onClick={() => changeBtnClicked(!btnClicked)}>Add a Profile Picture</button>
             </div>
-            : <Avatar alt="profile" src={image_url} style={{width: '130px'}} className={classes.large} />}
+            : 
+            <div>
+                <Avatar alt="profile" src={image_url} style={{width: '130px'}} className={classes.large} />
+                <button onClick={() => changeEditBtnClicked(!editBtnClicked)}>Edit Photo</button>
+            </div>}
+
             {btnClicked ? <AddPhotoForm/>  : null}
+
+            {editBtnClicked ? <AddPhotoForm editBtnClicked={editBtnClicked} changeEditBtnClicked={changeEditBtnClicked} />  : null}
+
             <div>Name: {first_name} {last_name}</div>
             <div>Username: {username}</div>
         </div>

@@ -20,7 +20,8 @@ const CREATE_REWARD_URL = "http://localhost:3000/api/v1/rewards/"
 const DELETE_VOCAB_URL = "http://localhost:3000/api/v1/vocab_activities/"
 
 function addedProfilePhoto(image_url){
-    return {type: 'ADD_PROFILE', payload: image_url}
+    debugger
+    return {type: 'ADD_PROFILE_PHOTO', payload: image_url}
 }
 
 function addingProfilePhoto(e){
