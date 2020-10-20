@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 const BasicVocabContainer = (props) => {
 
     const current_book_status = useSelector(state => state.currentBookReducer.currentBook.status)
+    const vocabData = useSelector(state => state.vocabDataReducer.vocabData)
 
     if (current_book_status === 500){
         return(
@@ -16,7 +17,8 @@ const BasicVocabContainer = (props) => {
     <div>
         <div>Basic Vocab Container</div>
         <BasicVocabForm />
-        <VocabList />
+        {vocabData.length > 0 ? <VocabList /> : null}
+        
     </div>
     )
 }

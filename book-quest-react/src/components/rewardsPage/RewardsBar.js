@@ -14,7 +14,7 @@ const RewardsBar = (props) => {
             <h4>Stars: {balance}</h4>
             <h4>Tweet Streak: {streak} <WhatshotIcon /></h4>
             <h4>Vocabulary Streak: {vocab_streak} <WhatshotIcon /></h4>
-            <NavLink to="/snow_man">Click Here to See Your Snowman!</NavLink>
+            <h4><NavLink to="/snow_man">Click Here to See Your Snow Scene!</NavLink></h4>
             <RewardsPage />
         </div>
     )

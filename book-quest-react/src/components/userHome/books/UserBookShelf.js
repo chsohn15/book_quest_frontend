@@ -13,7 +13,8 @@ const UserBookShelf = (props) => {
 
     return(
         <div>
-            {props.books.map(book => <ShelfBook book={book} key={book.id}/>)}
+            {props.books ? props.books.map(book => <ShelfBook book={book} key={book.id}/>) : null}
+            {/* {props.books.map(book => <ShelfBook book={book} key={book.id}/>)} */}
         </div>
     )
 }
