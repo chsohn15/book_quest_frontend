@@ -29,9 +29,69 @@ const TierThreeContainer = (props) => {
     
     return(
         <React.Fragment>
-            <div>Tier Three Container</div>
-            <button onClick={() => props.creatingReward(scarf_price, level, student_id, scarf_description)}>Add a Scarf</button>
-            <button onClick={() => props.creatingReward(hat_price, level, student_id, hat_description)}>Add a Hat</button>
+
+            <Card className={classes.root}>
+            <CardActionArea>
+                <CardMedia
+                    className={classes.media}
+                    image="https://previews.123rf.com/images/rrraven/rrraven1711/rrraven171100043/90455923-children-build-snowman-.jpg"
+                    title="Building Snowman Scarf"
+                    />
+                <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
+                        Scarf
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                        Add scarf to your snowman!
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                        Price: 20 Stars
+                    </Typography>
+                </CardContent>
+            </CardActionArea>
+        <CardActions>
+            {rewardsHash["scarf"] ? 
+                <Typography variant="body2" color="textSecondary" component="p">
+                    Redeemed!
+                </Typography> 
+                : 
+                <Button size="small" color="primary" onClick={() =>props.creatingReward(scarf_price, level, student_id, scarf_description)}>
+                Redeem Reward
+                </Button>
+            }
+        </CardActions>
+    </Card>
+    <Card className={classes.root}>
+            <CardActionArea>
+                <CardMedia
+                    className={classes.media}
+                    image="https://previews.123rf.com/images/tomaccojc/tomaccojc1411/tomaccojc141100438/33743983-three-kids-building-snowman-with-pine-tree-snowy-landscape-snowflake-top-hat-carrot-scarf-children-w.jpg"
+                    title="Building Snowman Hat"
+                    />
+                <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
+                        Hat
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                        Add hat to your snowman!
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                        Price: 20 Stars
+                    </Typography>
+                </CardContent>
+            </CardActionArea>
+        <CardActions>
+            {rewardsHash["hat"] ? 
+                <Typography variant="body2" color="textSecondary" component="p">
+                    Redeemed!
+                </Typography> 
+                : 
+                <Button size="small" color="primary" onClick={() =>props.creatingReward(hat_price, level, student_id, hat_description)}>
+                Redeem Reward
+                </Button>
+            }
+        </CardActions>
+    </Card>
             </React.Fragment>
     )
 }
@@ -46,7 +106,7 @@ const useStyles = makeStyles({
       maxWidth: 345,
     },
     media: {
-      height: 140,
+      height: 300,
     },
   });
 
