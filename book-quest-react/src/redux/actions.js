@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2'
+
 const BOOKS_URL = "http://localhost:3000/api/v1/books"
 const USER_URL = "http://localhost:3000/api/v1/users/"
 const CURRENT_BOOK_URL ="http://localhost:3000/api/v1/current_book"
@@ -66,6 +68,10 @@ function createdReward(reward){
 }
 
 function addRewardErrorMessage(error){
+    Swal.fire({
+        imageUrl:"https://www.valindakimmel.com/wp-content/uploads/2016/03/not-yet-1426593_1280-1.jpg",
+        text: error
+      })
     return {type: "ADD_REWARD_ERROR_MSG", payload: error}
 }
 

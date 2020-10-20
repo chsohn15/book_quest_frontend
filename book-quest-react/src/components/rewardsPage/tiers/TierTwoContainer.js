@@ -40,7 +40,7 @@ const TierTwoContainer = (props) => {
             <CardActionArea>
                 <CardMedia
                     className={classes.media}
-                    image="https://www.thewonderofchristmas.com/wp-content/uploads/2009/08/children-building-snowman.jpg"
+                    image="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSblHD2y_qkduDEOFEmSUb7SnAODb-Q-_A4vA&usqp=CAU"
                     title="Building Snowman Buttons"
                     />
                 <CardContent>
@@ -72,7 +72,7 @@ const TierTwoContainer = (props) => {
             <CardActionArea>
                 <CardMedia
                     className={classes.media}
-                    image="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSblHD2y_qkduDEOFEmSUb7SnAODb-Q-_A4vA&usqp=CAU"
+                    image="https://st4.depositphotos.com/2419757/24014/v/950/depositphotos_240140694-stock-illustration-christmas-holidays-children-building-snowman.jpg"
                     title="Building Snowman Eyes"
                     />
                 <CardContent>
