@@ -1,12 +1,12 @@
 import React from 'react';
-import ProfileCard from './ProfileCard.js'
-import CurrentBookCard from './CurrentBookCard.js'
+import ProfileCard from './profile/ProfileCard.js'
+import CurrentBookCard from './profile/CurrentBookCard.js'
 import UserBookShelf from './books/UserBookShelf.js'
 import RewardsBar from '../rewardsPage/RewardsBar.js'
 import BookSearchContainer from '../bookSearch/BookSearchContainer.js'
 import ReadingTweetsContainer from './readingTweets/ReadingTweetContainer.js'
 import BasicVocabContainer from './vocab/BasicVocabContainer.js'
-import ProfileContainer from './ProfileContainer.js'
+import ProfileContainer from './profile/ProfileContainer.js'
 import { NavLink } from "react-router-dom";
 import { useEffect } from 'react'
 import { loadingBooks } from '../../redux/actions.js'

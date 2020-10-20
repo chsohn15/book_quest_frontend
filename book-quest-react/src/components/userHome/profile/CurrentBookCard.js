@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { finishingCurrentBook } from '../../redux/actions.js'
+import { finishingCurrentBook } from '../../../redux/actions.js'
 
 const CurrentBookCard = (props) => {
 

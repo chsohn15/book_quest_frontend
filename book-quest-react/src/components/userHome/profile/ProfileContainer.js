@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileCard from './ProfileCard'
 import CurrentBookCard from './CurrentBookCard'
-import RewardsBar from '../rewardsPage/RewardsBar.js'
-import BookViewer from './books/BookViewer'
+import RewardsBar from '../../rewardsPage/RewardsBar.js'
+import BookViewer from '../books/BookViewer'
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import { Container, Row, Col } from 'react-bootstrap';
