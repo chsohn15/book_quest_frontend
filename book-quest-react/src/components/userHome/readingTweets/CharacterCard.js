@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { settingCharacter } from '../../../redux/actions.js'
 
+
 const CharacterCard = (props) => {
     const { id, name, image_url } = props.character
     const student_book_id = props.student_book_id
@@ -18,5 +19,7 @@ const CharacterCard = (props) => {
 const mapDispatchToProps = (dispatch) => ({
     settingCharacter: (character_id, student_book_id) => { dispatch( settingCharacter(character_id, student_book_id) )}
 })
+
+
 
 export default connect(null, mapDispatchToProps)(CharacterCard)
