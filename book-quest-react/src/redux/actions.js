@@ -19,8 +19,8 @@ const ADD_CHAR_URL = "http://localhost:3000/api/v1/characters"
 const CREATE_REWARD_URL = "http://localhost:3000/api/v1/rewards/"
 const DELETE_VOCAB_URL = "http://localhost:3000/api/v1/vocab_activities/"
 
-function addedProfilePhoto(){
-
+function addedProfilePhoto(image_url){
+    return {type: 'ADD_PROFILE', payload: image_url}
 }
 
 function addingProfilePhoto(e){
@@ -38,10 +38,10 @@ function addingProfilePhoto(e){
             image_url
         })})
         .then(res => res.json()) 
-        // .then(reward => {
-        //         dispatch(createdReward(reward))
+        .then(user => {
+                dispatch(addedProfilePhoto(user.image_url))
         
-}}
+})}}
 
 function addedCharacterToBook(character){
     return {type: 'ADD_CHARACTER', payload: character}

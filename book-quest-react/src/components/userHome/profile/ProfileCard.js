@@ -19,7 +19,7 @@ const ProfileCard = (props) => {
             <Avatar alt="profile" src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png" className={classes.large} />
             <button onClick={() => changeBtnClicked(!btnClicked)}>Add a Profile Picture</button>
             </div>
-            : null}
+            : <Avatar alt="profile" src={image_url} style={{width: '130px'}} className={classes.large} />}
             {btnClicked ? <AddPhotoForm/>  : null}
             <div>Name: {first_name} {last_name}</div>
             <div>Username: {username}</div>

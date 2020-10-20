@@ -56,7 +56,13 @@ switch(action.type){
                 ...state.currentUser, 
                 all_vocab: state.currentUser.all_vocab.filter(vocab => vocab.vocab.id !== action.payload)}
         }
-  
+    case 'ADD_PROFILE_PHOTO':
+        return {
+            ...state, 
+            currentUser: {
+                ...state.currentUser, 
+                image_url: action.payload}
+        }
     default: 
         return state;
     }
