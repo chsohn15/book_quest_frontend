@@ -9,7 +9,7 @@ const CurrentBookCard = (props) => {
     const student_book_id = props.book.id 
 
     return(
-        <div>
+        <div style={{paddingTop: '20px'}}>
             <div>Currently Reading</div>
             <img src={image_url}></img>
             <div>{title}</div>
