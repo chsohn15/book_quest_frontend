@@ -42,7 +42,7 @@ const TierThreeContainer = (props) => {
                         Scarf
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                        Add scarf to your snowman!
+                        Add a scarf to your snowman!
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
                         Price: 20 Stars
@@ -73,7 +73,7 @@ const TierThreeContainer = (props) => {
                         Hat
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                        Add hat to your snowman!
+                        Add a hat to your snowman!
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
                         Price: 20 Stars

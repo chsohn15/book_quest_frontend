@@ -45,6 +45,7 @@ import PersonPinIcon from '@material-ui/icons/PersonPin';
 import SearchIcon from '@material-ui/icons/Search';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 
 const UserHomeContainer = (props) => {
@@ -76,6 +77,12 @@ const UserHomeContainer = (props) => {
       setSubTwitterOpen(!subTwitterOpen);
     };
   
+    const logOut = () => {
+      localStorage.clear();
+      props.logOutUser()
+      props.history.push("/")
+    }
+
     return (
       <div className={classes.root}>
         <CssBaseline />
@@ -163,6 +170,10 @@ const UserHomeContainer = (props) => {
                 <ListItemIcon><AssessmentIcon/></ListItemIcon>
                 <ListItemText primary="Progress" classes={{primary:classes.listItemText}}/>
         </ListItem>
+        <ListItem button onClick={logOut}>
+                <ListItemIcon><ExitToAppIcon/></ListItemIcon>
+                <ListItemText primary="Log Out" classes={{primary:classes.listItemText}}/>
+        </ListItem>
 
 
            </List>
@@ -192,6 +203,7 @@ const mapDispatchToProps = (dispatch) => ({
     loadingBooks: () => { dispatch( loadingBooks() )},
     loadingCurrentBook: () => { dispatch( loadingCurrentBook() )},
     loadingUser: () => { dispatch( loadingUser() )},
+    logOutUser: () => { dispatch( {type: 'USER_LOGOUT'} )}
 }) 
 
 const drawerWidth = 240;

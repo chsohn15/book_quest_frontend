@@ -6,7 +6,6 @@ const ProfileCard = (props) => {
 
     return(
         <div>
-            User Profile Information
             <div>Name: {first_name} {last_name}</div>
             <div>Username: {username}</div>
         </div>

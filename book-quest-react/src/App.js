@@ -18,16 +18,10 @@ import { connect } from 'react-redux'
 
 function App(props) {
   
-  const logOut = () => {
-    localStorage.clear();
-    props.logOutUser()
-  }
-
-
   return (
     <div className="App">
       <Router>
-      <NavLink  style={{padding: "12px", "justifyContent": "right"}} onClick={logOut} to="/">Log Out</NavLink>
+      {/* <NavLink  style={{padding: "12px", "justifyContent": "right"}} onClick={logOut} to="/">Log Out</NavLink> */}
         {/* <Route exact path = "/signup" component={SignUp2}>
         </Route> */}
 
