@@ -2,20 +2,25 @@ import React from 'react';
 import { connect } from 'react-redux'
 import Avatar from '@material-ui/core/Avatar';
 import { makeStyles } from '@material-ui/core/styles';
+import { useState } from 'react'
+import AddPhotoForm from './AddPhotoForm.js'
 
 const ProfileCard = (props) => {
     const {id, first_name, last_name, username, is_student, image_url} = props
 
     const classes = useStyles();
 
+    const [btnClicked, changeBtnClicked] = React.useState(false);
+
     return(
         <div>
             { image_url === null ? 
             <div >
             <Avatar alt="profile" src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png" className={classes.large} />
-            <button>Add a Profile Picture</button>
+            <button onClick={() => changeBtnClicked(!btnClicked)}>Add a Profile Picture</button>
             </div>
             : null}
+            {btnClicked ? <AddPhotoForm/>  : null}
             <div>Name: {first_name} {last_name}</div>
             <div>Username: {username}</div>
         </div>
