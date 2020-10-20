@@ -24,7 +24,7 @@ import { faSnowman } from "@fortawesome/free-solid-svg-icons";
 const RewardsPage = (props) => {
 
   const classes = useStyles();
-  const [activeStep, setActiveStep] = React.useState(1);
+  const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
 
   const handleNext = () => {
