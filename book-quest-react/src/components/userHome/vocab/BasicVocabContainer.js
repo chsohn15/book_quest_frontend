@@ -4,9 +4,9 @@ import VocabList from './VocabList.js'
 import { useSelector } from "react-redux";
 
 const BasicVocabContainer = (props) => {
-
     const current_book_status = useSelector(state => state.currentBookReducer.currentBook.status)
-    const vocabData = useSelector(state => state.vocabDataReducer.vocabData)
+    const vocabArray = useSelector(state => state.userReducer.currentUser.all_vocab)
+
 
     if (current_book_status === 500){
         return(
@@ -17,7 +17,7 @@ const BasicVocabContainer = (props) => {
     <div>
         <div>Basic Vocab Container</div>
         <BasicVocabForm />
-        {vocabData.length > 0 ? <VocabList /> : null}
+        {vocabArray.length > 0 ? <VocabList /> : null}
         
     </div>
     )
