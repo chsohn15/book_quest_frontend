@@ -214,6 +214,7 @@ function loadedUser(user){
 }
 
 function loadingUser(){
+    
     return (dispatch) => {
         fetch(USER_URL + localStorage.user_id, {method: "GET", 
         headers: {
