@@ -20,13 +20,27 @@ const CREATE_REWARD_URL = "http://localhost:3000/api/v1/rewards/"
 const DELETE_VOCAB_URL = "http://localhost:3000/api/v1/vocab_activities/"
 const UPDATE_PAGE_URL = "http://localhost:3000/api/v1/update_page/"
 
-function updatedPage(){
-
+function updatedPage(page){
+    return {type: 'UPDATE_CURRENT_PAGE', payload: page}
 }
 
-function updatingPage(){
+function updatingPage(student_book_id, new_page){
+    return (dispatch) => {
+        fetch(UPDATE_PAGE_URL, {method: "POST", 
+        headers: {
+            "Content-Type":"application/json",
+            Authorization: `Bearer ${localStorage.token}`
+        },
+        body: JSON.stringify({
+            id: student_book_id,
+            current_page: new_page
+        })})
+        .then(res => res.json()) 
+        .then(page => {
+            dispatch(updatedPage(page))
+        
+})}}
 
-}
 
 function addedProfilePhoto(image_url){
     return {type: 'ADD_PROFILE_PHOTO', payload: image_url}
@@ -35,7 +49,7 @@ function addedProfilePhoto(image_url){
 function addingProfilePhoto(e){
     e.preventDefault()
     let image_url = e.target[0].value
-    debugger
+
     return (dispatch) => {
         fetch(USER_URL + localStorage.user_id, {method: "PATCH", 
         headers: {
@@ -468,4 +482,5 @@ export {
     creatingReward,
     deletingVocab,
     addingCharacterToBook,
-    addingProfilePhoto}
+    addingProfilePhoto,
+    updatingPage}

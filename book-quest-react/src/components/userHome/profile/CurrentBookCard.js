@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { finishingCurrentBook } from '../../../redux/actions.js'
 import { useState } from 'react'
+import UpdatePageForm from './UpdatePageForm'
 
 const CurrentBookCard = (props) => {
 
@@ -21,7 +22,8 @@ const CurrentBookCard = (props) => {
             <div>{author}</div>
             <div>Total Pages: {total_pages}</div>
             <div>Current Page: {currentPage} </div>
-            <button>Update Current Page</button>
+            <button onClick={()=> changeUpdateBtn(!updateBtnClicked)}>Update Current Page</button>
+            {updateBtnClicked ? <UpdatePageForm /> : null}
             <button onClick={() => props.finishingCurrentBook(student_book_id)}>Finished Book!</button>
         </div>
     )

@@ -135,6 +135,14 @@ function currentBookReducer(state = {currentBook: {}}, action){
                         characters: [...state.currentBook.book.characters, action.payload]}
                 }
             }
+        case 'UPDATE_CURRENT_PAGE':
+            return{
+                ...state,
+                currentBook: {
+                    ...state.currentBook, 
+                    current_page: action.payload
+                }
+            }
         default: 
             return state;
     }
