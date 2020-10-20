@@ -19,6 +19,30 @@ const ADD_CHAR_URL = "http://localhost:3000/api/v1/characters"
 const CREATE_REWARD_URL = "http://localhost:3000/api/v1/rewards/"
 const DELETE_VOCAB_URL = "http://localhost:3000/api/v1/vocab_activities/"
 
+function addedProfilePhoto(){
+
+}
+
+function addingProfilePhoto(e){
+    e.preventDefault()
+    let image_url = e.target[0].value
+    debugger
+    return (dispatch) => {
+        fetch(USER_URL + localStorage.user_id, {method: "PATCH", 
+        headers: {
+            "Content-Type":"application/json",
+            Authorization: `Bearer ${localStorage.token}`
+        },
+        body: JSON.stringify({
+            id: localStorage.user_id,
+            image_url
+        })})
+        .then(res => res.json()) 
+        // .then(reward => {
+        //         dispatch(createdReward(reward))
+        
+}}
+
 function addedCharacterToBook(character){
     return {type: 'ADD_CHARACTER', payload: character}
 }
@@ -434,4 +458,5 @@ export {
     loadingVocabData,
     creatingReward,
     deletingVocab,
-    addingCharacterToBook}
+    addingCharacterToBook,
+    addingProfilePhoto}

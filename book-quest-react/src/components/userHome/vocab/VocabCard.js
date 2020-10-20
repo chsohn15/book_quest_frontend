@@ -12,7 +12,7 @@ const VocabCard = (props) => {
 
     return(
     <div style={{cursor: "pointer"}} onClick={() => flipCard(!flipped)}>
-        {flipped == false ? <CardFront word={word}/> : <CardBack vocab={props.vocab.vocab} book_title={book_title}/>}
+        {flipped === false ? <CardFront word={word}/> : <CardBack vocab={props.vocab.vocab} book_title={book_title}/>}
         <br />
     </div>
     )
