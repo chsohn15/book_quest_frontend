@@ -37,7 +37,7 @@ const Tweet = (props) => {
                     <Avatar src={image_url}  className={classes.small} ></Avatar>
                 </a>
                 <div class="media-body">
-                    <h6><strong>{name}</strong></h6><CheckCircleIcon color="primary"/>
+                    <h6><strong>{name}</strong><CheckCircleIcon style={{color:"#00ACEE"}}/></h6>
                     <p className={classes.submission}>{submission}</p>
                     <ul class="nav nav-pills nav-pills-custom">
                         <li><a href="#"><span class="glyphicon glyphicon-share-alt"></span></a></li>

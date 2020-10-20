@@ -8,7 +8,6 @@ const TweetsContainer = (props) => {
     const reversed_tweets = [...tweets].reverse()
     return(
     <div>
-        <div>All Tweets:</div>
         {reversed_tweets.map(tweet => <Tweet tweet={tweet} key={tweet.id}/>)}
     </div>
     )
