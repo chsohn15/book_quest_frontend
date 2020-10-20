@@ -3,6 +3,7 @@ import CardFront from './CardFront'
 import CardBack from './CardBack'
 import { useState } from 'react'
 
+
 const VocabCard = (props) => {
 
     const { word } = props.vocab.vocab 

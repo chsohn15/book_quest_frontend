@@ -1,12 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { finishingCurrentBook } from '../../../redux/actions.js'
+import { useState } from 'react'
 
 const CurrentBookCard = (props) => {
+
+    const [updateBtnClicked, changeUpdateBtn] = useState(false);
 
     if (props.book.book){
     const {title, author, image_url, total_pages, ISBN_number} = props.book.book
     const student_book_id = props.book.id 
+    const currentPage = props.book.current_page
+
 
     return(
         <div style={{paddingTop: '20px'}}>
@@ -15,6 +20,8 @@ const CurrentBookCard = (props) => {
             <div>{title}</div>
             <div>{author}</div>
             <div>Total Pages: {total_pages}</div>
+            <div>Current Page: {currentPage} </div>
+            <button>Update Current Page</button>
             <button onClick={() => props.finishingCurrentBook(student_book_id)}>Finished Book!</button>
         </div>
     )
