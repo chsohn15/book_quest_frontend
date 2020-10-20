@@ -6,7 +6,7 @@ const AddPhotoForm = (props) => {
     
     const handleSubmit = (e) => {
         props.addingProfilePhoto(e)
-        props.changeEditBtnClicked(!props.editBtnClicked)
+        props.changeBtnClicked(!props.btnClicked)
     }
     return(<div>
         Photo Form

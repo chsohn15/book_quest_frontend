@@ -26,9 +26,9 @@ const ProfileCard = (props) => {
                 <button onClick={() => changeEditBtnClicked(!editBtnClicked)}>Edit Photo</button>
             </div>}
 
-            {btnClicked ? <AddPhotoForm/>  : null}
+            {btnClicked ? <AddPhotoForm btnClicked={btnClicked} changeBtnClicked={changeBtnClicked}/> : null}
 
-            {editBtnClicked ? <AddPhotoForm editBtnClicked={editBtnClicked} changeEditBtnClicked={changeEditBtnClicked} />  : null}
+            {editBtnClicked ? <AddPhotoForm btnClicked={editBtnClicked} changeBtnClicked={changeEditBtnClicked} />  : null}
 
             <div>Name: {first_name} {last_name}</div>
             <div>Username: {username}</div>
