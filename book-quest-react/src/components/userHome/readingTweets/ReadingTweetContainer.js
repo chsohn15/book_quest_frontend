@@ -30,7 +30,7 @@ const ReadingTweetContainer = (props) => {
                     
                 <NavLink to="/all_tweets">See My Tweets of All Time!</NavLink><br />
             <br/>
-
+                    <div>
                     {twitter_character ? 
                     <div>
                         <CharacterProfileCard/>
@@ -45,6 +45,7 @@ const ReadingTweetContainer = (props) => {
                         <TweetsContainer />
                     :
                         null}
+                    </div>
             </div>
         )
     }
