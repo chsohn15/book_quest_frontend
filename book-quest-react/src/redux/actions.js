@@ -186,7 +186,7 @@ function submittedVocab(words){
 }
 function submittingVocab(e, student_book_id, word, definition, sentence_from_book, original_sentence, point_value){
     e.preventDefault()
-
+    e.persist()
     return (dispatch) => {
         fetch(VOCAB_URL, {method: "POST", 
         headers: {
@@ -197,8 +197,12 @@ function submittingVocab(e, student_book_id, word, definition, sentence_from_boo
             user_id: localStorage.user_id, student_book_id, word, definition, sentence_from_book, original_sentence, point_value
         })})
         .then(res => res.json()) 
-        .then(words => dispatch(submittedVocab(words)))
+        .then(words => 
+            {   e.target.reset()
+                dispatch(submittedVocab(words))
+            })
 
+       
     }}
 
 function deletedTweet(tweet_id){
