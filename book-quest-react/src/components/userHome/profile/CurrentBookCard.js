@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { finishingCurrentBook } from '../../../redux/actions.js'
 import { useState } from 'react'
 import UpdatePageForm from './UpdatePageForm'
+import ProgressBar from 'react-bootstrap/ProgressBar';
 
 const CurrentBookCard = (props) => {
 
@@ -12,7 +13,8 @@ const CurrentBookCard = (props) => {
     const {title, author, image_url, total_pages, ISBN_number} = props.book.book
     const student_book_id = props.book.id 
     const currentPage = props.book.current_page
-
+    const progress = (currentPage/total_pages) *100
+    //debugger
 
     return(
         <div style={{paddingTop: '20px'}}>
@@ -21,9 +23,10 @@ const CurrentBookCard = (props) => {
             <div>{title}</div>
             <div>{author}</div>
             <div>Total Pages: {total_pages}</div>
+            <ProgressBar now={progress} />
             <div>Current Page: {currentPage} </div>
             <button onClick={()=> changeUpdateBtn(!updateBtnClicked)}>Update Current Page</button>
-            {updateBtnClicked ? <UpdatePageForm /> : null}
+            {updateBtnClicked ? <UpdatePageForm updateBtnClicked={updateBtnClicked} changeUpdateBtn={changeUpdateBtn} /> : null}
             <button onClick={() => props.finishingCurrentBook(student_book_id)}>Finished Book!</button>
         </div>
     )
