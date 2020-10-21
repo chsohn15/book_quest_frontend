@@ -79,9 +79,9 @@ const UserHomeContainer = (props) => {
     };
   
     const logOut = () => {
+      props.history.push("/")
       localStorage.clear();
       props.logOutUser()
-      props.history.push("/")
     }
 
     return (

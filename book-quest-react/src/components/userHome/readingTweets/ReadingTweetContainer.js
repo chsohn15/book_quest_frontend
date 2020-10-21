@@ -11,6 +11,7 @@ import AddCharacterForm from './AddCharacterForm'
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Avatar from '@material-ui/core/Avatar';
+import TwitterIcon from '@material-ui/icons/Twitter';
 
 
 
@@ -32,9 +33,7 @@ const ReadingTweetContainer = (props) => {
     if (props.characters.length > 0){
         return(
             <div className={classes.root}>
-                <h2>Lit Tweets!</h2>
-                    
-                <NavLink to="/all_tweets">See My Tweets of All Time!</NavLink><br />
+                <h2 style={{fontFamily: "'Comfortaa', cursive", fontSize:'35px',color:"#00ACEE"}}><TwitterIcon style={{color:"#00ACEE", fontSize: '45px'}}/> Lit Tweets!</h2>
             <br/>
                     <Grid container spacing={3}>
                     {twitter_character ? 
@@ -73,7 +72,7 @@ const ReadingTweetContainer = (props) => {
     else{
         return(
             <div>
-                <div>Lit Tweets!</div>
+                <div style={{fontFamily: "'Source Code Pro', monospace;"}}>Lit Tweets!</div>
                 <CharacterSelectForm /><br/>
             </div>
         )
