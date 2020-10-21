@@ -17,7 +17,7 @@ const TweetForm = (props) => {
 
     const charactersLeft = () => {
         if (280- submission.length >= 0){
-            return <div style={{marginLeft: '100px'}}>Characters Left: {280 - submission.length}</div>
+            return <div style={{marginLeft: '90px'}}>Characters Left: {280 - submission.length}</div>
         }
         else{
             return (<span style={{color: "red"}}>You've gone over the character limit by {280 - submission.length} characters </span>)
@@ -36,10 +36,10 @@ const TweetForm = (props) => {
     <div>
         <Form.Group controlId="exampleForm.ControlTextarea1" onSubmit={(e) => handleSubmit(e)}>
             <Form.Label style={{fontFamily: "'Lato', sans-serif", fontSize: "15px"}}>Write {name}'s Next Lit Tweet and Earn Five Points!</Form.Label><br />
-            <Form.Control  as="textarea" rows={3} onChange={(e)=> changeTweet(e.target.value)}></Form.Control><br />
+            <Form.Control  as="textarea" rows={3} onChange={(e)=> changeTweet(e.target.value)} style={{width: "294px"}}></Form.Control><br />
             <div className="d-flex align-items-center">
             {charactersLeft()}
-            <Button  variant="light" type="submit" style={{backgroundColor:"#00ACEE", color:"white", marginLeft: '3px',marginRight: '0px'}}>Tweet</Button>
+            <Button  variant="light" type="submit" style={{backgroundColor:"#00ACEE", color:"white", marginLeft: '3px',marginRight: '10px'}}>Tweet</Button>
             </div>
         </Form.Group>
     </div>
