@@ -3,6 +3,10 @@ import { useSelector } from "react-redux";
 import { submittingVocab } from '../../../redux/actions.js'
 import { connect } from 'react-redux'
 import { useState } from 'react'
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const BasicVocabForm = (props) => {
 
@@ -18,17 +22,25 @@ const BasicVocabForm = (props) => {
     return(
     <div>
         <div>Create a New Vocabulary Word for <em>{book_title}</em></div>
-        <form onSubmit={(e) => props.submittingVocab(e, student_book_id, word, definition, sentence_from_book, original_sentence, point_value)}>
-            <label>New Vocabulary Word from the Text: </label>
-            <input type="text" onChange={(e)=> changeWord(e.target.value)}></input><br />
-            <label>Sentence from Book with Word: </label>
-            <textarea onChange={(e)=> changeBookSentence(e.target.value)}></textarea><br />
-            <label>Definition: </label>
-            <textarea onChange={(e)=> changeDefinition(e.target.value)}></textarea><br />
-            <label>Your Original Sentence: </label>
-            <textarea onChange={(e)=> changeOriginalSentence(e.target.value)}></textarea><br />
+        <Form.Group as={Row} onSubmit={(e) => props.submittingVocab(e, student_book_id, word, definition, sentence_from_book, original_sentence, point_value)}>
+            <Form.Label column sm="2">New Vocabulary Word from the Text: </Form.Label>
+            <Col sm="10">
+                <Form.Control type="text" onChange={(e)=> changeWord(e.target.value)}></Form.Control><br />
+            </Col>
+            <Form.Label column sm="2">Sentence from Book with Word: </Form.Label>
+            <Col sm="10">
+                <Form.Control  as="textarea" rows={2} onChange={(e)=> changeBookSentence(e.target.value)}></Form.Control><br />
+            </Col>
+            <Form.Label column sm="2">Definition: </Form.Label>
+            <Col sm="10">
+                <Form.Control  as="textarea" rows={2} onChange={(e)=> changeDefinition(e.target.value)}></Form.Control><br />
+            </Col>
+            <Form.Label column sm="2">Your Original Sentence: </Form.Label>
+            <Col sm="10">
+                <Form.Control  as="textarea" rows={2} onChange={(e)=> changeOriginalSentence(e.target.value)}></Form.Control><br />
+            </Col>
             <input type="submit" value="Submit"></input>
-        </form>
+        </Form.Group>
     </div>
     )
 }

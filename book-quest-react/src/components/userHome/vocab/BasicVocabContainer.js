@@ -15,7 +15,7 @@ const BasicVocabContainer = (props) => {
     }
     return(
     <div>
-        <div>Basic Vocab Container</div>
+        <h1>Vocabulary Cards</h1>
         <BasicVocabForm />
         {vocabArray.length > 0 ? <VocabList /> : null}
         
