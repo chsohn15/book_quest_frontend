@@ -4,6 +4,8 @@ import CardBack from './CardBack'
 import { useState } from 'react'
 
 
+
+
 const VocabCard = (props) => {
 
     const { word } = props.vocab.vocab 
@@ -12,12 +14,16 @@ const VocabCard = (props) => {
     const [flipped, flipCard] = useState(false)
 
     return(
-    <div style={{cursor: "pointer"}} onClick={() => flipCard(!flipped)}>
-        {flipped === false ? <CardFront word={word}/> : <CardBack vocab={props.vocab.vocab} book_title={book_title}/>}
-        <br />
+       <div >
+            <div style={{cursor: "pointer"}} onClick={() => flipCard(!flipped)}>
+            {flipped === false ? <CardFront word={word}/> : <CardBack vocab={props.vocab.vocab} book_title={book_title}/>}
+            <br />
+        </div>
     </div>
     )
 }
+
+
 
 
 

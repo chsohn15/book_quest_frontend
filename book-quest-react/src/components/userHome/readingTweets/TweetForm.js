@@ -35,7 +35,7 @@ const TweetForm = (props) => {
     return(
     <div>
         <Form.Group controlId="exampleForm.ControlTextarea1" onSubmit={(e) => handleSubmit(e)}>
-            <Form.Label style={{fontFamily: "'Lato', sans-serif", fontSize: "15px"}}>Write {name}'s Next Lit Tweet and Earn Five Points!</Form.Label><br />
+            <Form.Label style={{fontFamily: "'Lato', sans-serif", fontSize: "15px"}}>Write {name}'s Next Lit Tweet and Earn Five Stars!</Form.Label><br />
             <Form.Control  as="textarea" rows={3} onChange={(e)=> changeTweet(e.target.value)} style={{width: "294px"}}></Form.Control><br />
             <div className="d-flex align-items-center">
             {charactersLeft()}
