@@ -239,9 +239,9 @@ function loadingTweetData(){
     }
 }
 
-// function handledStreak(streak){
-//     return {type: "HANDLE_STREAK", payload: streak}
-// }
+function handledStreak(streak){
+    return {type: "HANDLE_STREAK", payload: streak}
+}
 
 // function handlingStreak(){
 
@@ -487,4 +487,5 @@ export {
     deletingVocab,
     addingCharacterToBook,
     addingProfilePhoto,
-    updatingPage}
+    updatingPage, 
+    handledStreak}

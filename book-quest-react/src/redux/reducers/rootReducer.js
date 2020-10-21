@@ -31,13 +31,11 @@ switch(action.type){
             ...state, 
             currentUser: {id, first_name, last_name, username, is_student, total_points, streak, all_vocab, rewards_hash, money_spent, balance, image_url, vocab_streak, all_tweets}
         }
-    // case 'HANDLE_STREAK':
-    //     const user_streak = action.payload.streak
-
-    //     return {
-    //         ...state, 
-    //         currentUser: {...state.currentUser, streak: user_streak}
-    //     }
+    case 'HANDLE_STREAK':
+        return {
+            ...state, 
+            currentUser: {...state.currentUser, streak: state.currentUser.streak + 1}
+        }
     case 'ADD_VOCAB_WORD':
         return {
             ...state, 
