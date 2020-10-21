@@ -52,12 +52,12 @@ const Tweet = (props) => {
                 <a className={classes.mediaLeft} href="#fake">
                     <Avatar src={image_url}  className={classes.small} ></Avatar>
                 </a>
-                <div class="media-body">
+                <div class="media-body" style={{padding:'10px'}}>
                     <h6>
                         <strong>{name}</strong> 
                         <CheckCircleIcon style={{color:"#00ACEE"}}/>  
                         <span>{finalDate}</span>
-                        <KeyboardArrowDownIcon onClick={handleClick} aria-describedby={pop_id} style={{cursor:"pointer"}}/>
+                        <KeyboardArrowDownIcon onClick={handleClick} aria-describedby={pop_id} style={{cursor:"pointer", position: "absolute", right: "385px"}}/>
                         <Popover
                             id={pop_id}
                             open={open}
@@ -110,7 +110,7 @@ const useStyles = makeStyles((theme) => ({
       height: theme.spacing(8),
     },
     panelBody: {
-        marginBottom: "10px"
+        marginBottom: "0px"
     },
     mediaLeft: {
         marginRight: "10px"
