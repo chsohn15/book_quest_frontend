@@ -40,7 +40,8 @@ const BasicVocabForm = (props) => {
         {formHidden === false ? 
         <div>
         <h3>Create a New Vocabulary Card for <em>{book_title}</em></h3><br/>
-        <Form.Group as={Row} onSubmit={(e) => props.submittingVocab(e, student_book_id, word, definition, sentence_from_book, original_sentence, point_value)}>
+        <form onSubmit={(e) => props.submittingVocab(e, student_book_id, word, definition, sentence_from_book, original_sentence, point_value)}>
+            <Form.Group as={Row}>
             <Form.Label column sm="2">Word from the Text: </Form.Label>
             <Col sm="10">
                 <Form.Control type="text" onChange={(e)=> changeWord(e.target.value)}></Form.Control><br />
@@ -57,9 +58,9 @@ const BasicVocabForm = (props) => {
             <Col sm="10">
                 <Form.Control  as="textarea" rows={2} onChange={(e)=> changeOriginalSentence(e.target.value)}></Form.Control><br />
             </Col>
-            <input type="submit" value="Submit"></input>
-       
-        </Form.Group>
+            <input type="submit" value="Submit" id="submit"></input>
+            </Form.Group>
+        </form>
         </div>
         : null}
     </div>
