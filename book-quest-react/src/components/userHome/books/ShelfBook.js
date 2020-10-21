@@ -15,17 +15,12 @@ import Popper from '@material-ui/core/Popper';
 import PopupState, { bindToggle, bindPopper } from 'material-ui-popup-state';
 import Fade from '@material-ui/core/Fade';
 import Paper from '@material-ui/core/Paper';
+import Popover from '@material-ui/core/Popover';
 
-import AddIcon from '@material-ui/icons/Add';
-import Fab from '@material-ui/core/Fab';
 
-const useStyles = makeStyles((theme) => ({
-    typography: {
-      padding: theme.spacing(1),
-    },
-    fab: {
-        margin: theme.spacing(1)}
-  }));
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+
+
 
 const ShelfBook = (props) => {
     const { id, title, author, total_pages, image_url, ISBN_number } = props.book
@@ -36,39 +31,46 @@ const ShelfBook = (props) => {
         props.addingCurrentBook(id)
         props.filterBookShelf(id)
     }
+    
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+    const handlePopClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
+    const open = Boolean(anchorEl);
+    const pop_id = open ? 'simple-popover' : undefined;
 
     return(
         <Col md={3}>
             <Card style={{ width: '13rem' }} >
-            <Fab color="#F8F8F8" style={{position:'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}>+</Fab>
-            <Card.Img variant="top" src={image_url} /> 
-            <Card.Body>
-            <Card.Title>{title}</Card.Title>
-            <Card.Text>{author}</Card.Text>
-            <PopupState variant="popper" popupId="demo-popup-popper" >
-                {(popupState) => (
-                    <div>
-                    <Fab color="#F8F8F8" {...bindToggle(popupState)} style={{"marginLeft": "43px", width: '30px', height: '15px'}}>
-                    <AddIcon />
-                     </Fab>
-                    <Popper {...bindPopper(popupState)} transition>
-                    {({ TransitionProps }) => (
-                            <Fade {...TransitionProps} timeout={350}>
-                            <Paper>
+                <Card.Img variant="top" src={image_url} /> 
+                    <Card.Body>
+                        <Card.Title>{title} <KeyboardArrowDownIcon onClick={handlePopClick} aria-describedby={pop_id} style={{cursor: "pointer"}}/>
+                            <Popover
+                                id={pop_id}
+                                open={open}
+                                anchorEl={anchorEl}
+                                onClose={handleClose}
+                                anchorOrigin={{
+                                vertical: 'bottom',
+                                horizontal: 'center',
+                                }}
+                                transformOrigin={{
+                                vertical: 'top',
+                                horizontal: 'center',
+                                }}
+                                >
                                 <Typography onClick={() => handleClick(id)} className={classes.typography} style={{cursor:"pointer"}}>Add to 'Currently Reading'</Typography>
                                 <Typography onClick={() => props.removingFromShelf(student_id, id)} className={classes.typography} style={{cursor:"pointer"}}>Remove from shelf</Typography>
-                            </Paper>
-   
-                            </Fade>
-                )}
-                    </Popper>
-                </div>
-                )}
-             </PopupState>
-
-            {/* <Button variant="primary" onClick={() => handleClick(id)}>Add to 'Currently Reading'</Button><br />
-            <Button variant="primary" onClick={() => props.removingFromShelf(student_id, id)}>Remove from shelf</Button> */}
-            </Card.Body>
+                            </Popover>
+                        </Card.Title> 
+                    <Card.Text>{author}</Card.Text>
+                </Card.Body>
             </Card>
         </Col>
     )
@@ -79,5 +81,31 @@ const mapDispatchToProps = (dispatch) => ({
     filterBookShelf: (book_id) => { dispatch( filterBookShelf(book_id) )},
     removingFromShelf: (student_id, book_id) => { dispatch( removingFromShelf(student_id, book_id) )}
 })
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+      display: 'flex',
+      '& > *': {
+        margin: theme.spacing(1),
+      },
+      fontFamily: "'Lato', sans-serif"
+    },
+    small: {
+      width: theme.spacing(8),
+      height: theme.spacing(8),
+    },
+    panelBody: {
+        marginBottom: "0px"
+    },
+    mediaLeft: {
+        marginRight: "10px"
+    },
+    submission: {
+        fontSize: '18px'
+    },
+    typography: {
+        padding: theme.spacing(2),
+      }
+  }));
 
 export default connect(null, mapDispatchToProps)(ShelfBook)
