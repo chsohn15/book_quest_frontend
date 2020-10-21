@@ -80,7 +80,7 @@ const ReadingTweetContainer = (props) => {
 }
 
 const mapStateToProps = (state) => {
-    if (state.currentBookReducer.currentBook.status !== 500){
+    if (state.currentBookReducer.currentBook.status !== 500 && state.currentBookReducer.currentBook.id){
     return {characters: state.currentBookReducer.currentBook.book.characters}
     }
 }

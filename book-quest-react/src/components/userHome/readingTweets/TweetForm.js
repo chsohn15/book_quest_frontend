@@ -36,8 +36,8 @@ const TweetForm = (props) => {
         //         props.handledStreak()
         //     }
         // }
-        props.loadingUser() // load user to fetch new streak
         props.addingReadingTweet(e, submission, point_value, student_book_id, character_id)
+        setTimeout(function(){props.loadingUser()}, 1000) // load user to fetch new streak
     }
 
     return(
