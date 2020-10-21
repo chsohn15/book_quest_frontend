@@ -38,7 +38,7 @@ const ReadingTweetContainer = (props) => {
                     <Grid container spacing={3}>
                     {twitter_character ? 
                     <Grid item xs={3}>
-                        <CharacterProfileCard/>
+                        <CharacterProfileCard/><br />
                         <TweetForm />
                     </Grid>
                     : 

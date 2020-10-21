@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useState } from 'react'
 import { connect } from 'react-redux'
 import { addingReadingTweet, loadingUser } from '../../../redux/actions.js'
+import Form from 'react-bootstrap/Form';
 
 const TweetForm = (props) => {
 
@@ -26,28 +27,18 @@ const TweetForm = (props) => {
      
         e.preventDefault()
         
-        // if (tweetsArray.length === 0 ){
-        //     props.handledStreak()
-        // }
-        // if (tweetsArray.length > 0){
-        //     let today = new Date().toDateString();
-        //     let last_tweet_date = new Date(tweetsArray[tweetsArray.length - 1].created_at).toDateString();
-        //     if (today !== last_tweet_date){
-        //         props.handledStreak()
-        //     }
-        // }
         props.addingReadingTweet(e, submission, point_value, student_book_id, character_id)
         setTimeout(function(){props.loadingUser()}, 1000) // load user to fetch new streak
     }
 
     return(
     <div>
-        <form onSubmit={(e) => handleSubmit(e)}>
-            <label>Write {name}'s Next Lit Tweet and Earn Five Points!</label><br />
-            <textarea onChange={(e)=> changeTweet(e.target.value)}></textarea><br />
+        <Form.Group controlId="exampleForm.ControlTextarea1" onSubmit={(e) => handleSubmit(e)}>
+            <Form.Label>Write {name}'s Next Lit Tweet and Earn Five Points!</Form.Label><br />
+            <Form.Control as="textarea" rows={3} onChange={(e)=> changeTweet(e.target.value)}></Form.Control><br />
             {charactersLeft()}
             <input type="submit"/>
-        </form>
+        </Form.Group>
     </div>
     )
 }
