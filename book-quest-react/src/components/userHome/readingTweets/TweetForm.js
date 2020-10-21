@@ -27,14 +27,15 @@ const TweetForm = (props) => {
     const handleSubmit = (e) => {
      
         e.preventDefault()
-        
+       
         props.addingReadingTweet(e, submission, point_value, student_book_id, character_id)
         setTimeout(function(){props.loadingUser()}, 1000) // load user to fetch new streak
     }
 
     return(
     <div>
-        <Form.Group controlId="exampleForm.ControlTextarea1" onSubmit={(e) => handleSubmit(e)}>
+        <form onSubmit={(e) => handleSubmit(e)}>
+        <Form.Group controlId="exampleForm.ControlTextarea1" >
             <Form.Label style={{fontFamily: "'Lato', sans-serif", fontSize: "15px"}}>Write {name}'s Next Lit Tweet and Earn Five Stars!</Form.Label><br />
             <Form.Control  as="textarea" rows={3} onChange={(e)=> changeTweet(e.target.value)} style={{width: "294px"}}></Form.Control><br />
             <div className="d-flex align-items-center">
@@ -42,6 +43,7 @@ const TweetForm = (props) => {
             <Button  variant="light" type="submit" style={{backgroundColor:"#00ACEE", color:"white", marginLeft: '3px',marginRight: '10px'}}>Tweet</Button>
             </div>
         </Form.Group>
+        </form>
     </div>
     )
 }

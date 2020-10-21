@@ -34,11 +34,9 @@ const BasicVocabForm = (props) => {
     }
 
     const handleSubmit = (e) => {
-        debugger
-        e.persist()
-        debugger
-        props.submittingVocab(e, student_book_id, word, definition, sentence_from_book, original_sentence, point_value)
         e.preventDefault()
+        props.submittingVocab(e, student_book_id, word, definition, sentence_from_book, original_sentence, point_value)
+       
     
         setTimeout(function(){props.loadingUser()}, 1000) // load user to fetch new streak
     }
@@ -50,7 +48,8 @@ const BasicVocabForm = (props) => {
         {formHidden === false ? 
         <div>
         <h3>Create a New Vocabulary Card for <em>{book_title}</em></h3><br/>
-        <Form.Group as={Row} onSubmit={(e) => handleSubmit(e)}>
+        <form onSubmit={(e) => handleSubmit(e)}>
+        <Form.Group as={Row} >
             <Form.Label column sm="2">Word from the Text: </Form.Label>
             <Col sm="10">
                 <Form.Control type="text" onChange={(e)=> changeWord(e.target.value)}></Form.Control><br />
@@ -70,6 +69,7 @@ const BasicVocabForm = (props) => {
             <input type="submit" value="Submit"></input>
        
         </Form.Group>
+        </form>
         </div>
         : null}
     </div>
