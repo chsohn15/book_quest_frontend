@@ -53,9 +53,9 @@ const UserHomeContainer = (props) => {
 
 
     useEffect(() => {
+        props.loadingUser()
         props.loadingBooks()
         props.loadingCurrentBook()
-        props.loadingUser()
         //props.loadingAllTweets()
     }, [])
 

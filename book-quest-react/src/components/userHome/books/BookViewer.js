@@ -6,9 +6,9 @@ import { useSelector } from "react-redux";
 
 
 const BookViewer = () => {
-    const ISBN_num = useSelector(state => state.currentBookReducer.currentBook.book.ISBN_number)
-    const canvasRef = useRef()
     
+  const ISBN_num = useSelector(state => state.currentBookReducer.currentBook.book.ISBN_number)
+  const canvasRef = useRef()
 
     const [loaded, setLoaded] = useState(false);
     //const [pageReloaded, setPageReloaded] = useState(false);
@@ -22,11 +22,6 @@ const BookViewer = () => {
       document.body.appendChild(scriptTag);
 
   
-      // return(
-      //   () => {
-      //   document.getElementById('google-script').remove()
-      //   }
-      // )
     }, []);
   
     useEffect(()=>{
@@ -36,6 +31,7 @@ const BookViewer = () => {
       else{
 
         if(window.viewer){
+
 
           let viewer = new window.google.books.DefaultViewer(canvasRef.current);
           
