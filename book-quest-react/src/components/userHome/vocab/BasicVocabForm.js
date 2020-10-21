@@ -21,13 +21,13 @@ const BasicVocabForm = (props) => {
     
     return(
     <div>
-        <div>Create a New Vocabulary Word for <em>{book_title}</em></div>
+        <h3>Create a New Vocabulary Card for <em>{book_title}</em></h3><br/>
         <Form.Group as={Row} onSubmit={(e) => props.submittingVocab(e, student_book_id, word, definition, sentence_from_book, original_sentence, point_value)}>
-            <Form.Label column sm="2">New Vocabulary Word from the Text: </Form.Label>
+            <Form.Label column sm="2">Word from the Text: </Form.Label>
             <Col sm="10">
                 <Form.Control type="text" onChange={(e)=> changeWord(e.target.value)}></Form.Control><br />
             </Col>
-            <Form.Label column sm="2">Sentence from Book with Word: </Form.Label>
+            <Form.Label column sm="2">Model Sentence from Book: </Form.Label>
             <Col sm="10">
                 <Form.Control  as="textarea" rows={2} onChange={(e)=> changeBookSentence(e.target.value)}></Form.Control><br />
             </Col>
@@ -35,7 +35,7 @@ const BasicVocabForm = (props) => {
             <Col sm="10">
                 <Form.Control  as="textarea" rows={2} onChange={(e)=> changeDefinition(e.target.value)}></Form.Control><br />
             </Col>
-            <Form.Label column sm="2">Your Original Sentence: </Form.Label>
+            <Form.Label column sm="2">My Original Sentence: </Form.Label>
             <Col sm="10">
                 <Form.Control  as="textarea" rows={2} onChange={(e)=> changeOriginalSentence(e.target.value)}></Form.Control><br />
             </Col>
