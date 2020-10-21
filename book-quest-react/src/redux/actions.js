@@ -185,8 +185,7 @@ function submittedVocab(words){
     return {type: "ADD_VOCAB_WORD", payload: words}
 }
 function submittingVocab(e, student_book_id, word, definition, sentence_from_book, original_sentence, point_value){
-    debugger
-    e.preventDefault()
+   
     e.persist()
     return (dispatch) => {
         fetch(VOCAB_URL, {method: "POST", 

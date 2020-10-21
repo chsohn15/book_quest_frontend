@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from "react-redux";
-import { submittingVocab } from '../../../redux/actions.js'
+import { submittingVocab, loadingUser } from '../../../redux/actions.js'
 import { connect } from 'react-redux'
 import { useState } from 'react'
 import Form from 'react-bootstrap/Form';
@@ -33,6 +33,14 @@ const BasicVocabForm = (props) => {
         }
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        props.submittingVocab(e, student_book_id, word, definition, sentence_from_book, original_sentence, point_value)
+       
+    
+        setTimeout(function(){props.loadingUser()}, 1000) // load user to fetch new streak
+    }
+
     return(
     <div style={{fontFamily: "'Lato', sans-serif", fontSize: "15px"}}>
         <button onClick={() => handleClick()}>{buttonText}</button>
@@ -40,7 +48,7 @@ const BasicVocabForm = (props) => {
         {formHidden === false ? 
         <div>
         <h3>Create a New Vocabulary Card for <em>{book_title}</em></h3><br/>
-        <form onSubmit={(e) => props.submittingVocab(e, student_book_id, word, definition, sentence_from_book, original_sentence, point_value)}>
+        <form onSubmit={(e) => handleSubmit(e) }>
             <Form.Group as={Row}>
             <Form.Label column sm="2">Word from the Text: </Form.Label>
             <Col sm="10">
@@ -58,8 +66,9 @@ const BasicVocabForm = (props) => {
             <Col sm="10">
                 <Form.Control  as="textarea" rows={2} onChange={(e)=> changeOriginalSentence(e.target.value)}></Form.Control><br />
             </Col>
-            <input type="submit" value="Submit" id="submit"></input>
-            </Form.Group>
+            <input type="submit" value="Submit"></input>
+       
+        </Form.Group>
         </form>
         </div>
         : null}
@@ -69,7 +78,7 @@ const BasicVocabForm = (props) => {
 
 const mapDispatchToProps = (dispatch) => ({
     submittingVocab: (e, student_book_id, word, definition, sentence_from_book, original_sentence, point_value) => { dispatch( submittingVocab(e, student_book_id, word, definition, sentence_from_book, original_sentence, point_value) )},
-    
+    loadingUser: () => { dispatch( loadingUser())}
 })
 
 export default connect(null, mapDispatchToProps)(BasicVocabForm)
