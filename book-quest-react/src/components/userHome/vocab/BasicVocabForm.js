@@ -36,6 +36,7 @@ const BasicVocabForm = (props) => {
     return(
     <div style={{fontFamily: "'Lato', sans-serif", fontSize: "15px"}}>
         <button onClick={() => handleClick()}>{buttonText}</button>
+        <br/>
         {formHidden === false ? 
         <div>
         <h3>Create a New Vocabulary Card for <em>{book_title}</em></h3><br/>

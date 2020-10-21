@@ -13,7 +13,6 @@ const SnowManContainer = (props) => {
 
     return(
         <div id="snow-main-container">
-            <div>Here is a Snowman</div>
             <div class="backg">
             <div class="snowman">
             {rewards["face"] ? <SnowFace /> : null}
