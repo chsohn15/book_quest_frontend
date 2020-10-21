@@ -12,17 +12,19 @@ const CardFront = (props) => {
     const classes = useStyles();
 
     return(
-    <Card className={classes.root}>
+        <Card className={classes.root}>
         <CardContent>
             <Typography variant="h5" component="h2">{props.word}</Typography>
         </CardContent>
-    </Card>
+        </Card>
+
     )
 }
 
 const useStyles = makeStyles({
     root: {
-      minWidth: 275,
+      minWidth: 450,
+      height: 300
     },
     bullet: {
       display: 'inline-block',
