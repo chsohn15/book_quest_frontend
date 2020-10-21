@@ -72,7 +72,7 @@ const Tweet = (props) => {
                             horizontal: 'center',
                          }}
                         >
-                        <Typography className={classes.typography} style={{cursor:"pointer"}}>Delete Tweet</Typography>
+                        <Typography onClick={() => props.deletingTweet(id)} className={classes.typography} style={{cursor:"pointer"}}>Delete Tweet</Typography>
                     </Popover>
                     </h6>
                     <p className={classes.submission}>{submission}</p>
