@@ -3,9 +3,11 @@ import BasicVocabForm from './BasicVocabForm.js'
 import VocabList from './VocabList.js'
 import { useSelector } from "react-redux";
 
+
 const BasicVocabContainer = (props) => {
     const current_book_status = useSelector(state => state.currentBookReducer.currentBook.status)
     const vocabArray = useSelector(state => state.userReducer.currentUser.all_vocab)
+  
 
 
     if (current_book_status === 500){
@@ -17,6 +19,7 @@ const BasicVocabContainer = (props) => {
     <div>
         <h1>Vocabulary Cards</h1>
         <BasicVocabForm />
+     
         {vocabArray.length > 0 ? <VocabList /> : null}
         
     </div>

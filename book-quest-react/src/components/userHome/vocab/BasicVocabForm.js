@@ -14,13 +14,30 @@ const BasicVocabForm = (props) => {
     const [sentence_from_book, changeBookSentence] = useState("")
     const [definition, changeDefinition] = useState("")
     const [original_sentence, changeOriginalSentence] = useState("")
+    const [formHidden, changeFormHidden] = useState(true)
+    const [buttonText, changeButtonText] = useState("Create New Card")
+ 
 
     const book_title  = useSelector(state => state.currentBookReducer.currentBook.book.title)
     const student_book_id = useSelector(state => state.currentBookReducer.currentBook.id)
     const point_value = 5 
     
+    const handleClick = () => {
+        changeFormHidden(!formHidden)
+
+        if (buttonText === "Create New Card") {
+            changeButtonText("Hide Form")
+        }
+        else {
+            changeButtonText("Create New Card")
+        }
+    }
+
     return(
-    <div>
+    <div style={{fontFamily: "'Lato', sans-serif", fontSize: "15px"}}>
+        <button onClick={() => handleClick()}>{buttonText}</button>
+        {formHidden === false ? 
+        <div>
         <h3>Create a New Vocabulary Card for <em>{book_title}</em></h3><br/>
         <Form.Group as={Row} onSubmit={(e) => props.submittingVocab(e, student_book_id, word, definition, sentence_from_book, original_sentence, point_value)}>
             <Form.Label column sm="2">Word from the Text: </Form.Label>
@@ -40,7 +57,10 @@ const BasicVocabForm = (props) => {
                 <Form.Control  as="textarea" rows={2} onChange={(e)=> changeOriginalSentence(e.target.value)}></Form.Control><br />
             </Col>
             <input type="submit" value="Submit"></input>
+       
         </Form.Group>
+        </div>
+        : null}
     </div>
     )
 }
