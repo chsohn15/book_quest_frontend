@@ -29,7 +29,7 @@ function SignUp2(props) {
     const [password, changePassword] = useState("")
 
     const directToBookSearch = () => {
-        props.history.push('/book_search')
+        props.history.push('/user_home')
     }
     
     const handleSignUp = (e, first_name, last_name, username, password) => {
