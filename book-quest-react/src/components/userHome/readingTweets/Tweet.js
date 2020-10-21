@@ -4,10 +4,26 @@ import { connect } from 'react-redux'
 import Avatar from '@material-ui/core/Avatar';
 import { makeStyles } from '@material-ui/core/styles';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+import Popover from '@material-ui/core/Popover';
+import Typography from '@material-ui/core/Typography';
 
 
 const Tweet = (props) => {
     const classes = useStyles();
+    
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
+    const open = Boolean(anchorEl);
+    const pop_id = open ? 'simple-popover' : undefined;
 
     const { id, created_at, submission } = props.tweet
     const { name, image_url } = props.tweet.character
@@ -37,14 +53,30 @@ const Tweet = (props) => {
                     <Avatar src={image_url}  className={classes.small} ></Avatar>
                 </a>
                 <div class="media-body">
-                    <h6><strong>{name}</strong><CheckCircleIcon style={{color:"#00ACEE"}}/></h6>
+                    <h6>
+                        <strong>{name}</strong> 
+                        <CheckCircleIcon style={{color:"#00ACEE"}}/>  
+                        <span>{finalDate}</span>
+                        <KeyboardArrowDownIcon onClick={handleClick} aria-describedby={pop_id} style={{cursor:"pointer"}}/>
+                        <Popover
+                            id={pop_id}
+                            open={open}
+                            anchorEl={anchorEl}
+                            onClose={handleClose}
+                            anchorOrigin={{
+                            vertical: 'bottom',
+                            horizontal: 'center',
+                        }}
+                        transformOrigin={{
+                            vertical: 'top',
+                            horizontal: 'center',
+                         }}
+                        >
+                        <Typography className={classes.typography} style={{cursor:"pointer"}}>Delete Tweet</Typography>
+                    </Popover>
+                    </h6>
                     <p className={classes.submission}>{submission}</p>
-                    <ul class="nav nav-pills nav-pills-custom">
-                        <li><a href="#"><span class="glyphicon glyphicon-share-alt"></span></a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-retweet"></span></a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-option-horizontal"></span></a></li>
-                    </ul>
+                    
                 </div>
             </div>
         </div>
@@ -85,7 +117,10 @@ const useStyles = makeStyles((theme) => ({
     },
     submission: {
         fontSize: '18px'
-    }
+    },
+    typography: {
+        padding: theme.spacing(2),
+      }
   }));
 
 export default connect(null, mapDispatchToProps)(Tweet)

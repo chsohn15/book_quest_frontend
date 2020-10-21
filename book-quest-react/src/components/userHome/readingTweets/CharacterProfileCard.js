@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { removingCharacter } from '../../../redux/actions';
 import { makeStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 
 const CharacterProfileCard = (props) => {
 
@@ -14,7 +15,7 @@ const CharacterProfileCard = (props) => {
 
     return(<div className={classes.root}>
         <Avatar src={image_url}  className={classes.large}/>
-        <h5><strong>{name}</strong></h5>
+        <h5><strong>{name}</strong> <CheckCircleIcon style={{color:"#00ACEE"}}/></h5>
         <button onClick={ () => props.removingCharacter(student_book_id)}>Change Your Character</button>
         </div>)
 }
