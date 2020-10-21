@@ -93,7 +93,7 @@ const UserHomeContainer = (props) => {
             [classes.appBarShift]: open,
           })}
         >
-          <Toolbar style={{backgroundColor: "#008080"}}>
+          <Toolbar style={{backgroundColor: '#323099'}}>
             <IconButton
               color="inherit"
               aria-label="open drawer"

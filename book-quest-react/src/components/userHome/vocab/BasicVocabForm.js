@@ -20,7 +20,7 @@ const BasicVocabForm = (props) => {
 
     const book_title  = useSelector(state => state.currentBookReducer.currentBook.book.title)
     const student_book_id = useSelector(state => state.currentBookReducer.currentBook.id)
-    const point_value = 5 
+    const point_value = 10
     
     const handleClick = () => {
         changeFormHidden(!formHidden)

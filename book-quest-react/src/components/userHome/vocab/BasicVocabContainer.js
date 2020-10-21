@@ -18,8 +18,8 @@ const BasicVocabContainer = (props) => {
     }
     return(
     <div>
-        <h1>Vocabulary Cards</h1>
-        <h3>Earn five stars for each vocabulary card you create!</h3>
+        <h1>Flash Vocab</h1>
+        <h3>Earn ten stars for each vocabulary card you create!</h3>
         <BasicVocabForm />
      
         {vocabArray.length > 0 ? <VocabList /> : null}
