@@ -25,11 +25,11 @@ function userReducer(
 
 switch(action.type){
     case 'ADD_USER':
-        const {id, first_name, last_name, username, is_student, total_points, streak, all_vocab, rewards_hash, money_spent, balance, image_url, vocab_streak } = action.payload
+        const {id, first_name, last_name, username, is_student, total_points, streak, all_vocab, rewards_hash, money_spent, balance, image_url, vocab_streak, all_tweets } = action.payload
 
         return {
             ...state, 
-            currentUser: {id, first_name, last_name, username, is_student, total_points, streak, all_vocab, rewards_hash, money_spent, balance, image_url, vocab_streak}
+            currentUser: {id, first_name, last_name, username, is_student, total_points, streak, all_vocab, rewards_hash, money_spent, balance, image_url, vocab_streak, all_tweets}
         }
     // case 'HANDLE_STREAK':
     //     const user_streak = action.payload.streak

@@ -6,6 +6,7 @@ import { addingReadingTweet, handlingStreak } from '../../../redux/actions.js'
 
 const TweetForm = (props) => {
 
+    const tweetsArray = useSelector(state => state.userReducer.currentUser.all_tweets)
     const { id, name, image_url } = useSelector(state => state.currentBookReducer.currentBook.twitter_character)
     const character_id = id
     const student_book_id = useSelector(state => state.currentBookReducer.currentBook.id)
@@ -22,16 +23,19 @@ const TweetForm = (props) => {
         }
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e, tweetsArray) => {
+     
         e.preventDefault()
-        // props.handlingStreak()
-        // setTimeout?
+        // if (tweetsArray.length > 0 &&  tweetsArray[tweetsArray.length - 1].created_at 
+        
+
+
         props.addingReadingTweet(e, submission, point_value, student_book_id, character_id)
     }
 
     return(
     <div>
-        <form onSubmit={(e) => handleSubmit(e)}>
+        <form onSubmit={(e) => handleSubmit(e, tweetsArray)}>
             <label>Write {name}'s Next Lit Tweet and Earn Five Points!</label><br />
             <textarea onChange={(e)=> changeTweet(e.target.value)}></textarea><br />
             {charactersLeft()}

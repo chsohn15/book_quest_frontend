@@ -85,11 +85,11 @@ const Tweet = (props) => {
         return (
             <div className={classes.root}>
             <div className={classes.panelBody} >
-            <div class="media">
+            <div className="media">
                 <a className={classes.mediaLeft} href="#fake">
                     <Avatar src={image_url}  className={classes.small} ></Avatar>
                 </a>
-                <div class="media-body" style={{padding:'10px'}}>
+                <div className="media-body" style={{padding:'10px'}}>
                     <h6>
                         <strong>{name}</strong> 
                         <CheckCircleIcon style={{color:"#00ACEE"}}/>  
