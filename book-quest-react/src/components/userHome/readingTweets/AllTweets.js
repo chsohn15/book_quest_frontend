@@ -17,7 +17,6 @@ const AllTweets = (props) => {
 
     return(
     <div>
-        <div>List of All Tweets by a User</div>
         {reversed_tweets.map(tweet => <Tweet tweet={tweet} key={tweet.id}/>)}
     </div>
     )

@@ -5,6 +5,7 @@ import UserBookShelf from './books/UserBookShelf.js'
 import RewardsBar from '../rewardsPage/RewardsBar.js'
 import BookSearchContainer from '../bookSearch/BookSearchContainer.js'
 import ReadingTweetsContainer from './readingTweets/ReadingTweetContainer.js'
+import AllTweets from './readingTweets/AllTweets.js'
 import BasicVocabContainer from './vocab/BasicVocabContainer.js'
 import ProfileContainer from './profile/ProfileContainer.js'
 import { NavLink } from "react-router-dom";
@@ -153,7 +154,7 @@ const UserHomeContainer = (props) => {
           <ListItem button className={classes.nested}>
             <ListItemIcon>
             </ListItemIcon>
-            <ListItemText primary="My Tweet Index" classes={{primary:classes.listItemText}}/>
+            <ListItemText onClick={()=> changePage("tweet_index")} primary="My Tweet Index" classes={{primary:classes.listItemText}}/>
           </ListItem>
         </List>
       </Collapse>
@@ -191,6 +192,7 @@ const UserHomeContainer = (props) => {
             {page === "vocab" ?  <BasicVocabContainer />: null}
             {page === "rewards" ?  <RewardsBar />: null}
             {page === "progress" ?  <ProgressChartsContainer />: null}
+            {page === "tweet_index" ?  <AllTweets />: null}
         </main>
       </div>
     );

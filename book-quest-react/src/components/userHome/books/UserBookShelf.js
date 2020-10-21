@@ -3,6 +3,8 @@ import ShelfBook from './ShelfBook'
 import { connect } from 'react-redux'
 import { loadingBooks } from '../../../redux/actions.js'
 import { useEffect } from 'react'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
 
 
 const UserBookShelf = (props) => {
@@ -12,10 +14,12 @@ const UserBookShelf = (props) => {
     }, [])
 
     return(
-        <div>
+        <Container>
+            <Row>
             {props.books ? props.books.map(book => <ShelfBook book={book} key={book.id}/>) : null}
             {/* {props.books.map(book => <ShelfBook book={book} key={book.id}/>)} */}
-        </div>
+            </Row>
+        </Container>
     )
 }
 

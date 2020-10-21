@@ -5,6 +5,7 @@ import { filterBookShelf } from '../../../redux/actions.js'
 import { removingFromShelf } from '../../../redux/actions.js'
 import { useSelector } from "react-redux";
 import Card from 'react-bootstrap/Card'
+import Col from 'react-bootstrap/Col'
 
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -32,8 +33,8 @@ const ShelfBook = (props) => {
     }
 
     return(
-        <div>
-            <Card style={{ width: '13rem' }}>
+        <Col md={3}>
+            <Card style={{ width: '13rem' }} >
             <Card.Img variant="top" src={image_url} />
             <Card.Body>
             <Card.Title>{title}</Card.Title>
@@ -63,7 +64,7 @@ const ShelfBook = (props) => {
             <Button variant="primary" onClick={() => props.removingFromShelf(student_id, id)}>Remove from shelf</Button> */}
             </Card.Body>
             </Card>
-        </div>
+        </Col>
     )
 }
 

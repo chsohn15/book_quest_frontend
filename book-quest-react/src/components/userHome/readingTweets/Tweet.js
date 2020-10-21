@@ -33,14 +33,51 @@ const Tweet = (props) => {
 
     if (props.tweet.student_book){
         const book_title = props.tweet.student_book.book.title
+
     return(
     <div>
-        <img src={image_url} style={{width: "20px"}} />
+         <div className={classes.root}>
+            <div className={classes.panelBody} >
+            <div class="media">
+                <a className={classes.mediaLeft} href="#fake">
+                    <Avatar src={image_url}  className={classes.small} ></Avatar>
+                </a>
+                <div class="media-body" style={{padding:'10px'}}>
+                    <h6>
+                        <strong>{name}</strong> 
+                        <CheckCircleIcon style={{color:"#00ACEE"}}/>  
+                        <span>{finalDate}</span>
+                        <KeyboardArrowDownIcon onClick={handleClick} aria-describedby={pop_id} style={{cursor:"pointer", position: "absolute", right: "385px"}}/>
+                        <Popover
+                            id={pop_id}
+                            open={open}
+                            anchorEl={anchorEl}
+                            onClose={handleClose}
+                            anchorOrigin={{
+                            vertical: 'bottom',
+                            horizontal: 'center',
+                        }}
+                        transformOrigin={{
+                            vertical: 'top',
+                            horizontal: 'center',
+                         }}
+                        >
+                        <Typography onClick={() => props.deletingTweet(id)} className={classes.typography} style={{cursor:"pointer"}}>Delete Tweet</Typography>
+                    </Popover>
+                        <span><em>   {book_title}</em></span>
+                    </h6>
+                    <p className={classes.submission}>{submission}</p>
+                    
+                </div>
+            </div>
+        </div>
+        </div>
+        {/* <img src={image_url} style={{width: "20px"}} />
         <span>{name}</span>
         <div><em>{book_title}</em></div>
         <div>{submission}</div>
         <div>{finalDate}</div>
-        <button onClick={() => props.deletingTweet(id)}>-</button>
+        <button onClick={() => props.deletingTweet(id)}>-</button> */}
     </div>
     )
     }
