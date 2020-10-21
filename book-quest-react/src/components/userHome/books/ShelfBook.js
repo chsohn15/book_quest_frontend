@@ -16,10 +16,15 @@ import PopupState, { bindToggle, bindPopper } from 'material-ui-popup-state';
 import Fade from '@material-ui/core/Fade';
 import Paper from '@material-ui/core/Paper';
 
+import AddIcon from '@material-ui/icons/Add';
+import Fab from '@material-ui/core/Fab';
+
 const useStyles = makeStyles((theme) => ({
     typography: {
-      padding: theme.spacing(2),
+      padding: theme.spacing(1),
     },
+    fab: {
+        margin: theme.spacing(1)}
   }));
 
 const ShelfBook = (props) => {
@@ -35,16 +40,17 @@ const ShelfBook = (props) => {
     return(
         <Col md={3}>
             <Card style={{ width: '13rem' }} >
-            <Card.Img variant="top" src={image_url} />
+            <Fab color="#F8F8F8" style={{position:'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}>+</Fab>
+            <Card.Img variant="top" src={image_url} /> 
             <Card.Body>
             <Card.Title>{title}</Card.Title>
             <Card.Text>{author}</Card.Text>
             <PopupState variant="popper" popupId="demo-popup-popper" >
                 {(popupState) => (
                     <div>
-                    <Button variant="contained" color="primary" {...bindToggle(popupState)} style={{"marginLeft": "43px"}}>
-                    +
-                     </Button>
+                    <Fab color="#F8F8F8" {...bindToggle(popupState)} style={{"marginLeft": "43px", width: '30px', height: '15px'}}>
+                    <AddIcon />
+                     </Fab>
                     <Popper {...bindPopper(popupState)} transition>
                     {({ TransitionProps }) => (
                             <Fade {...TransitionProps} timeout={350}>

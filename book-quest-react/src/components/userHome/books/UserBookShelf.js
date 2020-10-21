@@ -14,12 +14,14 @@ const UserBookShelf = (props) => {
     }, [])
 
     return(
+        <div>
         <Container>
             <Row>
             {props.books ? props.books.map(book => <ShelfBook book={book} key={book.id}/>) : null}
             {/* {props.books.map(book => <ShelfBook book={book} key={book.id}/>)} */}
             </Row>
         </Container>
+        </div>
     )
 }
 
