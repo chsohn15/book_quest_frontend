@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { connect } from 'react-redux'
 import { addingReadingTweet, loadingUser } from '../../../redux/actions.js'
 import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 const TweetForm = (props) => {
 
@@ -16,10 +17,10 @@ const TweetForm = (props) => {
 
     const charactersLeft = () => {
         if (280- submission.length >= 0){
-            return <div>Characters Left: {280 - submission.length}</div>
+            return <div style={{marginLeft: '100px'}}>Characters Left: {280 - submission.length}</div>
         }
         else{
-            return (<div style={{color: "red"}}>You've gone over the character limit by {280 - submission.length} characters </div>)
+            return (<span style={{color: "red"}}>You've gone over the character limit by {280 - submission.length} characters </span>)
         }
     }
 
@@ -34,10 +35,12 @@ const TweetForm = (props) => {
     return(
     <div>
         <Form.Group controlId="exampleForm.ControlTextarea1" onSubmit={(e) => handleSubmit(e)}>
-            <Form.Label>Write {name}'s Next Lit Tweet and Earn Five Points!</Form.Label><br />
-            <Form.Control as="textarea" rows={3} onChange={(e)=> changeTweet(e.target.value)}></Form.Control><br />
+            <Form.Label style={{fontFamily: "'Lato', sans-serif", fontSize: "15px"}}>Write {name}'s Next Lit Tweet and Earn Five Points!</Form.Label><br />
+            <Form.Control  as="textarea" rows={3} onChange={(e)=> changeTweet(e.target.value)}></Form.Control><br />
+            <div className="d-flex align-items-center">
             {charactersLeft()}
-            <input type="submit"/>
+            <Button  variant="light" type="submit" style={{backgroundColor:"#00ACEE", color:"white", marginLeft: '3px',marginRight: '0px'}}>Tweet</Button>
+            </div>
         </Form.Group>
     </div>
     )

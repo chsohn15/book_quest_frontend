@@ -15,7 +15,7 @@ const CharacterProfileCard = (props) => {
 
     return(<div className={classes.root}>
         <Avatar src={image_url}  className={classes.large}/>
-        <h5><strong>{name}</strong> <CheckCircleIcon style={{color:"#00ACEE"}}/></h5>
+        <h5 style={{marginLeft: '50px', paddingTop: '10px'}}><strong>{name}</strong> <CheckCircleIcon style={{color:"#00ACEE"}}/></h5>
         <button onClick={ () => props.removingCharacter(student_book_id)}>Change Your Character</button>
         </div>)
 }
@@ -35,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
     large: {
       width: theme.spacing(18),
       height: theme.spacing(18),
+      marginLeft: '60px'
     },
   }));
 
