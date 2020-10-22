@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import Button from '@material-ui/core/Button';
+import Button from 'react-bootstrap/Button';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
@@ -68,7 +68,7 @@ function Welcome(props) {
     <div id="welcome-container">
 
       <React.Fragment key={"signup"}>
-          <Button onClick={toggleDrawer("signup", true)}>Sign Up</Button>
+          <Button  variant="light" onClick={toggleDrawer("signup", true)} style={{marginLeft:'610px', marginTop:'670px'}}>Sign Up</Button>
           <SwipeableDrawer
             anchor={"right"}
             open={state["signup"]}
@@ -80,7 +80,7 @@ function Welcome(props) {
         </React.Fragment>
 
         <React.Fragment key={"login"}>
-          <Button onClick={toggleDrawer("login", true)}>Log In</Button>
+          <Button variant="light" onClick={toggleDrawer("login", true)} style={{marginTop:'670px', marginLeft:'40px'}}>Log In</Button>
           <SwipeableDrawer
             anchor={"right"}
             open={state["login"]}
