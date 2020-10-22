@@ -1,6 +1,7 @@
 import React from 'react';
 import { addingProfilePhoto } from '../../../redux/actions.js'
 import { connect } from 'react-redux'
+import Button from 'react-bootstrap/Button'
 
 const AddPhotoForm = (props) => {
     
@@ -8,12 +9,12 @@ const AddPhotoForm = (props) => {
         props.addingProfilePhoto(e)
         props.changeBtnClicked(!props.btnClicked)
     }
-    return(<div>
-        Photo Form
+    return(
+    <div style={{marginTop: '10px'}}>
         <form onSubmit={(e) => handleSubmit(e)}>
-            <label>Image URL</label>
+            <label style={{fontSize: "15px"}}>Image URL:</label>
             <input type="text"></input>
-            <input type="submit"></input>
+            <Button variant="outline-dark" type="submit" style={{marginTop: '10px'}}>Submit</Button>
         </form>
     </div>)
 }

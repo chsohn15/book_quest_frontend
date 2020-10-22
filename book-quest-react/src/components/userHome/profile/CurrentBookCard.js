@@ -35,7 +35,7 @@ const CurrentBookCard = (props) => {
     )
     }
     else return (
-        <div>Add a book to your "Currently Reading" List below!</div>
+        <div style={{fontSize: '16px', marginTop: '10px'}}>Add a book to your "Currently Reading" List below!</div>
     )
 }
 

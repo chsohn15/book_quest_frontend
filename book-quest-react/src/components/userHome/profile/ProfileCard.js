@@ -7,6 +7,7 @@ import AddPhotoForm from './AddPhotoForm.js'
 import AddIcon from '@material-ui/icons/Add';
 import Tooltip from '@material-ui/core/Tooltip';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Button from 'react-bootstrap/Button'
 
 
 const ProfileCard = (props) => {
@@ -23,7 +24,7 @@ const ProfileCard = (props) => {
             <div >
                 <Avatar alt="profile" src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png" className={classes.large} />
                 <h5 style={{fontFamily: "'Lato', sans-serif", marginLeft: '10px'}}><strong>{first_name} {last_name}</strong></h5>
-                <button onClick={() => changeBtnClicked(!btnClicked)}>Add a Profile Picture</button>
+                <Button variant="outline-dark" onClick={() => changeBtnClicked(!btnClicked)}>Add a Profile Picture</Button>
             </div>
             : 
             <div>
