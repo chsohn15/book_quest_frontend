@@ -4,6 +4,8 @@ import { addingCharacterToBook } from '../../../redux/actions.js'
 import { useSelector } from "react-redux";
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
 
 const AddCharacterForm = (props) => {
 
@@ -12,13 +14,19 @@ const AddCharacterForm = (props) => {
     return(
     <div>
         <form onSubmit={(e) => props.addingCharacterToBook(e, book_id)}>
-        <Form.Group>
-        <Form.Label>Character Name:</Form.Label>
-        <Form.Control type="text" name="character"></Form.Control><br />
-        <Form.Label>Image URL:</Form.Label>
-        <Form.Control type="text" name="image-url"></Form.Control><br />
-        <Button type="submit" variant="light" style={{backgroundColor: "#323099", color: 'white'}}>Add Character</Button>
+        <Form.Group as={Row}>
+            <Form.Label column sm="2" style={{fontSize: "15px"}}>Character Name:</Form.Label>
+                <Col sm="6">
+                    <Form.Control type="text" name="character" style={{marginLeft: "12px"}}></Form.Control><br />
+                </Col>
         </Form.Group>
+        <Form.Group as={Row} >
+            <Form.Label column sm="2" style={{fontSize: "15px"}}>Image URL:</Form.Label>
+                <Col sm="6">
+                    <Form.Control type="text" name="image-url" style={{marginLeft: "12px"}}></Form.Control><br />
+                </Col>
+        </Form.Group>
+        <Button type="submit" variant="light" style={{backgroundColor: "#00ACEE", color: 'white'}}>Add Character</Button>
         </form>
     </div>
     )

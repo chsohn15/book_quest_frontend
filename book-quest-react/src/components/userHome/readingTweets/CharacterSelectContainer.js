@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import CharacterCard from './CharacterCard.js'
 import { useState } from 'react'
 import AddCharacterForm from './AddCharacterForm.js'
+import Button from 'react-bootstrap/Button'
 
 const CharacterSelectContainer = (props) => {
 
@@ -10,11 +11,11 @@ const CharacterSelectContainer = (props) => {
 
     return(
     <div>
-        {showForm ? <button onClick={() => changeShowForm(!showForm)}>Hide Form</button>
-        :  <button onClick={() => changeShowForm(!showForm)}>Add Another Character to This Book</button>}
+        {showForm ? <React.Fragment><button style={{marginBottom: "10px"}} onClick={() => changeShowForm(!showForm)}>Hide Form</button><br/></React.Fragment>
+        :  <Button type="submit" variant="light" style={{backgroundColor: "#00ACEE", color: 'white'}} onClick={() => changeShowForm(!showForm)}>Add Another Character to This Book</Button>}
         
         {showForm ? <AddCharacterForm />: null}
-        <div>Select a Character From Your Book:</div>
+        <h6 style={{marginTop: '10px'}}>Select a Character From Your Book:</h6>
         {props.characters.map(character => (<CharacterCard student_book_id={props.student_book_id} character={character} key={character.id}/>))}
     </div>
     )

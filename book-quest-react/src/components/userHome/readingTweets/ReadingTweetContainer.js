@@ -61,9 +61,9 @@ const ReadingTweetContainer = (props) => {
         return(
             <div>
                 <br />
-                <div>No Characters Exist for This Book Yet!</div>
+                <h4>No Characters Exist for This Book Yet!</h4>
                 <br />
-                <div>Add a Character to This Book:</div>
+                <h4>Add a Character to This Book:</h4>
                 <br />
                 <AddCharacterForm />
             </div>
