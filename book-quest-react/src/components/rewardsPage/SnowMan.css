@@ -69,10 +69,10 @@
     width: 120px;
     background-color: #2b303a;
     position: relative;
-    bottom: 55px;
+    bottom: 60px;
     transform: rotate(20deg);
     border-radius: 4px;
-    left:15px; 
+    left:19px; 
 }
 .h-top{
     height:0;
@@ -127,7 +127,7 @@
 }
 .sc2{
     height: 0;
-    width: 20px;
+    width: 30px;
     border-bottom: 70px solid #e74339;
     border-left:8px solid transparent;
     border-right: 8px solid transparent;

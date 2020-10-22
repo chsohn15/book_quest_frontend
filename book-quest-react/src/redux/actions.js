@@ -139,6 +139,7 @@ function creatingReward(price, level, student_id, description){
                 dispatch(addRewardErrorMessage(reward.errors))
             }
             else {
+                loadingUser()
                 dispatch(createdReward(reward))
             }
         })}}

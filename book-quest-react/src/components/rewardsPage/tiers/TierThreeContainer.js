@@ -12,6 +12,10 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+
 const TierThreeContainer = (props) => {
 
     const classes = useStyles();
@@ -29,7 +33,9 @@ const TierThreeContainer = (props) => {
     
     return(
         <React.Fragment>
-
+            <Container style={{marginTop: '50px', marginLeft:"150px"}}>
+                <Row>
+                <Col md={6}>
             <Card className={classes.root}>
             <CardActionArea>
                 <CardMedia
@@ -61,6 +67,8 @@ const TierThreeContainer = (props) => {
             }
         </CardActions>
     </Card>
+     </Col>
+    <Col md={6}>
     <Card className={classes.root}>
             <CardActionArea>
                 <CardMedia
@@ -92,7 +100,10 @@ const TierThreeContainer = (props) => {
             }
         </CardActions>
     </Card>
-            </React.Fragment>
+    </Col>
+    </Row>
+    </Container>
+    </React.Fragment>
     )
 }
 
