@@ -4,8 +4,12 @@ import CharacterCard from './CharacterCard.js'
 import { useState } from 'react'
 import AddCharacterForm from './AddCharacterForm.js'
 import Button from 'react-bootstrap/Button'
+import { makeStyles } from '@material-ui/core/styles';
+import Avatar from '@material-ui/core/Avatar';
 
 const CharacterSelectContainer = (props) => {
+
+
 
     const [showForm, changeShowForm] = useState(false)
 
@@ -24,4 +28,6 @@ const CharacterSelectContainer = (props) => {
 const mapStateToProps = (state) => {
     return {characters: state.currentBookReducer.currentBook.book.characters, student_book_id: state.currentBookReducer.currentBook.id}
 }
+
+
 export default connect(mapStateToProps)(CharacterSelectContainer)

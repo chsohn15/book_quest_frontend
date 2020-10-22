@@ -15,7 +15,7 @@ const CharacterProfileCard = (props) => {
 
     return(<div className={classes.root}>
         <Avatar src={image_url}  className={classes.large}/>
-        <h5 style={{marginLeft: '50px', paddingTop: '10px'}}><strong>{name}</strong> <CheckCircleIcon style={{color:"#00ACEE"}}/></h5>
+        <h5 style={{marginLeft: '55px', paddingTop: '10px'}}><strong>{name}</strong> <CheckCircleIcon style={{color:"#00ACEE"}}/></h5>
         <button onClick={ () => props.removingCharacter(student_book_id)}>Change Your Character</button>
         </div>)
 }
@@ -26,10 +26,6 @@ const mapDispatchToProps = (dispatch) => ({
 
 const useStyles = makeStyles((theme) => ({
     root: {
-    //   display: 'flex',
-    //   '& > *': {
-    //     margin: theme.spacing(1),
-    //   },
       fontFamily: "'Lato', sans-serif"
     },
     large: {

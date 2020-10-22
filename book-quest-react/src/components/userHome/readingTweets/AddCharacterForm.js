@@ -15,15 +15,15 @@ const AddCharacterForm = (props) => {
     <div>
         <form onSubmit={(e) => props.addingCharacterToBook(e, book_id)}>
         <Form.Group as={Row}>
-            <Form.Label column sm="2" style={{fontSize: "15px"}}>Character Name:</Form.Label>
+            <Form.Label column sm="2" style={{fontSize: "15px", fontFamily: "'Lato', sans-serif"}}>Character Name:</Form.Label>
                 <Col sm="6">
-                    <Form.Control type="text" name="character" style={{marginLeft: "12px"}}></Form.Control><br />
+                    <Form.Control type="text" name="character" style={{marginLeft: "13px"}}></Form.Control><br />
                 </Col>
         </Form.Group>
         <Form.Group as={Row} >
-            <Form.Label column sm="2" style={{fontSize: "15px"}}>Image URL:</Form.Label>
+            <Form.Label column sm="2" style={{fontSize: "15px", fontFamily: "'Lato', sans-serif"}}>Image URL:</Form.Label>
                 <Col sm="6">
-                    <Form.Control type="text" name="image-url" style={{marginLeft: "12px"}}></Form.Control><br />
+                    <Form.Control type="text" name="image-url" style={{marginLeft: "13px"}}></Form.Control><br />
                 </Col>
         </Form.Group>
         <Button type="submit" variant="light" style={{backgroundColor: "#00ACEE", color: 'white'}}>Add Character</Button>
