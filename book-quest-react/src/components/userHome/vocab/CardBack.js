@@ -20,7 +20,7 @@ const CardBack = (props) => {
     <Card className={classes.root}>
         <CardContent>
         <Typography variant="body2" component="p" style={{fontSize:'15px'}}><strong>Definition: </strong>{definition}</Typography><br />
-        <Typography variant="body2" component="p" style={{fontSize:'15px'}}><strong>Sentence from <em>{book_title}</em>:</strong> {sentence_from_book}</Typography><br />
+        <Typography variant="body2" component="p" style={{fontSize:'15px'}}><strong>Sentence from <em>{book_title}</em>:</strong> "{sentence_from_book}"</Typography><br />
         <Typography variant="body2" component="p" style={{fontSize:'15px'}}><strong>Original Sentence:</strong> {original_sentence}</Typography><br />
         <button onClick={() => props.deletingVocab(id)}>Delete Card</button>
         </CardContent>
