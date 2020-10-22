@@ -26,7 +26,7 @@ const ReadingTweetContainer = (props) => {
 
     if (current_book_status === 500){
         return(
-            <div>Add a Book to "Currently Reading" to Start Writing Tweets!</div>
+            <h3>Add a Book to "Currently Reading" to Start Writing Lit Tweets!</h3>
         )
     }
 

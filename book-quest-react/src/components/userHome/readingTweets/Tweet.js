@@ -94,7 +94,7 @@ const Tweet = (props) => {
                         <strong>{name}</strong> 
                         <CheckCircleIcon style={{color:"#00ACEE"}}/>  
                         <span>{finalDate}</span>
-                        <KeyboardArrowDownIcon onClick={handleClick} aria-describedby={pop_id} style={{cursor:"pointer", position: "absolute", right: "385px"}}/>
+                        <KeyboardArrowDownIcon onClick={handleClick} aria-describedby={pop_id} style={{cursor:"pointer", position: "absolute", right: "380px"}}/>
                         <Popover
                             id={pop_id}
                             open={open}
@@ -150,7 +150,8 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: "0px"
     },
     mediaLeft: {
-        marginRight: "10px"
+        marginRight: "10px",
+        marginLeft: '45px'
     },
     submission: {
         fontSize: '18px'

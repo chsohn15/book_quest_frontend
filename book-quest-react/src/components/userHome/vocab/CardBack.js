@@ -38,7 +38,9 @@ const mapDispatchToProps = (dispatch) => ({
 const useStyles = makeStyles({
     root: {
       minWidth: 450,
-      height: 300
+      height: 300,
+      backgroundColor: "#9ae3dd;",
+      backgroundImage: 'url("https://www.transparenttextures.com/patterns/fake-luxury.png")'
     },
     bullet: {
       display: 'inline-block',

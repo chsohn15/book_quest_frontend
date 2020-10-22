@@ -43,12 +43,12 @@ const BasicVocabForm = (props) => {
 
     return(
     <div style={{fontFamily: "'Lato', sans-serif", fontSize: "15px"}}>
-        <button onClick={() => handleClick()}>{buttonText}</button>
+        <button onClick={() => handleClick()} style={{marginLeft: "515px"}}>{buttonText}</button>
         <br/>
         {formHidden === false ? 
         <div>
-        <h3>Create a New Vocabulary Card for <em>{book_title}</em></h3><br/>
-        <form onSubmit={(e) => handleSubmit(e) }>
+        <h3 style={{marginLeft: '100px', marginTop: '20px'}}>Create a New Vocabulary Card for <em>{book_title}</em> :</h3><br/>
+        <form onSubmit={(e) => handleSubmit(e) } style={{marginLeft: '100px', marginRight: '220px'}}>
             <Form.Group as={Row}>
             <Form.Label column sm="2">Word from the Text: </Form.Label>
             <Col sm="10">
@@ -66,7 +66,7 @@ const BasicVocabForm = (props) => {
             <Col sm="10">
                 <Form.Control  as="textarea" rows={2} onChange={(e)=> changeOriginalSentence(e.target.value)}></Form.Control><br />
             </Col>
-            <input type="submit" value="Submit"></input>
+            <input type="submit" value="Submit" style={{marginLeft: "920px"}}></input>
        
         </Form.Group>
         </form>

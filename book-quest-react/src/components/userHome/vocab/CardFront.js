@@ -14,7 +14,7 @@ const CardFront = (props) => {
     return(
         <Card className={classes.root}>
         <CardContent>
-            <Typography variant="h5" component="h2">{props.word}</Typography>
+            <Typography variant="h5" component="h2" style={{fontFamily: "'Cabin', sans-serif;", textAlign:"center", marginTop: "110px"}}>{props.word}</Typography>
         </CardContent>
         </Card>
 
@@ -24,7 +24,9 @@ const CardFront = (props) => {
 const useStyles = makeStyles({
     root: {
       minWidth: 450,
-      height: 300
+      height: 300,
+      backgroundColor: "#9ae3dd;",
+      backgroundImage: 'url("https://www.transparenttextures.com/patterns/fake-luxury.png")'
     },
     bullet: {
       display: 'inline-block',
@@ -37,6 +39,7 @@ const useStyles = makeStyles({
     pos: {
       marginBottom: 12,
     },
+    
   });
 
 export default CardFront
