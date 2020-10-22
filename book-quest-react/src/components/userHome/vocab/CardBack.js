@@ -7,6 +7,9 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import DeleteIcon from '@material-ui/icons/Delete';
+import HighlightOffIcon from '@material-ui/icons/HighlightOff';
+import Tooltip from '@material-ui/core/Tooltip';
 
 const CardBack = (props) => {
 
@@ -22,7 +25,9 @@ const CardBack = (props) => {
         <Typography variant="body2" component="p" style={{fontSize:'15px'}}><strong>Definition: </strong>{definition}</Typography><br />
         <Typography variant="body2" component="p" style={{fontSize:'15px'}}><strong>Sentence from <em>{book_title}</em>:</strong> "{sentence_from_book}"</Typography><br />
         <Typography variant="body2" component="p" style={{fontSize:'15px'}}><strong>Original Sentence:</strong> {original_sentence}</Typography><br />
-        <button onClick={() => props.deletingVocab(id)}>Delete Card</button>
+        <Tooltip title="Delete Card">
+        <HighlightOffIcon style={{marginBottom:'0px', marginLeft:'0px'}} onClick={() => props.deletingVocab(id)}></HighlightOffIcon>
+        </Tooltip>
         </CardContent>
     </Card>
     )
