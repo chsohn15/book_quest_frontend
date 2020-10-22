@@ -7,6 +7,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Swal from 'sweetalert2'
 
 const BasicVocabForm = (props) => {
 
@@ -37,7 +38,14 @@ const BasicVocabForm = (props) => {
         e.preventDefault()
         props.submittingVocab(e, student_book_id, word, definition, sentence_from_book, original_sentence, point_value)
        
-    
+        Swal.fire({
+            imageUrl: "https://thumbs.dreamstime.com/b/retro-cartoon-pop-art-comic-style-shooting-star-vector-illustra-illustration-eps-109987555.jpg",
+            position: 'center',
+            title: 'Nice Work! You earned 10 stars!',
+            showConfirmButton: false,
+            timer: 2000
+          })
+
         setTimeout(function(){props.loadingUser()}, 1000) // load user to fetch new streak
     }
 
