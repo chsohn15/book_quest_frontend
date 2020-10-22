@@ -15,7 +15,10 @@ const CharacterSelectContainer = (props) => {
 
     return(
     <div>
-        {showForm ? <React.Fragment><button style={{marginBottom: "10px"}} onClick={() => changeShowForm(!showForm)}>Hide Form</button><br/></React.Fragment>
+        {showForm ? 
+            <React.Fragment>
+                <Button variant="light" style={{backgroundColor: "#00ACEE", color: 'white',marginBottom: "10px"}}  onClick={() => changeShowForm(!showForm)}>Hide Form</Button><br/>
+            </React.Fragment>
         :  <Button type="submit" variant="light" style={{backgroundColor: "#00ACEE", color: 'white'}} onClick={() => changeShowForm(!showForm)}>Add Another Character to This Book</Button>}
         
         {showForm ? <AddCharacterForm />: null}
