@@ -19,9 +19,9 @@ const CardBack = (props) => {
     return(
     <Card className={classes.root}>
         <CardContent>
-        <Typography variant="body2" component="p">Definition: {definition}</Typography><br />
-        <Typography variant="body2" component="p">Sentence from <em>{book_title}</em>: {sentence_from_book}</Typography><br />
-        <Typography variant="body2" component="p">Original Sentence: {original_sentence}</Typography><br />
+        <Typography variant="body2" component="p" style={{fontSize:'15px'}}><strong>Definition: </strong>{definition}</Typography><br />
+        <Typography variant="body2" component="p" style={{fontSize:'15px'}}><strong>Sentence from <em>{book_title}</em>:</strong> {sentence_from_book}</Typography><br />
+        <Typography variant="body2" component="p" style={{fontSize:'15px'}}><strong>Original Sentence:</strong> {original_sentence}</Typography><br />
         <button onClick={() => props.deletingVocab(id)}>Delete Card</button>
         </CardContent>
     </Card>

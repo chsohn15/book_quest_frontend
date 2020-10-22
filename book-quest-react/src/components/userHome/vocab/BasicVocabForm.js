@@ -50,19 +50,19 @@ const BasicVocabForm = (props) => {
         <h4 style={{marginLeft: '100px', marginTop: '20px'}}>Create a New Vocabulary Card for <em>{book_title}</em> :</h4><br/>
         <form onSubmit={(e) => handleSubmit(e) } style={{marginLeft: '100px', marginRight: '220px'}}>
             <Form.Group as={Row}>
-            <Form.Label column sm="2">Word from the Text: </Form.Label>
+            <Form.Label column sm="2" style={{fontSize: "15px"}}><strong>Word from the Text: </strong></Form.Label>
             <Col sm="10">
                 <Form.Control type="text" onChange={(e)=> changeWord(e.target.value)}></Form.Control><br />
             </Col>
-            <Form.Label column sm="2">Model Sentence from Book: </Form.Label>
+            <Form.Label column sm="2"><strong>Model Sentence from Book: </strong></Form.Label>
             <Col sm="10">
                 <Form.Control  as="textarea" rows={2} onChange={(e)=> changeBookSentence(e.target.value)}></Form.Control><br />
             </Col>
-            <Form.Label column sm="2">Definition: </Form.Label>
+            <Form.Label column sm="2"><strong>Definition: </strong></Form.Label>
             <Col sm="10">
                 <Form.Control  as="textarea" rows={2} onChange={(e)=> changeDefinition(e.target.value)}></Form.Control><br />
             </Col>
-            <Form.Label column sm="2">My Original Sentence: </Form.Label>
+            <Form.Label column sm="2"><strong>My Original Sentence: </strong></Form.Label>
             <Col sm="10">
                 <Form.Control  as="textarea" rows={2} onChange={(e)=> changeOriginalSentence(e.target.value)}></Form.Control><br />
             </Col>
