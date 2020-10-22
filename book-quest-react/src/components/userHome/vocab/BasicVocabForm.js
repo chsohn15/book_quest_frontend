@@ -47,7 +47,7 @@ const BasicVocabForm = (props) => {
         <br/>
         {formHidden === false ? 
         <div>
-        <h3 style={{marginLeft: '100px', marginTop: '20px'}}>Create a New Vocabulary Card for <em>{book_title}</em> :</h3><br/>
+        <h4 style={{marginLeft: '100px', marginTop: '20px'}}>Create a New Vocabulary Card for <em>{book_title}</em> :</h4><br/>
         <form onSubmit={(e) => handleSubmit(e) } style={{marginLeft: '100px', marginRight: '220px'}}>
             <Form.Group as={Row}>
             <Form.Label column sm="2">Word from the Text: </Form.Label>

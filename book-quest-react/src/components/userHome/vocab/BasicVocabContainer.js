@@ -16,8 +16,8 @@ const BasicVocabContainer = (props) => {
     }
     return(
     <div>
-        <h1 style={{marginLeft: "480px", fontFamily: "'Special Elite', cursive"}}>Flash Vocab</h1>
-        <h3 style={{marginLeft: "240px", fontFamily: "'Special Elite', cursive"}}>Earn ten stars for each vocabulary card you create!</h3>
+        <h1 style={{marginLeft: "480px", fontFamily: "'Kalam', cursive"}}>Flash Vocab</h1>
+        <h3 style={{marginLeft: "240px", fontFamily: "'Kalam', cursive"}}>Earn ten stars for each vocabulary card you create!</h3>
         <BasicVocabForm />
      
         {vocabArray.length > 0 ? <VocabList /> : null}
