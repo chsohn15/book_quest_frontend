@@ -50,7 +50,7 @@ const BookSearchContainer = (props) => {
         <div>
             <Jumbotron style={{backgroundImage: 'url("https://bloomerang.co/wp-content/uploads/2020/06/floating-book-header.png")', 
                             backgroundSize: 'cover', height: '50vh'}}>
-                <h3 style={{color: 'white'}}>Search for Books to Add to Your Bookshelf!</h3>
+                <h2 style={{color: 'white', marginTop: '-25px'}}>Search for Books to Add to Your Bookshelf!</h2>
                 <SearchBar handleSearch={handleSearch}/>
             </Jumbotron>
             {filterBookData(books)}
