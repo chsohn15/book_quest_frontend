@@ -51,7 +51,7 @@ const BasicVocabForm = (props) => {
 
     return(
     <div style={{fontFamily: "'Lato', sans-serif", fontSize: "15px"}}>
-        <button onClick={() => handleClick()} style={{marginLeft: "515px"}}>{buttonText}</button>
+        <Button variant="info" onClick={() => handleClick()} style={{marginLeft: "515px"}}>{buttonText}</Button>
         <br/>
         {formHidden === false ? 
         <div>
@@ -74,7 +74,7 @@ const BasicVocabForm = (props) => {
             <Col sm="10">
                 <Form.Control  as="textarea" rows={2} onChange={(e)=> changeOriginalSentence(e.target.value)}></Form.Control><br />
             </Col>
-            <input type="submit" value="Submit" style={{marginLeft: "920px"}}></input>
+            <Button variant="info" type="submit" value="Submit" style={{marginLeft: "920px"}}>Submit</Button>
        
         </Form.Group>
         </form>
