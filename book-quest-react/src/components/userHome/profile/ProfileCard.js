@@ -4,6 +4,9 @@ import Avatar from '@material-ui/core/Avatar';
 import { makeStyles } from '@material-ui/core/styles';
 import { useState } from 'react'
 import AddPhotoForm from './AddPhotoForm.js'
+import AddIcon from '@material-ui/icons/Add';
+import Tooltip from '@material-ui/core/Tooltip';
+
 
 const ProfileCard = (props) => {
     const {id, first_name, last_name, username, is_student, image_url} = props
@@ -18,20 +21,25 @@ const ProfileCard = (props) => {
             { image_url === null ? 
             <div >
                 <Avatar alt="profile" src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png" className={classes.large} />
+                <h5 style={{fontFamily: "'Lato', sans-serif", marginLeft: '10px'}}>{first_name} {last_name}</h5>
                 <button onClick={() => changeBtnClicked(!btnClicked)}>Add a Profile Picture</button>
             </div>
             : 
             <div>
                 <Avatar alt="profile" src={image_url} style={{width: '130px'}} className={classes.large} />
-                <button onClick={() => changeEditBtnClicked(!editBtnClicked)}>Edit Photo</button>
+                <h5 style={{fontFamily: "'Lato', sans-serif", marginLeft: '10px'}}>{first_name} {last_name}</h5>
+                <Tooltip title="Edit Photo" style={{cursor: "pointer", marginLeft: '50px'}}>
+                    <AddIcon onClick={() => changeEditBtnClicked(!editBtnClicked)}/>
+                </Tooltip>
+                {/* <button onClick={() => changeEditBtnClicked(!editBtnClicked)}>Edit Photo</button> */}
             </div>}
 
             {btnClicked ? <AddPhotoForm btnClicked={btnClicked} changeBtnClicked={changeBtnClicked}/> : null}
 
             {editBtnClicked ? <AddPhotoForm btnClicked={editBtnClicked} changeBtnClicked={changeEditBtnClicked} />  : null}
 
-            <div>Name: {first_name} {last_name}</div>
-            <div>Username: {username}</div>
+           
+
         </div>
     )
 }
