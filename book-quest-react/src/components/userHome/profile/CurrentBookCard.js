@@ -17,17 +17,17 @@ const CurrentBookCard = (props) => {
     //debugger
 
     return(
-        <div style={{paddingTop: '20px'}}>
-            <div>Currently Reading</div>
-            <img src={image_url}></img>
-            <div>{title}</div>
-            <div>{author}</div>
-            <div>Total Pages: {total_pages}</div>
-            <ProgressBar now={progress} />
-            <div>Current Page: {currentPage} </div>
-            <button onClick={()=> changeUpdateBtn(!updateBtnClicked)}>Update Current Page</button>
+        <div style={{paddingTop: '20px', fontFamily: "'Lato', sans-serif", fontSize: '16px'}}>
+            <div style={{fontSize: '16px', fontWeight:"bold"}}>Currently Reading:</div>
+            <img src={image_url} style={{paddingTop: '10px'}}></img>
+            <div style={{fontWeight:"bold"}} ><em>{title}</em></div>
+            <div style={{paddingTop: '10px'}}>By {author}</div>
+            <div style={{paddingTop: '10px'}}>Total Pages: {total_pages}</div>
+            <ProgressBar style={{marginTop: '10px'}} now={progress} />
+            <div style={{paddingTop: '10px'}}>Current Page: {currentPage} </div>
+            <button style={{marginTop: '15px'}} onClick={()=> changeUpdateBtn(!updateBtnClicked)}>Update Current Page</button>
             {updateBtnClicked ? <UpdatePageForm updateBtnClicked={updateBtnClicked} changeUpdateBtn={changeUpdateBtn} /> : null}
-            <button onClick={() => props.finishingCurrentBook(student_book_id)}>Finished Book!</button>
+            <button style={{marginTop: '15px'}} onClick={() => props.finishingCurrentBook(student_book_id)}>Finished Book!</button>
         </div>
     )
     }
