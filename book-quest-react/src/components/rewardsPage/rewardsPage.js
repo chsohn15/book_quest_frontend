@@ -20,6 +20,8 @@ import Typography from '@material-ui/core/Typography';
 import AcUnitIcon from '@material-ui/icons/AcUnit';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSnowman } from "@fortawesome/free-solid-svg-icons";
+import { faCarrot } from "@fortawesome/free-solid-svg-icons";
+import { faHatCowboy } from "@fortawesome/free-solid-svg-icons";
 
 const RewardsPage = (props) => {
 
@@ -209,7 +211,8 @@ const QontoConnector = withStyles({
     const icons = {
       1: <AcUnitIcon />,
       2: <FontAwesomeIcon icon={faSnowman} size="2x"/>,
-      3: <VideoLabelIcon />,
+      3: <FontAwesomeIcon icon={faHatCowboy} size="2x"/>
+      
     };
   
     return (
