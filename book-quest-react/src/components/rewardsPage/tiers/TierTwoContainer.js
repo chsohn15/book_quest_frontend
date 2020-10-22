@@ -11,6 +11,9 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 const TierTwoContainer = (props) => {
 
@@ -35,7 +38,9 @@ const TierTwoContainer = (props) => {
 
     return(
         <React.Fragment>
-
+            <Container style={{marginTop: '50px'}}>
+                <Row>
+            <Col md={4}>
             <Card className={classes.root}>
             <CardActionArea>
                 <CardMedia
@@ -67,7 +72,8 @@ const TierTwoContainer = (props) => {
             }
         </CardActions>
     </Card>
-
+    </Col>
+    <Col md={4}>
     <Card className={classes.root}>
             <CardActionArea>
                 <CardMedia
@@ -99,7 +105,8 @@ const TierTwoContainer = (props) => {
             }
         </CardActions>
     </Card>
-
+    </Col>
+    <Col md={4}>
     <Card className={classes.root}>
             <CardActionArea>
                 <CardMedia
@@ -131,12 +138,13 @@ const TierTwoContainer = (props) => {
             }
         </CardActions>
     </Card>
-
+    </Col>
+    <Col md={4} style={{marginTop:"30px"}}>
     <Card className={classes.root}>
             <CardActionArea>
                 <CardMedia
                     className={classes.media}
-                    image="https://lh3.googleusercontent.com/proxy/kDX2k_rNwPRn6hsCc6Ygfld-kRq6y_07l4XN6L0RVT8buiQc-JJYq6RC6vx1vNWi25i6gAN8yNx0Woyi85M0VgnFCdsix1BtgGary3F-exxU"
+                    image="https://gcma.org/site/user/images/Happy_Snowman__1_.jpg"
                     title="Building Snowman Arms"
                     />
                 <CardContent>
@@ -163,10 +171,13 @@ const TierTwoContainer = (props) => {
             }
         </CardActions>
     </Card>
+    </Col>
             {/* <button onClick={() => props.creatingReward(buttons_price, level, student_id, buttons_description)}>Add Buttons</button> */}
             {/* <button onClick={() => props.creatingReward(eyes_price, level, student_id, eyes_description)}>Add Eyes</button> */}
             {/* <button onClick={() => props.creatingReward(nose_price, level, student_id, nose_description)}>Add a Carrot Nose</button> */}
             {/* <button onClick={() => props.creatingReward(arms_price, level, student_id, arms_description)}>Add Arms</button> */}
+            </Row>
+            </Container>
         </React.Fragment>
     )
 }

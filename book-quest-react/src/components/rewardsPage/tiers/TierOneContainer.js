@@ -11,6 +11,9 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 const TierOneContainer = (props) => {
 
@@ -34,7 +37,10 @@ const TierOneContainer = (props) => {
 
     return(
     <React.Fragment>
+        <Container style={{marginTop: '50px', marginLeft:"150px"}}>
+            <Row>
         {/* {errors.rewardsError ? <div>{errors.rewardsError}</div>: null} */}
+        <Col md={6}>
         <Card className={classes.root}>
             <CardActionArea>
                 <CardMedia
@@ -44,7 +50,7 @@ const TierOneContainer = (props) => {
                     />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
-                        Snow Body
+                        Snowman Body
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
                         Start building your snowman by adding a base!
@@ -66,6 +72,8 @@ const TierOneContainer = (props) => {
             }
         </CardActions>
     </Card>
+    </Col>
+    <Col md={6}>
     <Card className={classes.root}>
             <CardActionArea>
                 <CardMedia
@@ -75,7 +83,7 @@ const TierOneContainer = (props) => {
                     />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
-                        Snow Face
+                        Snowman Face
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
                         Add a Face to Your Snowman!
@@ -98,6 +106,9 @@ const TierOneContainer = (props) => {
             
         </CardActions>
     </Card>
+    </Col>
+    </Row>
+    </Container>
     </React.Fragment>
     )
 }
