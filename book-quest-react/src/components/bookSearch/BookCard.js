@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { addingBook } from '../../redux/actions.js'
 import { NavLink } from "react-router-dom";
 import Swal from 'sweetalert2'
+import Button from 'react-bootstrap/Button'
 
 const BookCard = (props) => {
     const {title, authorsArray, publisher, publishedDate, description, pageCount, image_url, ISBN} = props
@@ -24,17 +25,17 @@ const BookCard = (props) => {
     
     
     return(
-        <div>
+        <div style={{marginTop:"20px", fontSize:'17px'}}>
             <img src={image_url} alt="book"/>
-            <div>{title}</div>
-            By {authorsArray.map(author => <div>{author}</div>)}
+            <div style={{marginTop:'10px'}}><em><strong>{title}</strong></em></div>
+            Author: {authorsArray.map(author => <span>{author}</span>)}
             <div>ISBN number: {ISBN}</div>
             <div>Publisher: {publisher}</div>
             <div>Published Date: {publishedDate}</div>
             <div>Description: {description}</div>
             <div>Pages: {pageCount}</div>
             <NavLink to="user_home">
-                <button onClick={() => handleClick(title, first_author, ISBN, image_url, pageCount)}>Add to Book Shelf</button>
+                <Button variant="outline-dark" style={{marginTop:'10px'}} onClick={() => handleClick(title, first_author, ISBN, image_url, pageCount)}>Add to Book Shelf</Button>
             </NavLink>
 
         </div>
