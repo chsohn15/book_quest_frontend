@@ -15,8 +15,9 @@ const UserBookShelf = (props) => {
 
     return(
         <div>
+        <h1 style={{fontFamily: "'Kalam', cursive", marginLeft: "500px"}}>My Bookshelf</h1>
         <Container>
-            <Row>
+            <Row >
             {props.books ? props.books.map(book => <ShelfBook book={book} key={book.id}/>) : null}
             {/* {props.books.map(book => <ShelfBook book={book} key={book.id}/>)} */}
             </Row>

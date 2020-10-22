@@ -47,7 +47,7 @@ const ShelfBook = (props) => {
 
     return(
         <Col md={3}>
-            <Card style={{ width: '13rem' }} >
+            <Card style={{ width: '13rem', marginTop: '15px' }} >
                 <Card.Img variant="top" src={image_url} /> 
                     <Card.Body>
                         <Card.Title>{title} <KeyboardArrowDownIcon onClick={handlePopClick} aria-describedby={pop_id} style={{cursor: "pointer"}}/>

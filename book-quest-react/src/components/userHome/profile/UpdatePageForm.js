@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from "react-redux";
 import { connect } from 'react-redux'
 import { updatingPage } from '../../../redux/actions.js'
+import Button from 'react-bootstrap/Button';
 
 
 const UpdatePageForm = (props) => {
@@ -19,9 +20,9 @@ const UpdatePageForm = (props) => {
     return(
         <div>
             <form onSubmit={(e) => handleSubmit(e)}>
-                <label>Current Page:</label>
+                <label style={{marginTop: '10px'}}>New Current Page:</label>
                 <input type="number"></input>
-                <input type="submit"></input>
+                <Button style={{marginTop: '10px'}} variant="outline-dark" type="submit">Submit</Button>
             </form>
         </div>
     )

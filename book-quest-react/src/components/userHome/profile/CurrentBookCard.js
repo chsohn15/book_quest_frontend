@@ -4,6 +4,7 @@ import { finishingCurrentBook } from '../../../redux/actions.js'
 import { useState } from 'react'
 import UpdatePageForm from './UpdatePageForm'
 import ProgressBar from 'react-bootstrap/ProgressBar';
+import Button from 'react-bootstrap/Button';
 
 const CurrentBookCard = (props) => {
 
@@ -25,9 +26,11 @@ const CurrentBookCard = (props) => {
             <div style={{paddingTop: '10px'}}>Total Pages: {total_pages}</div>
             <ProgressBar style={{marginTop: '10px'}} now={progress} />
             <div style={{paddingTop: '10px'}}>Current Page: {currentPage} </div>
-            <button style={{marginTop: '15px'}} onClick={()=> changeUpdateBtn(!updateBtnClicked)}>Update Current Page</button>
+            {updateBtnClicked === false? 
+            <Button variant="outline-dark" style={{marginTop: '15px', cursor:"pointer"}} onClick={()=> changeUpdateBtn(!updateBtnClicked)}>Update Current Page</Button>
+            : null}
             {updateBtnClicked ? <UpdatePageForm updateBtnClicked={updateBtnClicked} changeUpdateBtn={changeUpdateBtn} /> : null}
-            <button style={{marginTop: '15px'}} onClick={() => props.finishingCurrentBook(student_book_id)}>Finished Book!</button>
+            <Button variant="outline-dark" style={{marginTop: '15px', cursor:"pointer"}} onClick={() => props.finishingCurrentBook(student_book_id)}>Finished Book!</Button>
         </div>
     )
     }
