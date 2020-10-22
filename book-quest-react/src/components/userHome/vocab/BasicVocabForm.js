@@ -39,7 +39,7 @@ const BasicVocabForm = (props) => {
         props.submittingVocab(e, student_book_id, word, definition, sentence_from_book, original_sentence, point_value)
        
         Swal.fire({
-            imageUrl: "https://thumbs.dreamstime.com/b/retro-cartoon-pop-art-comic-style-shooting-star-vector-illustra-illustration-eps-109987555.jpg",
+            imageUrl: "https://pngimg.com/uploads/star/star_PNG41463.png",
             position: 'center',
             title: 'Nice Work! You earned 10 stars!',
             showConfirmButton: false,
